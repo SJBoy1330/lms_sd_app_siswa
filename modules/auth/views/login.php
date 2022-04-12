@@ -38,7 +38,7 @@
             </div>
 
             <div class="form-group mb-4">
-                <label for="exampleFormControlInput3" class="form-label title-3">Kata Sandi</label>
+                <label class="form-label title-3">Kata Sandi</label>
                 <div class="wrapper-password d-flex">
                     <input type="password" class="form-control form-control-pribadi" name="password" id="password" placeholder="Masukkan kata sandi" autocomplete="off">
 
