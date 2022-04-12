@@ -31,8 +31,13 @@
             </div>
 
             <div class="mb-4">
-                <label for="exampleFormControlInput1" class="form-label title-3">Email</label>
-                <input type="email" class="form-control form-control-pribadi" id="exampleFormControlInput1" placeholder="Masukkan email" autocomplete="off">
+                <label for="kode_sekolah" class="form-label title-3">Kode Sekolah</label>
+                <input type="text" name="kode_sekolah" class="form-control form-control-pribadi" id="kode_sekolah" placeholder="Masukkan kode sekolah" autocomplete="off">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="form-label title-3">Email</label>
+                <input type="email" name="email" class="form-control form-control-pribadi" id="email" placeholder="Masukkan email" autocomplete="off">
             </div>
         </div>
         <div class="col-11 col-sm-11 mt-auto mx-auto pt-4 pb-5">

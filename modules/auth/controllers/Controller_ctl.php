@@ -33,7 +33,7 @@ class Controller_ctl extends MY_Welcome
 
 	public function send_email()
 	{
-		// LOAD title
+		// LOAD TITLE
 		$mydata['title'] = 'send email';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('send_email', $mydata, TRUE);
