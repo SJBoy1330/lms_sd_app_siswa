@@ -33,7 +33,7 @@ class Controller_ctl extends MY_Welcome
 
 	public function send_email()
 	{
-		// LOAD title
+		// LOAD TITLE
 		$mydata['title'] = 'send email';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('send_email', $mydata, TRUE);
@@ -44,6 +44,8 @@ class Controller_ctl extends MY_Welcome
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Verif OTP';
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/otp.js"></script>';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('otp', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

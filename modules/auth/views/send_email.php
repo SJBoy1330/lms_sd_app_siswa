@@ -31,9 +31,9 @@
             </div>
 
             <div class="mb-4">
-                    <label for="exampleFormControlInput3" class="form-label title-3">Kode Sekolah</label>
-                    <input type="text" class="form-control form-control-pribadi" id="exampleFormControlInput3" placeholder="Masukkan Username" autocomplete="off">
-                </div>
+                <label for="exampleFormControlInput3" class="form-label title-3">Kode Sekolah</label>
+                <input type="text" class="form-control form-control-pribadi" id="exampleFormControlInput3" placeholder="Masukkan Username" autocomplete="off">
+            </div>
 
             <div class="mb-4">
                 <label for="exampleFormControlInput4" class="form-label title-3">Email</label>

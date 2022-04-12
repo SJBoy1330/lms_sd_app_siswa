@@ -6,15 +6,6 @@
              <div class="row">
                  <header class="header">
                      <div class="row">
-                         <!-- <div class="col">
-                                <div class="logo-small">
-                                    <img src="<?= base_url() ?>assets/img/logo.png" alt="" />
-                                    <h5><span class="text-secondary fw-light">Finance</span><br />Wallet</h5>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center">
-                                <a href="signin-SD.html" class="label-merah"> Masuk <i class="bi bi-arrow-right"></i>  </a>
-                            </div> -->
                      </div>
                  </header>
              </div>
