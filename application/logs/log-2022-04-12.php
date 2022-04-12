@@ -162,3 +162,11 @@ ERROR - 2022-04-12 16:16:48 --> 404 Page Not Found: /index
 ERROR - 2022-04-12 16:16:48 --> 404 Page Not Found: /index
 ERROR - 2022-04-12 16:16:48 --> 404 Page Not Found: /index
 ERROR - 2022-04-12 16:16:48 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:27:09 --> 404 Page Not Found: ../../modules/auth/controllers/Controller_ctl/serviceWorker.js
+ERROR - 2022-04-12 16:27:11 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:27:11 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:27:11 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:30:25 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:30:25 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:30:25 --> 404 Page Not Found: /index
+ERROR - 2022-04-12 16:30:25 --> 404 Page Not Found: ../../modules/auth/controllers/Controller_ctl/serviceWorker.js
