@@ -44,7 +44,66 @@
         </ul>
     </div>
 </footer>
+<div class="modal fade" id="menumodal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content shadow position-absolute" style="bottom: 65px;">
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <div class="col-auto text-center">
+                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-20 bg-danger mb-2">
+                            <div class="circle-bg-top"></div>
+                            <div class="circle-bg-bottom"></div>
+                            <div class="icons text-danger">
+                                <i class="fa-solid fa-book-open-cover size-28 text-white"></i>
+                            </div>
+                        </a>
+                        <p class="size-13 text-secondary">Materi</p>
+                    </div>
+
+                    <div class="col-auto text-center">
+                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-primary mb-2">
+                            <div class="circle-bg-top"></div>
+                            <div class="circle-bg-bottom"></div>
+                            <div class="icons text-purple">
+                                <i class="fa-solid fa-book-bookmark size-28 text-white"></i>
+                            </div>
+                        </a>
+                        <p class="size-13 text-secondary">Ujian</p>
+                    </div>
+
+                    <div class="col-auto text-center">
+                        <a href="tugas-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
+                            <div class="circle-bg-top"></div>
+                            <div class="circle-bg-bottom"></div>
+                            <div class="icons text-success">
+                                <i class="fa-solid fa-list-check size-28 text-white"></i>
+                            </div>
+                        </a>
+                        <p class="size-13 text-secondary">Tugas</p>
+                    </div>
+
+                    <div class="col-auto text-center">
+                        <div class="notifikasi-chat">
+                            <p>2</p>
+                        </div>
+                        <a href="pesan-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
+                            <div class="circle-bg-top"></div>
+                            <div class="circle-bg-bottom"></div>
+                            <div class="icons text-success">
+                                <i class="fa-solid fa-messages size-28 text-white"></i>
+                            </div>
+                        </a>
+                        <p class="size-13 text-secondary">Chatting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Required jquery and libraries -->
+<script>
+    var BASE_URL = baseUrl = '<?= base_url(); ?>';
+</script>
 <script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
 <script src="<?= base_url() ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
@@ -64,9 +123,6 @@
 
 <!-- swiper js script -->
 <script src="<?= base_url() ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
-
-<!-- page level custom script -->
-<script src="<?= base_url() ?>assets/js/app.js"></script>
 
 <script src="<?= base_url() ?>assets/js/pagination-carousel.js"></script>
 

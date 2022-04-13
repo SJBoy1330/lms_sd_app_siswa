@@ -6,6 +6,7 @@ class Controller_ctl extends MY_Frontend
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
+		is_logged_in();
 	}
 
 

@@ -11,6 +11,10 @@ class Controller_ctl extends MY_Welcome
 
 	public function index()
 	{
+		// CEK SESSION
+		if ($this->session->userdata('lms_siswa_id_siswa')) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Splash';
 
@@ -24,6 +28,10 @@ class Controller_ctl extends MY_Welcome
 
 	public function login()
 	{
+		// CEK SESSION
+		if ($this->session->userdata('lms_siswa_id_siswa')) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Login';
 		// LOAD VIEW
@@ -33,6 +41,10 @@ class Controller_ctl extends MY_Welcome
 
 	public function send_email()
 	{
+		// CEK SESSION
+		if ($this->session->userdata('lms_siswa_id_siswa')) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'send email';
 		// LOAD VIEW
@@ -42,6 +54,10 @@ class Controller_ctl extends MY_Welcome
 
 	public function otp()
 	{
+		// CEK SESSION
+		if ($this->session->userdata('lms_siswa_id_siswa')) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Verif OTP';
 		// LOAD JS
@@ -53,10 +69,25 @@ class Controller_ctl extends MY_Welcome
 
 	public function reset_sandi()
 	{
+		// CEK SESSION
+		if ($this->session->userdata('lms_siswa_id_siswa')) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Verif OTP';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('reset_sandi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
+	}
+
+
+	public function logout()
+	{
+		$this->session->unset_userdata('lms_sd_siswa_server');
+		$this->session->unset_userdata('lms_siswa_id_siswa');
+		$this->session->unset_userdata('lms_siswa_role');
+		$this->session->unset_userdata('lms_siswa_id_sekolah');
+
+		redirect('auth/login');
 	}
 }

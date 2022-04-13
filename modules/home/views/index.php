@@ -1,4 +1,3 @@
-<!-- Begin page -->
 <main class="h-100">
 
     <!-- Header -->
@@ -10,13 +9,9 @@
                 </a>
             </div>
             <div class="col text-center">
-                <!-- <div class="logo-small">
-                        <img src="<?= base_url(); ?>assets/img/logo.png" alt="" />
-                        <h5><span class="text-secondary fw-light">Finance</span><br />Wallet</h5>
-                    </div> -->
             </div>
             <div class="col-auto">
-                <a href="profile.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
+                <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
                     <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
                     <span class="count-indicator"></span>
                 </a>
@@ -34,8 +29,8 @@
                 <p class="mb-0 ms-2 title-1-home">Selamat Datang</p>
             </div>
             <div class="col-3 d-flex justify-content-center align-items-center">
-                <button class="btn btn-sm btn-outline-danger btn-fingerprint">
-                    <i class="bi bi-fingerprint" style="font-size: 1.7rem;"></i>
+                <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" data-bs-toggle="modal" data-bs-target="#presensiModal">
+                    <i class="fa-solid fa-user-check" style="font-size:1.2rem"></i>
                 </button>
             </div>
         </div>
@@ -341,17 +336,17 @@
                 <h6 class="title">Pengumuman</h6>
             </div>
             <div class="col-auto align-self-center">
-                <a href="blog.html" class="label-merah">Lihat Semua</a>
+                <a href="list-pengumuman-SD.html" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="blogdetails.html" class="card mb-3">
+                <a href="detail-pengumuman-SD.html" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
                                 <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                    <img src="<?= base_url(); ?>assets/images/vaksin.jpg" alt="">
+
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
@@ -364,7 +359,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="blogdetails.html" class="card mb-3">
+                <a href="detail-pengumuman-SD.html" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -382,7 +377,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="blogdetails.html" class="card mb-3">
+                <a href="detail-pengumuman-SD.html" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -407,7 +402,7 @@
                 <h6 class="title">Berita</h6>
             </div>
             <div class="col-auto">
-                <a href="" class="label-merah">Lihat Semua</a>
+                <a href="list-berita-SD.html" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row mb-2">
@@ -481,7 +476,69 @@
 
     </div>
     <!-- main page content ends -->
-
-
 </main>
-<!-- Page ends-->
+
+<!-- MODAL -->
+
+<!-- Modal Presensi -->
+<div class="modal fade" id="presensiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header py-4">
+                <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="map-container-google-1" class="z-depth-1-half map-container">
+                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto pe-1">
+                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-clock size-20 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Jam Masuk</p>
+                                        <p class="fw-normal text-secondary size-12">07:00 WIB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto pe-1">
+                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-clock size-20 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 fw-medium" style="font-size: 14.5px;">Jam Pulang</p>
+                                        <p class="fw-normal text-secondary size-12">16:00 WIB</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center border-0">
+                <a href="detail-kbm.html" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
+            </div>
+        </div>
+    </div>
+</div>

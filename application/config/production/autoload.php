@@ -264,5 +264,10 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 
 */
-
-$autoload['model'] = array('manual_m', 'staf_m', 'notifikasi_staf_m', 'notifikasi_m');
+$arrModel[] = 'manual_m';
+$arrModel[] = 'sekolah_m';
+if (isset($_SESSION['lms_sd_siswa_server'])) {
+    $arrModel[] = 'siswa_m';
+    $arrModel[] = 'notifikasi_m';
+}
+$autoload['model'] = array($arrModel);

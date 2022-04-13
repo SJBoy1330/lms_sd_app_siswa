@@ -108,11 +108,20 @@ $route['auth/(:any)'] = 'auth/controller_ctl/$1';
 
 $route['auth/(:any)/(:any)'] = 'auth/controller_ctl/$1/$2';
 
+
+$route['func_auth']  = 'auth/function_ctl';
+
+$route['func_auth/(:any)'] = 'auth/function_ctl/$1';
+
+$route['func_auth/(:any)/(:any)'] = 'auth/function_ctl/$1/$2';
+
+
 $route['home']  = 'home/controller_ctl';
 
 $route['home/(:any)'] = 'home/controller_ctl/$1';
 
 $route['home/(:any)/(:any)'] = 'home/controller_ctl/$1/$2';
+
 
 $route['404_override'] = '';
 

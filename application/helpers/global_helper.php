@@ -375,3 +375,32 @@ function get_id_sekolah($kode)
   $result = $ci->db->get_where('sekolah', ['kode' => $kode])->row();
   return $result->id_sekolah;
 }
+
+function hash_my_password($id_sekolah, $username, $password)
+{
+  $data = hash('sha256', $id_sekolah . $username . $password);
+  return $data;
+}
+
+function is_logged_in()
+{
+
+  $obj = &get_instance();
+
+  $base_url = $obj->config->item('base_url');
+
+  $ci = get_instance();
+
+  if ($ci->session->userdata('lms_siswa_id_siswa')) {
+    if ($ci->session->userdata('lms_siswa_role') != 'siswa') {
+      redirect('auth/login');
+    } else {
+      $ci->db2 = $ci->load->database('db_sekolah', TRUE);
+      $ci->db2->set('last_access', date('Y-m-d H:i:s'));
+      $ci->db2->where('id_siswa', $ci->session->userdata('lms_siswa_id_siswa'));
+      $ci->db2->update('siswa');
+    }
+  } else {
+    redirect('auth/login');
+  }
+}
