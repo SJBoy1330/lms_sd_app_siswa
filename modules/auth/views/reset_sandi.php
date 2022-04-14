@@ -71,7 +71,7 @@
         <div class="col-11 col-sm-11 mt-auto mx-auto pt-4 pb-5">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center d-grid">
-                    <a href="<?= base_url('auth/login') ?>" onclick="unreload()" class="btn btn-lg shadow-sm btn-pribadi">Kirim</a>
+                    <a href="<?= base_url('auth/login') ?>" onclick="unreload(this)" class="btn btn-lg shadow-sm btn-pribadi">Kirim</a>
                 </div>
             </div>
         </div>

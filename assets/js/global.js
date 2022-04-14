@@ -4,13 +4,30 @@ const unreload = (element, event) => {
     event.preventDefault();
     window.history.pushState({}, "", element.href);
     handleLocation(element.href);
+    // console.log(element.href);
 };
 
 const handleLocation = async (root) => {
     const route = root + '?routing=true' || routes[404];
     const html = await fetch(route).then((data) => data.text());
+    var body = document.querySelector('body');
+    var htmls = document.querySelector('html');
     document.getElementById("reload-content").innerHTML = html;
     $('footer').load(root + ' footer');
+    $('header').load(root + ' header');
+    $('#sidemenu').load(root + ' #sidemenu');
+    body.classList.remove('menu-open');
+    htmls.classList.remove('menu-open');
+
+    // $('main').fadeIn('slow');
+    $('main').css('min-height', $(window).height());
+
+    if ($('.header.position-fixed').length > 0) {
+        $('main').css('padding-top', $('.header').outerHeight() + 10);
+    }
+    if ($('.footer').length > 0) {
+        $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
+    }
 };
 
 window.onpopstate = handleLocation;
