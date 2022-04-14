@@ -13973,11 +13973,11 @@ linearGradient stop:last-child {
 
 .menu-open .sidebar-wrap {
   left: 0;
-  opacity: 1;
+  opacity: 1
 }
 
 .menu-open .sidebar-wrap.sidebar-overlay::after {
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .menu-open .sidebar-wrap.sidebar-overlay .sidebar {
@@ -16591,11 +16591,6 @@ button.button-kirim-pesan {
   left: -280px;
   background-color: #EC3528;
   z-index: 1;
-}
-
-.nav-item.logout{
-  position: absolute;
-  bottom: 0;
 }
 
 /* Style CSS Dewa */
