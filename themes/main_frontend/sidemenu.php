@@ -33,7 +33,9 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'kbm', $this->uri->segment(2), array())) ?>" href="<?= base_url('kbm') ?>" onclick="unreload(this)" tabindex="-1">
+                        <a class="nav-link <?php if (strpos(current_url(), "kbm/jadwal")) {
+                                                echo 'active';
+                                            } ?>" href="<?= base_url('kbm/jadwal') ?>" onclick="unreload(this)" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-calendar-days"></i></div>
                             <div class="col">Jadwal</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
