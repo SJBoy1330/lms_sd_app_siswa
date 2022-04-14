@@ -112,15 +112,6 @@
 <script src="<?= base_url() ?>assets/js/main.js"></script>
 <script src="<?= base_url() ?>assets/js/color-scheme.js"></script>
 
-<!-- PWA app service registration and works -->
-<script src="<?= base_url() ?>assets/js/pwa-services.js"></script>
-
-<!-- Chart js script -->
-<script src="<?= base_url() ?>assets/vendor/chart-js-3.3.1/chart.min.js"></script>
-
-<!-- Progress circle js script -->
-<script src="<?= base_url() ?>assets/vendor/progressbar-js/progressbar.min.js"></script>
-
 <!-- swiper js script -->
 <script src="<?= base_url() ?>assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
 
