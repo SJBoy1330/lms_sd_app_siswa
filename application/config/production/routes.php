@@ -123,6 +123,44 @@ $route['home/(:any)'] = 'home/controller_ctl/$1';
 $route['home/(:any)/(:any)'] = 'home/controller_ctl/$1/$2';
 
 
+
+
+$route['kbm']  = 'kbm/controller_ctl';
+
+$route['kbm/(:any)'] = 'kbm/controller_ctl/$1';
+
+$route['kbm/(:any)/(:any)'] = 'kbm/controller_ctl/$1/$2';
+
+$route['func_kbm']  = 'kbm/function_ctl';
+
+$route['func_kbm/(:any)'] = 'kbm/function_ctl/$1';
+
+$route['func_kbm/(:any)/(:any)'] = 'kbm/function_ctl/$1/$2';
+
+
+
+$route['profil']  = 'profil/controller_ctl';
+
+$route['profil/(:any)'] = 'profil/controller_ctl/$1';
+
+$route['profil/(:any)/(:any)'] = 'profil/controller_ctl/$1/$2';
+
+$route['func_profil']  = 'profil/function_ctl';
+
+$route['func_profil/(:any)'] = 'profil/function_ctl/$1';
+
+$route['func_profil/(:any)/(:any)'] = 'profil/function_ctl/$1/$2';
+
+
+
+
+$route['toko']  = 'toko/controller_ctl';
+
+$route['toko/(:any)'] = 'toko/controller_ctl/$1';
+
+$route['toko/(:any)/(:any)'] = 'toko/controller_ctl/$1/$2';
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

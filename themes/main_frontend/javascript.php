@@ -3,7 +3,7 @@
     <div class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
-                <a class="nav-link mt-1  active" href="index-SD.html">
+                <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" href="<?= base_url('home'); ?>" onclick="unreload(this)">
                     <span>
                         <i class="fa-solid fa-house size-18"></i>
                         <span class="nav-text">Dashboard</span>
@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="jadwal-SD.html">
+                <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'kbm', $this->uri->segment(2), array())) ?>" href="<?= base_url('kbm'); ?>" onclick="unreload(this)">
                     <span>
                         <i class="far fa-calendar-alt size-18"></i>
                         <span class="nav-text">Jadwal</span>
@@ -26,7 +26,7 @@
                 </button>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="toko-SD.html">
+                <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'toko', $this->uri->segment(2), array())) ?>" href="<?= base_url('toko'); ?>" onclick="unreload(this)">
                     <span>
                         <i class="fa-solid fa-shop size-18"></i>
                         <span class="nav-text">Toko</span>
@@ -34,7 +34,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mt-1 " href="akun-SD.html">
+                <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'profil', $this->uri->segment(2), array())) ?>" href="<?= base_url('profil'); ?>" onclick="unreload(this)">
                     <span>
                         <i class="fa-solid fa-user size-18"></i>
                         <span class="nav-text">Profil</span>

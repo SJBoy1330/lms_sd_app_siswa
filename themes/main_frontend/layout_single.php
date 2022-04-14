@@ -16,7 +16,8 @@
     }
     ?>
     <?php echo $content; ?>
-    <?php include_once("javascript.php"); ?>
+
 </div>
+<?php include_once("javascript.php"); ?>
 
 <?php include_once("footer.php"); ?>

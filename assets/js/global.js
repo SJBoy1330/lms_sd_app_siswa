@@ -1,15 +1,16 @@
 
-const unreload = (event) => {
+const unreload = (element, event) => {
     event = event || window.event;
     event.preventDefault();
-    window.history.pushState({}, "", event.target.href);
-    handleLocation(event.target.href);
+    window.history.pushState({}, "", element.href);
+    handleLocation(element.href);
 };
 
 const handleLocation = async (root) => {
     const route = root + '?routing=true' || routes[404];
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("reload-content").innerHTML = html;
+    $('footer').load(root + ' footer');
 };
 
 window.onpopstate = handleLocation;

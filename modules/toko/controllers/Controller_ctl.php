@@ -13,7 +13,7 @@ class Controller_ctl extends MY_Frontend
 	public function index()
 	{
 		// LOAD TITLE
-		$mydata['title'] = 'Home';
+		$mydata['title'] = 'Toko';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
