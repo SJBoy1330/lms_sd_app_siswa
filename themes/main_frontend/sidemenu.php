@@ -1,5 +1,5 @@
 <!-- Sidebar main menu -->
-<div class="sidebar-wrap  sidebar-overlay">
+<div id="sidemenu" class="sidebar-wrap  sidebar-overlay">
     <!-- Add pushcontent or fullmenu instead overlay -->
     <div class="closemenu text-muted">Close Menu</div>
     <div class="sidebar">
@@ -25,7 +25,7 @@
             <div class="col-12">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= base_url('home'); ?>">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" aria-current="page" href="<?= base_url('home'); ?>" onclick="unreload(this)">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-house"></i></div>
                             <div class="col">Dashboard</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -33,14 +33,14 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'kbm', $this->uri->segment(2), array())) ?>" href="<?= base_url('kbm') ?>" onclick="unreload(this)" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-calendar-days"></i></div>
                             <div class="col">Jadwal</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'kbm', $this->uri->segment(2), array('materi'))) ?>" href="<?= base_url('kbm/materi') ?>" tabindex="-1" onclick="unreload(this)">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-open-cover"></i></div>
                             <div class="col">Materi</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -48,7 +48,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'tugas', $this->uri->segment(2), array())) ?>" href="<?= base_url('tugas') ?>" onclick="unreload(this)" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-list-check"></i></div>
                             <div class="col">Tugas</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
@@ -56,39 +56,9 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-                            <div class="col">Surat Ijin</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-screen-users"></i></div>
-                            <div class="col">KBM</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
+                        <a class="nav-link <?= (set_active($this->uri->segment(1), 'toko', $this->uri->segment(2), array())) ?>" href="<?= base_url('toko') ?>" onclick="unreload(this)" tabindex="-1">
                             <div class="avatar avatar-40 icon"><i class="fa-solid fa-shop"></i></div>
                             <div class="col">Toko</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-user"></i></div>
-                            <div class="col">Jurnal Staf</div>
-                            <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1">
-                            <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-user"></i></div>
-                            <div class="col">Jurnal Siswa</div>
                             <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                         </a>
                     </li>
