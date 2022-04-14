@@ -74,7 +74,11 @@ class Controller_ctl extends MY_Welcome
 			redirect('home');
 		}
 		// LOAD TITLE
-		$mydata['title'] = 'Verif OTP';
+		$mydata['title'] = 'Reset Kata Sandi';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/resetsandi.js"></script>';
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('reset_sandi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

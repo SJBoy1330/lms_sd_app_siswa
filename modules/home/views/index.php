@@ -1,4 +1,4 @@
-<main class="h-100">
+<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
     <!-- Header -->
     <header class="header position-fixed">
@@ -189,10 +189,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <div class="col-6 mb-3 jadwal">
                 <div class="card card-jadwalmapel">
                     <div class="card-body">
@@ -336,7 +332,7 @@
                 <h6 class="title">Pengumuman</h6>
             </div>
             <div class="col-auto align-self-center">
-                <a href="list-pengumuman-SD.html" class="label-merah">Lihat Semua</a>
+                <a href="<?= base_url('home/list_pengumuman'); ?>" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row">
@@ -346,7 +342,7 @@
                         <div class="row">
                             <div class="col-auto">
                                 <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-
+                                    <img src="<?= base_url(); ?>assets/images/no-photo.png" alt="">
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
@@ -402,7 +398,7 @@
                 <h6 class="title">Berita</h6>
             </div>
             <div class="col-auto">
-                <a href="list-berita-SD.html" class="label-merah">Lihat Semua</a>
+                <a href="#" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row mb-2">

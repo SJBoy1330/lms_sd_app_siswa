@@ -30,7 +30,7 @@
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet" id="style">
 
     <!-- Font Awesome-->
-    <script src="https://kit.fontawesome.com/ec75c6c12e.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b2ed95a515.js" crossorigin="anonymous"></script>
 
 </head>
 

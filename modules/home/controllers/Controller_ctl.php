@@ -18,4 +18,9 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function list_pengumuman()
+	{
+		
+	}
 }
