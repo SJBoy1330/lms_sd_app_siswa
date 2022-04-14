@@ -337,7 +337,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -355,7 +355,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -373,7 +373,7 @@
                 </a>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <a href="detail-pengumuman-SD.html" class="card mb-3">
+                <a href="<?= base_url('home/detail_pengumuman')?>" class="card mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -398,14 +398,14 @@
                 <h6 class="title">Berita</h6>
             </div>
             <div class="col-auto">
-                <a href="#" class="label-merah">Lihat Semua</a>
+                <a href="<?= base_url('home/list_berita')?>" class="label-merah">Lihat Semua</a>
             </div>
         </div>
         <div class="row mb-2">
             <div class="col-12 px-0">
                 <div class="swiper-container cardswiper cardswiper-berita">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <a href="<?= base_url('home/detail_berita')?>" class="swiper-slide">
                             <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
                                 <div class="card-body">
                                     <div class="row">
@@ -418,14 +418,14 @@
                             </div>
                             <div class="wrapper-text shadow-sm">
                                 <div class="row px-3 py-3">
-                                    <p class="mb-1 title-1-home-text">Tari Saman</p>
+                                    <p class="mb-1 title-1-home-text text-dark">Tari Saman</p>
                                     <p class="mb-0 title-4-home-text">Tari Saman Adalah tarian Suku Gayo yang
                                         didirikan dan di kembangkan oleh ulama asal Aceh Tenggara, Tari Saman
                                         ditampilkan...</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
+                        </a>
+                        <a href="<?= base_url('home/detail_berita')?>" class="swiper-slide">
                             <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
                                 <div class="card-body">
                                     <div class="row">
@@ -438,14 +438,14 @@
                             </div>
                             <div class="wrapper-text shadow-sm">
                                 <div class="row px-3 py-3">
-                                    <p class="mb-1 title-1-home-text">Tari Saman</p>
+                                    <p class="mb-1 title-1-home-text text-dark">Tari Saman</p>
                                     <p class="mb-0 title-4-home-text">Tari Saman Adalah tarian Suku Gayo yang
                                         didirikan dan di kembangkan oleh ulama asal Aceh Tenggara, Tari Saman
                                         ditampilkan...</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
+                        </a>
+                        <a href="<?= base_url('home/detail_berita')?>" class="swiper-slide">
                             <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= base_url(); ?>assets/images/tari-saman.png');">
                                 <div class="card-body">
                                     <div class="row">
@@ -458,13 +458,13 @@
                             </div>
                             <div class="wrapper-text shadow-sm">
                                 <div class="row px-3 py-3">
-                                    <p class="mb-1 title-1-home-text">Tari Saman</p>
+                                    <p class="mb-1 title-1-home-text text-dark">Tari Saman</p>
                                     <p class="mb-0 title-4-home-text">Tari Saman Adalah tarian Suku Gayo yang
                                         didirikan dan di kembangkan oleh ulama asal Aceh Tenggara, Tari Saman
                                         ditampilkan...</p>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
