@@ -12,22 +12,19 @@ const handleLocation = async (root) => {
     const html = await fetch(route).then((data) => data.text());
     var body = document.querySelector('body');
     var htmls = document.querySelector('html');
-    document.getElementById("reload-content").innerHTML = html;
     $('footer').load(root + ' footer');
     $('header').load(root + ' header');
     $('#sidemenu').load(root + ' #sidemenu');
-    body.classList.remove('menu-open');
-    htmls.classList.remove('menu-open');
-
     // $('main').fadeIn('slow');
     $('main').css('min-height', $(window).height());
-
-    if ($('.header.position-fixed').length > 0) {
-        $('main').css('padding-top', $('.header').outerHeight() + 10);
-    }
     if ($('.footer').length > 0) {
         $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
     }
+    document.getElementById("reload-content").innerHTML = html;
+    body.classList.remove('menu-open');
+    htmls.classList.remove('menu-open');
+
+
 };
 
 window.onpopstate = handleLocation;
@@ -126,4 +123,17 @@ function submit_form(element, id_form) {
             }
         }
     });
+}
+
+function submenu(stts) {
+    var body = document.querySelector('body');
+    var htmls = document.querySelector('html');
+    console.log(stts);
+    if (stts == 'open') {
+        body.classList.add('menu-open');
+        htmls.classList.add('menu-open');
+    } else {
+        body.classList.remove('menu-open');
+        htmls.classList.remove('menu-open');
+    }
 }

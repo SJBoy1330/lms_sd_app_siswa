@@ -1,103 +1,123 @@
 'use strict'
-$(document).ready(function () {
-
+$(document).on('click', '.menu-btn', function () {
     var body = $('body');
     var bodyParent = $('html');
-
-    /* page load as iframe */
-    if (self !== top) {
-        body.addClass('iframe');
+    if (body.hasClass('menu-open') === true) {
+        body.removeClass('menu-open');
+        bodyParent.removeClass('menu-open');
     } else {
-        body.removeClass('iframe');
+        body.addClass('menu-open');
+        bodyParent.addClass('menu-open');
     }
 
-    /* menu open close */
-    $('.menu-btn').on('click', function () {
-        if (body.hasClass('menu-open') === true) {
-            body.removeClass('menu-open');
-            bodyParent.removeClass('menu-open');
-        } else {
-            body.addClass('menu-open');
-            bodyParent.addClass('menu-open');
-        }
-
-        return false;
-    });
-
-    body.on("click", function (e) {
-        if (!$('.sidebar').is(e.target) && $('.sidebar').has(e.target).length === 0) {
-            body.removeClass('menu-open');
-            bodyParent.removeClass('menu-open');
-        }
-
-        return true;
-    });
-
-
-    /* Filter button */
-    $('.filter-btn').on('click', function () {
-        if (body.hasClass('filter-open') === true) {
-            body.removeClass('filter-open');
-        } else {
-            body.addClass('filter-open');
-        }
-
-        return false;
-    });
-    $('.filter-close').on('click', function () {
-        if (body.hasClass('filter-open') === true) {
-            body.removeClass('filter-open');
-        }
-    });
-
-
-    /* menu style switch */
-    $('#menu-pushcontent').on('change', function () {
-        if ($(this).is(':checked') === true) {
-            body.addClass('menu-push-content');
-            body.removeClass('menu-overlay');
-        }
-
-        return false;
-    });
-
-    $('#menu-overlay').on('change', function () {
-        if ($(this).is(':checked') === true) {
-            body.removeClass('menu-push-content');
-            body.addClass('menu-overlay');
-        }
-
-        return false;
-    });
-
-
-    /* back page navigation */
-    $('.back-btn').on('click', function () {
-        window.history.back();
-        return false;
-    });
-
-
-
-    if ($('.footer').length > 0) {
-        /** center button click toggle **/
-        $('.centerbutton .nav-link').on('click', function () {
-            $(this).toggleClass('active')
-        })
-        /* hide menu active */
-        var centerbtnmenu = document.getElementById('menumodal');
-        var centerbtn = document.getElementById('centermenubtn');
-
-        centerbtnmenu.addEventListener('hide.bs.modal', function () {
-            centerbtn.classList.remove('active')
-        })
-    }
-
-    /* scroll y limited container height on page  */
-    var scrollyheight = Number($(window).height() - $('.header').outerHeight() - $('.footer-info').outerHeight()) - 25;
-    $('.scroll-y').height(scrollyheight);
-
+    return false;
 });
+
+$(document).on('click', 'body', function (e) {
+    var body = $('body');
+    var bodyParent = $('html');
+    body.removeClass('menu-open');
+    bodyParent.removeClass('menu-open');
+});
+// $(document).ready(function () {
+
+//     var body = $('body');
+//     var bodyParent = $('html');
+
+//     /* page load as iframe */
+//     if (self !== top) {
+//         body.addClass('iframe');
+//     } else {
+//         body.removeClass('iframe');
+//     }
+
+//     /* menu open close */
+//     $('.menu-btn').on('click', function () {
+//         if (body.hasClass('menu-open') === true) {
+//             body.removeClass('menu-open');
+//             bodyParent.removeClass('menu-open');
+//         } else {
+//             body.addClass('menu-open');
+//             bodyParent.addClass('menu-open');
+//         }
+
+//         return false;
+//     });
+
+//     body.on("click", function (e) {
+//         if (!$('.sidebar').is(e.target) && $('.sidebar').has(e.target).length === 0) {
+//             body.removeClass('menu-open');
+//             bodyParent.removeClass('menu-open');
+//         }
+
+//         return true;
+//     });
+
+
+//     /* Filter button */
+//     $('.filter-btn').on('click', function () {
+//         if (body.hasClass('filter-open') === true) {
+//             body.removeClass('filter-open');
+//         } else {
+//             body.addClass('filter-open');
+//         }
+
+//         return false;
+//     });
+//     $('.filter-close').on('click', function () {
+//         if (body.hasClass('filter-open') === true) {
+//             body.removeClass('filter-open');
+//         }
+//     });
+
+
+//     /* menu style switch */
+//     $('#menu-pushcontent').on('change', function () {
+//         if ($(this).is(':checked') === true) {
+//             body.addClass('menu-push-content');
+//             body.removeClass('menu-overlay');
+//         }
+
+//         return false;
+//     });
+
+//     $('#menu-overlay').on('change', function () {
+//         if ($(this).is(':checked') === true) {
+//             body.removeClass('menu-push-content');
+//             body.addClass('menu-overlay');
+//         }
+
+//         return false;
+//     });
+
+
+//     /* back page navigation */
+//     $('.back-btn').on('click', function () {
+//         window.history.back();
+//         return false;
+//     });
+
+
+
+//     if ($('.footer').length > 0) {
+//         /** center button click toggle **/
+//         $('.centerbutton .nav-link').on('click', function () {
+//             $(this).toggleClass('active')
+//         })
+//         /* hide menu active */
+//         var centerbtnmenu = document.getElementById('menumodal');
+//         var centerbtn = document.getElementById('centermenubtn');
+
+//         centerbtnmenu.addEventListener('hide.bs.modal', function () {
+//             centerbtn.classList.remove('active')
+//         })
+//     }
+
+//     /* scroll y limited container height on page  */
+//     var scrollyheight = Number($(window).height() - $('.header').outerHeight() - $('.footer-info').outerHeight()) - 25;
+//     $('.scroll-y').height(scrollyheight);
+
+// });
 
 
 $(window).on('load', function () {
