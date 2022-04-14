@@ -9,7 +9,7 @@
                 <div class="row mt-3">
                     <div class="col-auto">
                         <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                            <img src="<?= base_url('assets/images/mia-khalifa.png')?>" alt="" class="rounded-18">
+                            <img src="<?= base_url('assets/images/mia-khalifa.png') ?>" alt="" class="rounded-18">
                         </figure>
                     </div>
                     <div class="col px-0 align-self-center">
@@ -104,3 +104,24 @@
     </div>
 </div>
 <!-- Sidebar main menu ends -->
+<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+    <!-- Header -->
+    <header class="header position-fixed">
+        <div class="row">
+            <div class="col-auto">
+                <a href="javascript:void(0)" target="_self" class="btn btn-44 menu-btn">
+                    <img src="<?= base_url(); ?>assets/icons/hamburger.png" width="24" alt="">
+                </a>
+            </div>
+            <div class="col text-center">
+            </div>
+            <div class="col-auto">
+                <a href="notifikasi-SD.html" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
+                    <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
+                    <span class="count-indicator"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- Header ends -->

@@ -11,6 +11,16 @@ const handleLocation = async (root) => {
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("reload-content").innerHTML = html;
     $('footer').load(root + ' footer');
+    $('header').load(root + ' header');
+    // $('main').fadeIn('slow');
+    $('main').css('min-height', $(window).height());
+
+    if ($('.header.position-fixed').length > 0) {
+        $('main').css('padding-top', $('.header').outerHeight() + 10);
+    }
+    if ($('.footer').length > 0) {
+        $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
+    }
 };
 
 window.onpopstate = handleLocation;

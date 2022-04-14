@@ -38,7 +38,7 @@
                      </p>
                  </div>
                  <div class="col-12 d-flex justify-content-center d-grid">
-                     <a href="<?= base_url('auth/reset_sandi'); ?>" onclick="unreload()" class="btn btn-lg shadow-sm btn-pribadi">Kirim</a>
+                     <a href="<?= base_url('auth/reset_sandi'); ?>" onclick="unreload(this)" class="btn btn-lg shadow-sm btn-pribadi">Kirim</a>
                  </div>
              </div>
          </div>
