@@ -1,5 +1,5 @@
 <!-- Begin page -->
-<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+<main class="h-100 pt-0">
 
 <!-- Header -->
 <header class="header position-fixed">
