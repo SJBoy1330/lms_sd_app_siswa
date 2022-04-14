@@ -13973,7 +13973,7 @@ linearGradient stop:last-child {
 
 .menu-open .sidebar-wrap {
   left: 0;
-  opacity: 1
+  opacity: 1;
 }
 
 .menu-open .sidebar-wrap.sidebar-overlay::after {
