@@ -11,3 +11,4 @@ function previewImage() {
         getPhoto.src = oFREvent.target.result;
     }
 }
+console.log('ok');

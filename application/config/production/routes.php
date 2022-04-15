@@ -154,6 +154,72 @@ $route['func_profil/(:any)/(:any)'] = 'profil/function_ctl/$1/$2';
 
 
 
+
+
+$route['materi']  = 'materi/controller_ctl';
+
+$route['materi/(:any)'] = 'materi/controller_ctl/$1';
+
+$route['materi/(:any)/(:any)'] = 'materi/controller_ctl/$1/$2';
+
+$route['func_materi']  = 'materi/function_ctl';
+
+$route['func_materi/(:any)'] = 'materi/function_ctl/$1';
+
+$route['func_materi/(:any)/(:any)'] = 'materi/function_ctl/$1/$2';
+
+
+
+
+
+
+
+$route['tugas']  = 'tugas/controller_ctl';
+
+$route['tugas/(:any)'] = 'tugas/controller_ctl/$1';
+
+$route['tugas/(:any)/(:any)'] = 'tugas/controller_ctl/$1/$2';
+
+$route['func_tugas']  = 'tugas/function_ctl';
+
+$route['func_tugas/(:any)'] = 'tugas/function_ctl/$1';
+
+$route['func_tugas/(:any)/(:any)'] = 'tugas/function_ctl/$1/$2';
+
+
+
+
+
+
+$route['qna']  = 'qna/controller_ctl';
+
+$route['qna/(:any)'] = 'qna/controller_ctl/$1';
+
+$route['qna/(:any)/(:any)'] = 'qna/controller_ctl/$1/$2';
+
+$route['func_qna']  = 'qna/function_ctl';
+
+$route['func_qna/(:any)'] = 'qna/function_ctl/$1';
+
+$route['func_qna/(:any)/(:any)'] = 'qna/function_ctl/$1/$2';
+
+
+
+
+$route['ujian']  = 'ujian/controller_ctl';
+
+$route['ujian/(:any)'] = 'ujian/controller_ctl/$1';
+
+$route['ujian/(:any)/(:any)'] = 'ujian/controller_ctl/$1/$2';
+
+$route['func_ujian']  = 'ujian/function_ctl';
+
+$route['func_ujian/(:any)'] = 'ujian/function_ctl/$1';
+
+$route['func_ujian/(:any)/(:any)'] = 'ujian/function_ctl/$1/$2';
+
+
+
 $route['toko']  = 'toko/controller_ctl';
 
 $route['toko/(:any)'] = 'toko/controller_ctl/$1';

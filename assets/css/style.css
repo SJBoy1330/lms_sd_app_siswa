@@ -15959,6 +15959,9 @@ form input {
   background-color: #F5F5F5;
 }
 
+#content_sidemenu {
+  height: 100%;
+}
 
 /* Home Page */
 .btn-notifikasi {
@@ -16579,7 +16582,7 @@ button.button-kirim-pesan {
 }
 
 /* Sidebar */
-.sidebar{
+.sidebar {
   background-image: url(../images/bg-sidebar.png);
   background-position: center center;
   background-repeat: no-repeat;
