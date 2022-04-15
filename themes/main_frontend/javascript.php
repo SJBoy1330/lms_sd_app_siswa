@@ -1,6 +1,7 @@
+</main>
 <!-- Footer -->
 <footer class="footer">
-    <div class="container">
+    <div id="footer" class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
                 <a class="nav-link mt-1 <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" href="<?= base_url('home'); ?>" onclick="unreload(this)">
@@ -50,7 +51,7 @@
             <div class="modal-body">
                 <div class="row justify-content-center">
                     <div class="col-auto text-center">
-                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-20 bg-danger mb-2">
+                        <a href="<?= base_url('materi') ?>" onclick="unreload(this)" class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-20 bg-danger mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-danger">
@@ -61,7 +62,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-primary mb-2">
+                        <a href="<?= base_url('ujian') ?>" onclick="unreload(this)" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-primary mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-purple">
@@ -72,7 +73,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <a href="tugas-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
+                        <a href="<?= base_url('tugas') ?>" onclick="unreload(this)" class="avatar avatar-60 p-1 shadow-sm shadow-warning rounded-20 bg-warning mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
@@ -86,14 +87,14 @@
                         <div class="notifikasi-chat">
                             <p>2</p>
                         </div>
-                        <a href="pesan-SD.html" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
+                        <a href="<?= base_url('qna') ?>" onclick="unreload(this)" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
                                 <i class="fa-solid fa-messages size-28 text-white"></i>
                             </div>
                         </a>
-                        <p class="size-13 text-secondary">Chatting</p>
+                        <p class="size-13 text-secondary">Pesan</p>
                     </div>
                 </div>
             </div>
@@ -118,15 +119,18 @@
 <script src="<?= base_url() ?>assets/js/pagination-carousel.js"></script>
 
 <script src="<?= base_url() ?>assets/js/global.js"></script>
+<div id="script">
+    <div id="scripting">
+        <?php
 
-<?php
+        if (isset($js_add) && is_array($js_add)) {
+            foreach ($js_add as $js) {
+                echo $js;
+            }
+        } else {
+            echo (isset($js_add) && ($js_add != "") ? $js_add : "");
+        }
 
-if (isset($js_add) && is_array($js_add)) {
-    foreach ($js_add as $js) {
-        echo $js;
-    }
-} else {
-    echo (isset($js_add) && ($js_add != "") ? $js_add : "");
-}
-
-?>
+        ?>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-
+var quick_link = new bootstrap.Modal(document.getElementById('menumodal'), {})
 const unreload = (element, event) => {
     event = event || window.event;
     event.preventDefault();
@@ -12,14 +12,18 @@ const handleLocation = async (root) => {
     const html = await fetch(route).then((data) => data.text());
     var body = document.querySelector('body');
     var htmls = document.querySelector('html');
-    $('footer').load(root + ' footer');
-    $('header').load(root + ' header');
-    $('#sidemenu').load(root + ' #sidemenu');
+    $('#script').load(root + ' #scripting');
+    $('footer').load(root + ' #footer');
+    $('header').load(root + ' #header');
+    $('#sidemenu').load(root + ' #content_sidemenu');
+
     // $('main').fadeIn('slow');
+    quick_link.hide()
     $('main').css('min-height', $(window).height());
     if ($('.footer').length > 0) {
         $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
     }
+
     document.getElementById("reload-content").innerHTML = html;
     body.classList.remove('menu-open');
     htmls.classList.remove('menu-open');
