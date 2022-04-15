@@ -46,7 +46,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'List Berita';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/listberita.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/berita/listberita.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);

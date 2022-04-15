@@ -19,7 +19,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/uploadfoto.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/uploadfoto.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
@@ -48,10 +48,23 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/ubahpassword.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/ubahpassword.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('ubah_password', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function tentang_sekolah()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Tentang Sekolah';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('tentang_sekolah', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
@@ -64,7 +77,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/auth/bantuan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/profil/bantuan.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('bantuan', $mydata, TRUE);

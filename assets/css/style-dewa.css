@@ -192,3 +192,20 @@ button.input-group-text {
 .accordion-button{
   background-color: #F5F5F5;
 }
+
+.vektor-bantuan-satu{
+  position: absolute;
+  z-index: 0;
+}
+
+.vektor-bantuan-dua{
+  position: absolute;
+  z-index: 0;
+  top: 53%;
+  right: 0;
+}
+
+.rows-1{
+  position: relative;
+  z-index: 1;
+}
