@@ -198,11 +198,11 @@ button.input-group-text {
   z-index: 0;
 }
 
-.vektor-bantuan-dua{
+.vektor-bantuan-dua {
   position: absolute;
   z-index: 0;
-  top: 53%;
-  right: 0;
+  top: 335px;
+  right: 15px;
 }
 
 .rows-1{
