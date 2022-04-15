@@ -450,7 +450,7 @@
 
 </div>
 <!-- main page content ends -->
-</main>
+
 
 <!-- MODAL -->
 
