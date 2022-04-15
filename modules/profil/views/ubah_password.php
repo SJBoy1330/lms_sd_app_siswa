@@ -1,28 +1,3 @@
-<!-- Begin page -->
-<main class="h-100 pt-0">
-
-    <!-- Header -->
-    <header class="header position-fixed">
-        <div class="row">
-            <div class="col-auto">
-                <a href="<?= base_url('profil')?>" class="btn btn-44">
-                    <i class="fa-solid fa-chevron-left text-dark"></i>
-                </a>
-            </div>
-            <div class="col text-center">
-                <div class="logo-small">
-                    <h5>Ubah Kata Sandi</h5>
-                </div>
-            </div>
-            <div class="col-auto">
-                <a href="#" target="_self" class="btn btn-44">
-                    <i class="fa-solid fa-check"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-    <!-- Header ends -->
-
     <!-- main page content -->
     <div class="main-container container">
         <!-- comment -->
@@ -97,7 +72,3 @@
 
     </div>
     <!-- main page content ends -->
-
-
-</main>
-<!-- Page ends-->
