@@ -1,5 +1,5 @@
 <!-- Begin page -->
-<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+<main class="h-100 py-0">
 
     <!-- Header -->
     <header class="header position-fixed">
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-12 px-0">
                 <div class="box-fiture">
-                    <a href="<?= base_url('profil/ubah_profil'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="<?= base_url('profil/ubah_profil'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="<?= base_url('profil/ubah_password'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="<?= base_url('profil/ubah_password'); ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="profile-sd.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="profile-sd.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="tentang-sekolah.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="tentang-sekolah.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="<?= base_url('profil/bantuan')?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="<?= base_url('profil/bantuan')?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="signin.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-2 mx-3">
+                    <a href="signin.html" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
                         <div class="row p-2">
                             <div class="d-flex col-auto align-items-center ">
                                 <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">
