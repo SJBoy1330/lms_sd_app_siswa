@@ -1,6 +1,3 @@
-<!-- Begin page -->
-<main class="h-100">
-
 <!-- main page content -->
 <div class="main-container container">
     <div class="col-12 align-self-center pb-3">
@@ -22,7 +19,3 @@
     </div>
 </div>
 <!-- main page content ends -->
-
-
-</main>
-<!-- Page ends-->
