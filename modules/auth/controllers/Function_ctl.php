@@ -26,7 +26,7 @@ class Function_ctl extends MY_Welcome
 
         if (!in_array(false, $arrAccess)) {
             $kds = $this->sekolah_m->get_single(array('kode_sekolah' => $kode_sekolah));
-            // CEK KODDE SEKOLAH
+            // CEK KODE SEKOLAH
             if ($kds) {
                 // CETAK SESSION SERVER
                 $dbs['lms_sd_siswa_server'] = $kds->server;
