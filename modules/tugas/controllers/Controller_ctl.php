@@ -18,4 +18,17 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function detail_tugas()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Detail Tugas';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/tugas/detail_tugas.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_tugas', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }
