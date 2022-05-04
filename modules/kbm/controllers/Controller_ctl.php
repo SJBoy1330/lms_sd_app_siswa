@@ -18,4 +18,26 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('jadwal', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function detail_kbm()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Detail KBM';
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_kbm', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function detail_materi()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Detail KBM';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/kbm/detail_materi.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_materi', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }

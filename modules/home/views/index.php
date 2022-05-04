@@ -304,6 +304,7 @@
             <a class="to-page d-none" href="javascript:void(0)"></a>
         </ul>
     </nav>
+
     <!-- Pengumuman -->
     <div class="row mt-4 mb-3 px-1">
         <div class="col">
@@ -313,6 +314,7 @@
             <a href="<?= base_url('home/list_pengumuman'); ?>" class="label-merah">Lihat Semua</a>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
             <a href="<?= base_url('home/detail_pengumuman') ?>" class="card mb-3">
@@ -508,7 +510,7 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center border-0">
-                <a href="detail-kbm.html" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
+                <a href="<?= base_url('kbm/detail_kbm')?>" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
             </div>
         </div>
     </div>

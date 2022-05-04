@@ -13479,6 +13479,12 @@ linearGradient stop:last-child {
   width: 50px;
 }
 
+.avatar.avatar-55{
+  line-height: 55px;
+  height: 55px;
+  width: 55px;
+}
+
 .avatar.avatar-60 {
   line-height: 60px;
   height: 60px;
@@ -16006,6 +16012,20 @@ form input {
     opacity: 1;
     transform: none;
   }
+}
+
+.jam-presensi-2{
+  width: 55px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pulse 2s infinite;
+}
 }
 
 p {

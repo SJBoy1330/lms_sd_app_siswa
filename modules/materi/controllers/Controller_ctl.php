@@ -18,4 +18,14 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function detail_bab()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Detail Bab';
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_bab', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
 }
