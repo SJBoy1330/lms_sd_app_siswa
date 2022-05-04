@@ -451,9 +451,6 @@
 </div>
 <!-- main page content ends -->
 
-
-<!-- MODAL -->
-
 <!-- Modal Presensi -->
 <div class="modal fade" id="presensiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -474,15 +471,15 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-auto pe-1">
+                                    <div class="col-auto ps-2 pe-1">
                                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
                                                 <i class="fa-solid fa-clock size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Jam Masuk</p>
+                                        <p class="mb-0 size-12 fw-medium">Jam Masuk</p>
                                         <p class="fw-normal text-secondary size-12">07:00 WIB</p>
                                     </div>
                                 </div>
@@ -493,15 +490,15 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-auto pe-1">
+                                    <div class="col-auto ps-2 pe-1">
                                         <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline">
+                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
                                                 <i class="fa-solid fa-clock size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-1">
-                                        <p class="mb-0 fw-medium" style="font-size: 14.5px;">Jam Pulang</p>
+                                        <p class="mb-0 size-12 fw-medium">Jam Pulang</p>
                                         <p class="fw-normal text-secondary size-12">16:00 WIB</p>
                                     </div>
                                 </div>
