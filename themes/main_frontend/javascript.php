@@ -1,6 +1,6 @@
 </main>
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer d-none">
     <div id="footer" class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
@@ -119,6 +119,7 @@
 <script src="<?= base_url() ?>assets/js/pagination-carousel.js"></script>
 
 <script src="<?= base_url() ?>assets/js/global.js"></script>
+
 <div id="script">
     <div id="scripting">
         <?php
