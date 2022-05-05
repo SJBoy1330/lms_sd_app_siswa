@@ -77,7 +77,7 @@
 
 </div>
 <!-- Sidebar main menu ends -->
-<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+<main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.pn); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
     <!-- Header -->
     <header class="header position-fixed">
