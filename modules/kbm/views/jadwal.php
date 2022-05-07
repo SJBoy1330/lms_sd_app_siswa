@@ -32,8 +32,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Mata Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">Bahasa Indonesia</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Mata Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">Bahasa Indonesia</p>
                                 </div>
                             </div>
 
@@ -46,8 +46,8 @@
                                     </div>
                                 </div>
                                 <div class="col-auto align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Jam Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">07:00 - 08:00</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Jam Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">07:00 - 08:00</p>
                                 </div>
                             </div>
 
@@ -60,8 +60,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Nama Guru</p> 
-                                    <p class="mb-0 size-18 fw-medium">Drs. Sri Handayani S.Pd</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Nama Guru</p> 
+                                    <p class="mb-0 size-13 fw-medium">Drs. Sri Handayani S.Pd</p>
                                 </div>
                             </div>
                         </div>
@@ -80,8 +80,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Mata Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">Matematika</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Mata Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">Matematika</p>
                                 </div>
                             </div>
 
@@ -94,8 +94,8 @@
                                     </div>
                                 </div>
                                 <div class="col-auto align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Jam Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">08:00 - 10:00</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Jam Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">08:00 - 10:00</p>
                                 </div>
                             </div>
 
@@ -108,8 +108,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Nama Guru</p> 
-                                    <p class="mb-0 size-18 fw-medium">Drs. Astutik S.Pd</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Nama Guru</p> 
+                                    <p class="mb-0 size-13 fw-medium">Drs. Astutik S.Pd</p>
                                 </div>
                             </div>
                         </div>
@@ -128,8 +128,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Mata Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">Pendidikan Jasmani, Olahraga, dan Kesehatan </p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Mata Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">Pendidikan Jasmani, Olahraga, dan Kesehatan </p>
                                 </div>
                             </div>
 
@@ -142,8 +142,8 @@
                                     </div>
                                 </div>
                                 <div class="col-auto align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Jam Pelajaran</p> 
-                                    <p class="mb-0 size-18 fw-medium">10:00 - 11:00</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Jam Pelajaran</p> 
+                                    <p class="mb-0 size-13 fw-medium">10:00 - 11:00</p>
                                 </div>
                             </div>
 
@@ -156,8 +156,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-16 fw-normal text-secondary">Nama Guru</p> 
-                                    <p class="mb-0 size-18 fw-medium">Pak Raditya Chandra</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">Nama Guru</p> 
+                                    <p class="mb-0 size-13 fw-medium">Pak Raditya Chandra</p>
                                 </div>
                             </div>
                         </div>

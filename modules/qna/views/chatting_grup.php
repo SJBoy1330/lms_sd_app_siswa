@@ -7,10 +7,10 @@
             </a>
         </div>
         <div class="col d-flex justify-content-center align-items-center text-center">
-            <h6 class="text-dark">Drs. Sri Handayani S.Pd</h6>
+            <h6 class="text-dark">Grup Kelas Unggulan</h6>
         </div>
         <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= base_url(); ?>assets/img/user2.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+            <a href="#" target="_self" class="btn btn-44"></a>
         </div>
     </div>
 </header>
@@ -146,7 +146,7 @@
                 </div>
             </div>
             <div class="col-12 text-end">
-            <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i>  08:30 </p>
+                <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i>  08:30 </p>
             </div>
             <div class="row no-margin left-chat my-3">
                 <div class="col-2 align-self-center">
@@ -156,13 +156,31 @@
                     <div class="chat-block penerima">
                         <div class="row">
                             <div class="col">
+                                <p class="mb-1 mt-0 ms-1 size-16 fw-medium text-dark">Drs. Sri Handayani S.Pd</p>
                                 <p class="mb-0 ms-1 size-15 fw-normal"> Sama sama, semangat ya semoga dapat nilai bagus</p>
                             </div>
                         </div>
                     </div>
                     <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i>  08:30 </p>
                 </div>
-            </div>  
+            </div>
+            
+            <div class="row no-margin left-chat my-3">
+                <div class="col-2 align-self-center">
+                    <a href="#" target="_self" class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= base_url(); ?>assets/img/user4.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+                </div>
+                <div class="col-10">
+                    <div class="chat-block penerima">
+                        <div class="row">
+                            <div class="col">
+                                <p class="mb-1 mt-0 ms-1 size-16 fw-medium text-dark">Pak Haryono S.Kom</p>
+                                <p class="mb-0 ms-1 size-15 fw-normal">Waah keren banget menggunakan aplikasi KlasQ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i>  08:30 </p>
+                </div>
+            </div>
         </div>
     </div>
 
