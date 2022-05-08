@@ -1,6 +1,5 @@
 <!-- main page content -->
 <div class="main-container container">
-
     <div class="row">
         <a data-bs-toggle="modal" href="#detailUjian" role="button" class="col-6 mb-3 jadwal">
             <div class="card card-jadwalmapel">
