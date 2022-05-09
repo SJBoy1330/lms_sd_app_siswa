@@ -57,4 +57,68 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('exam', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function exam_multiple()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Exam Multiple';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('exam_multiple', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function exam_esai()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Exam Esai';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('exam_esai', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function exam_esai_panjang()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Exam Esai Panjang';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('exam_esai_panjang', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function exam_penjodohan()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Exam Penjodohan';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('exam_penjodohan', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }

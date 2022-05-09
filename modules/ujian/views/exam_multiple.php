@@ -1,3 +1,4 @@
+
 <!-- Header -->
 <header class="header position-fixed">
     <div id="header" class="row">
@@ -10,8 +11,7 @@
             <h6 class="text-dark">Paket Ujian 01</h6>
         </div>
         <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44">
-            </a>
+            <a href="#" target="_self" class="btn btn-44"></a>
         </div>
     </div>
 </header>
@@ -27,7 +27,8 @@
                             <div class="card-body">
                                 <div class="row mt-2">
                                     <div class="col align-self-center">
-                                        <p class="mb-0 size-15 text-dark fw-medium">Pertanyaan <span>1</span> dari <span>40</span> soal</p>
+                                        <p class="mb-0 size-15 text-dark fw-medium">Pertanyaan <span>2</span> dari <span>40</span> soal</p>
+                                        <p class="mb-0 size-13 text-watning fw-normal fst-italic">Nb : Jawaban bisa dipilih lebih dari 1</p>
                                     </div>
                                 </div>
                                 <div class="row mt-3">
@@ -40,9 +41,9 @@
                                     <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
                                         
                                         <label>
-                                        <input type="radio" name="product" selected checked class="card-input-element" />
+                                        <input type="checkbox" name="product" selected checked class="card-input-element-2" />
 
-                                            <div class="card card-default card-input">
+                                            <div class="card card-default-2 card-input-2">
                                                 <div class="card-body">
                                                     <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
                                                 </div>
@@ -54,9 +55,9 @@
                                     <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
                                         
                                         <label>
-                                        <input type="radio" name="product" class="card-input-element" />
+                                        <input type="checkbox" name="product" class="card-input-element-2" />
 
-                                            <div class="card card-default card-input">
+                                            <div class="card card-default-2 card-input-2">
                                                 <div class="card-body">
                                                     <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
                                                 </div>
@@ -68,9 +69,9 @@
                                     <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
                                         
                                         <label>
-                                        <input type="radio" name="product" selected checked class="card-input-element" />
+                                        <input type="checkbox" name="product" selected checked class="card-input-element-2" />
 
-                                            <div class="card card-default card-input">
+                                            <div class="card card-default-2 card-input-2">
                                                 <div class="card-body">
                                                     <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
                                                 </div>
@@ -82,9 +83,9 @@
                                     <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
                                         
                                         <label>
-                                        <input type="radio" name="product" class="card-input-element" />
+                                        <input type="checkbox" name="product" class="card-input-element-2" />
 
-                                            <div class="card card-default card-input">
+                                            <div class="card card-default-2 card-input-2">
                                                 <div class="card-body">
                                                     <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
                                                 </div>
@@ -115,9 +116,9 @@
         </div> 
         <div class="border-bottom"></div>
         <div class="row d-flex justify-content-center align-items-center mt-3">
-            <div class="col-3 d-flex justify-content-center align-items-center"><a href="#" class="btn btn-danger d-flex justify-content-center align-items-center rounded-circle next-button"><i class="fa-solid fa-chevron-left text-white"></i></a></div>
+            <div class="col-3 d-flex justify-content-center align-items-center"><a href="<?= base_url('ujian/exam_multiple')?>" class="btn btn-danger d-flex justify-content-center align-items-center rounded-circle next-button"><i class="fa-solid fa-chevron-left text-white"></i></a></div>
             <div class="col-6 d-flex justify-content-center align-items-center"><button class="btn btn-outline-warning rounded-pill ragu-button">Ragu - Ragu</button></div>
-            <div class="col-3 d-flex justify-content-center align-items-center"><a href="<?= base_url('ujian/exam_multiple')?>" class="btn btn-danger d-flex justify-content-center align-items-center  rounded-circle previous-button"><i class="fa-solid fa-chevron-right text-white"></i></a></div>
+            <div class="col-3 d-flex justify-content-center align-items-center"><a href="<?= base_url('ujian/exam_esai')?>" class="btn btn-danger d-flex justify-content-center align-items-center  rounded-circle previous-button"><i class="fa-solid fa-chevron-right text-white"></i></a></div>
         </div>
     </div>
 </footer>

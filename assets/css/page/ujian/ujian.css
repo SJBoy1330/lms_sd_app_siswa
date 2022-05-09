@@ -47,6 +47,10 @@
     background-color: #FFE6E6;
 }
 
+.btn.btn-44.done-exam{
+    background-color: #D4FFF3;
+}
+
 .btn-44 {
     height: 44px !important;
     line-height: 45px !important;
@@ -54,3 +58,118 @@
     padding: 0 !important;
 }
 
+
+/* Pilgan */
+
+label {
+    width: 100%;
+}
+
+.card.card-default{
+    border-radius: 8px;
+}
+
+.card-input-element {
+    display: none;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 1px 1px #2ecc71;
+     background-color: #E2FFF7;
+}
+
+
+/* Checkbox */
+
+label {
+    width: 100%;
+}
+
+.card.card-default-2{
+    border-radius: 8px;
+}
+
+.card-input-element-2 {
+    display: none;
+}
+
+.card-input-2:hover {
+    cursor: pointer;
+}
+
+.card-input-element-2:checked + .card-input-2 {
+     box-shadow: 0 0 1px 1px #2ecc71;
+     background-color: #E2FFF7;
+}
+
+
+.footer-ujian{
+    min-height: 145px;
+    background-color: #F3F3F2;
+}
+
+div.timer-exam{
+    width: 40%;
+    border-radius: 10px;
+    background-color: #FFE6E6;
+    border: 1px solid #EC3528;
+}
+
+.btn-outline-warning {
+    color: #FFBD17;
+    border-color: #FFBD17;
+  }
+  
+  .btn-outline-warning:hover {
+    color: #000;
+    background-color: #FFBD17;
+    border-color: #FFBD17;
+  }
+  
+  .btn-check:focus+.btn-outline-warning,
+  .btn-outline-warning:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 189, 23, 0.5);
+  }
+  
+  .btn-check:checked+.btn-outline-warning,
+  .btn-check:active+.btn-outline-warning,
+  .btn-outline-warning:active,
+  .btn-outline-warning.active,
+  .btn-outline-warning.dropdown-toggle.show {
+    color: #000;
+    background-color: #FFBD17;
+    border-color: #FFBD17;
+  }
+  
+  .btn-check:checked+.btn-outline-warning:focus,
+  .btn-check:active+.btn-outline-warning:focus,
+  .btn-outline-warning:active:focus,
+  .btn-outline-warning.active:focus,
+  .btn-outline-warning.dropdown-toggle.show:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 189, 23, 0.5);
+  }
+  
+  .btn-outline-warning:disabled,
+  .btn-outline-warning.disabled {
+    color: #FFBD17;
+    background-color: transparent;
+  }
+
+
+.next-button{
+    width: 45px;
+    height: 45px;
+}
+
+.ragu-button{
+    height: 45px;
+}
+
+.previous-button{
+    width: 45px;
+    height: 45px;
+}
