@@ -1,3 +1,26 @@
+<style>
+label {
+    width: 100%;
+}
+
+.card.card-default{
+    border-radius: 8px;
+}
+
+.card-input-element {
+    display: none;
+}
+
+.card-input:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+     box-shadow: 0 0 1px 1px #2ecc71;
+     background-color: #E2FFF7;
+}
+</style>
+
 <!-- Header -->
 <header class="header position-fixed">
     <div id="header" class="row">
@@ -32,6 +55,64 @@
                                 <div class="row mt-3">
                                     <div class="col align-self-center">
                                         <p class="mb-0 size-14 text-dark fw-normal">Siapakah pendiri dari perusahaan Google awalnya dan siapakah yang menjadi CEO google saat ini dan berikan penjelasan jelas kenapa dia bisa berhasil menjadi CEO dari google?</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+    
+                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                        
+                                        <label>
+                                        <input type="radio" name="product" selected checked class="card-input-element" />
+
+                                            <div class="card card-default card-input">
+                                                <div class="card-body">
+                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
+                                                </div>
+                                            </div>
+
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                        
+                                        <label>
+                                        <input type="radio" name="product" class="card-input-element" />
+
+                                            <div class="card card-default card-input">
+                                                <div class="card-body">
+                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        
+                                    </div>
+
+                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                        
+                                        <label>
+                                        <input type="radio" name="product" selected checked class="card-input-element" />
+
+                                            <div class="card card-default card-input">
+                                                <div class="card-body">
+                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
+                                                </div>
+                                            </div>
+
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                        
+                                        <label>
+                                        <input type="radio" name="product" class="card-input-element" />
+
+                                            <div class="card card-default card-input">
+                                                <div class="card-body">
+                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        
                                     </div>
                                 </div>
                             </div>
