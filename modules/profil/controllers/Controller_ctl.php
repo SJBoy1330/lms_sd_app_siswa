@@ -55,6 +55,19 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
+	public function laporan_presensi()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Laporan Presensi';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('laporan_presensi', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
 	public function laporan_ujian()
 	{
 		// LOAD TITLE
