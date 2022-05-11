@@ -1,6 +1,6 @@
 </main>
 <!-- Footer -->
-<footer class="footer d-none">
+<footer class="footer">
     <div id="footer" class="container">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
@@ -119,6 +119,10 @@
 <script src="<?= base_url() ?>assets/js/pagination-carousel.js"></script>
 
 <script src="<?= base_url() ?>assets/js/global.js"></script>
+
+<!--evo calender-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="<?= base_url()?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
 
 <div id="script">
     <div id="scripting">

@@ -61,7 +61,10 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Laporan Presensi';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/laporan/laporan_presensi.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/laporan_presensi.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('laporan_presensi', $mydata, TRUE);
