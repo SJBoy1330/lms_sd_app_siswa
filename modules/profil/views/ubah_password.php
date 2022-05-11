@@ -1,4 +1,25 @@
-    <!-- main page content -->
+<!-- Header -->
+<header class="header position-fixed">
+    <div class="row">
+        <div class="col-auto">
+            <a href="<?= base_url('profil'); ?>" class="btn btn-44">
+                <i class="fa-solid fa-chevron-left text-dark"></i>
+            </a>
+        </div>
+        <div class="col text-center">
+            <div class="logo-small">
+                <h6>Ubah Kata Sandi</h6>
+            </div>
+        </div>
+        <div class="col-auto">
+            <a href="#" target="_self" class="btn btn-44">
+                <i class="fa-solid fa-check text-dark"></i>
+            </a>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->
+<!-- main page content -->
     <div class="main-container container">
         <!-- comment -->
         <div class="row mx-2">

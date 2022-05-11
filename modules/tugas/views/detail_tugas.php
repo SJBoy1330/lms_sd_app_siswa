@@ -1,3 +1,22 @@
+<!-- Header -->
+<header class="header position-fixed">
+    <div class="row">
+        <div class="col-auto">
+            <a href="<?= base_url('tugas'); ?>" class="btn btn-44">
+                <i class="fa-solid fa-chevron-left text-dark"></i>
+            </a>
+        </div>
+        <div class="col text-center">
+            <div class="logo-small">
+                <h6>Detail Tugas Sekolah</h6>
+            </div>
+        </div>
+        <div class="col-auto">
+            <a href="#" target="_self" class="btn btn-44"></a>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->
 <div class="main-container container">
     <div class="row">
         <div class="col-12">
@@ -59,7 +78,7 @@
                         <p class="fw-bolder size-15">Tugas Anda</p>
                     </div>
                     <div class="col-auto align-self-center">
-                        <a class="label-biru fw-bold size-13"><i class="fa-regular fa-plus"></i> Upload Tugas</a>
+                        <a href="#" class="label-biru fw-bold size-13"><i class="fa-regular fa-plus"></i> Upload Tugas</a>
                     </div>
                 </div>
 

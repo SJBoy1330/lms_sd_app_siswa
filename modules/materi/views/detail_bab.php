@@ -1,3 +1,22 @@
+<!-- Header -->
+<header class="header position-fixed">
+    <div class="row">
+        <div class="col-auto">
+            <a href="<?= base_url('materi'); ?>" class="btn btn-44">
+                <i class="fa-solid fa-chevron-left text-dark"></i>
+            </a>
+        </div>
+        <div class="col text-center">
+            <div class="logo-small">
+                <h6>Detail Bab</h6>
+            </div>
+        </div>
+        <div class="col-auto">
+            <a href="#" target="_self" class="btn btn-44"></a>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->
 <!-- main page content -->
 <div class="main-container container top-20">
     <div class="row">
@@ -32,7 +51,7 @@
 
                         <div class="col-auto ps-1">
                             <div class="avatar avatar-46 shadow-sm rounded-15 avatar-presensi-outline">
-                                <div class="avatar avatar-36 rounded-12 avatar-presensi-inline">
+                                <div class="avatar avatar-36 rounded-12 avatar-presensi-inline" style="line-height: 39px;">
                                     <i class="fa-solid fa-book-open-cover size-20 text-white"></i>
                                 </div>
                             </div>

@@ -11,7 +11,7 @@
         </div>
         <div class="col text-center">
             <div class="logo-small">
-                <h5>Pengumuman</h5>
+                <h6>Pengumuman</h6>
             </div>
         </div>
         <div class="col-auto">

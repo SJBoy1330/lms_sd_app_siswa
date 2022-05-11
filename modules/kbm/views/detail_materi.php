@@ -1,3 +1,22 @@
+<!-- Header -->
+<header class="header position-fixed">
+    <div class="row">
+        <div class="col-auto">
+            <a href="<?= base_url('kbm/detail_kbm'); ?>" class="btn btn-44">
+                <i class="fa-solid fa-chevron-left text-dark"></i>
+            </a>
+        </div>
+        <div class="col text-center">
+            <div class="logo-small">
+                <h6>Detail Materi</h6>
+            </div>
+        </div>
+        <div class="col-auto">
+            <a href="#" target="_self" class="btn btn-44"></a>
+        </div>
+    </div>
+</header>
+<!-- Header ends -->
 <!-- main page content -->
 <div class="main-container container top-20">
             <div class="row mt-3">
@@ -68,7 +87,7 @@
                             <div class="card mb-3">
                                 <div class="col-auto position-absolute avatar-detail-kbm">
                                     <div class="avatar avatar-60 shadow-sm rounded-18 avatar-presensi-outline">
-                                       <div class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                       <div class="avatar avatar-50 rounded-18 avatar-presensi-inline" style="line-height: 55px;">
                                             <i class="fa-solid fa-book-open-cover size-22 text-white"></i>
                                        </div>
                                     </div>

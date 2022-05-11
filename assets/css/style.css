@@ -16692,3 +16692,32 @@ button.button-kirim-pesan {
   border-radius: 50%;
   display: inline-block;
 }
+
+.btn-notifikasi-fill{
+  min-width: 140px;
+  background-color: #EC3528;
+  color: #FFFFFF;
+}
+
+.btn-notifikasi-fill:hover{
+  min-width: 140px;
+  background-color: #EC3528;
+  color: #FFFFFF;
+}
+
+.btn-notifikasi-outline{
+  min-width: 140px;
+  background-color: #FFFFFF;
+  color: #EC3528;
+  border: 1px solid #EC3528;
+}
+
+.btn-notifikasi-outline:hover{
+  background-color: #EC3528;
+  transition: 0.1s;
+  color: #FFFFFF;
+}
+
+.span-notifikasi{
+  line-height: 24px;
+}
