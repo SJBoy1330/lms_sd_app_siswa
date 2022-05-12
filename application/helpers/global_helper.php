@@ -404,10 +404,7 @@ function is_logged_in()
 function curl_post($url, $fields = array())
 {
   $ch = curl_init();
-  $postvars = '';
-  foreach ($fields as $key => $value) {
-    $postvars .= $key . "=" . $value . "&";
-  }
+  $postvars = http_build_query($fields);
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
   curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
@@ -415,8 +412,8 @@ function curl_post($url, $fields = array())
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
   curl_setopt($ch, CURLOPT_TIMEOUT, 20);
   $response = curl_exec($ch);
-  return json_decode($response);
   curl_close($ch);
+  return json_decode($response);
 }
 
 function curl_get($url)
@@ -428,6 +425,108 @@ function curl_get($url)
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
   curl_setopt($ch, CURLOPT_TIMEOUT, 20);
   $response = curl_exec($ch);
-  return json_decode($response);
   curl_close($ch);
+  return json_decode($response);
+}
+
+function nice_title($str, $limit = 75)
+{
+  $tmp = array();
+  $tmp2 = array();
+  $tmp3 = array();
+  if ($str != '') {
+    $tmp = explode(' ', $str);
+    foreach ($tmp as $key => $value) {
+      $tmp2[] = $value;
+      if (strlen(implode(' ', $tmp2)) < $limit) {
+        $tmp3[] = $value;
+      } else {
+        break;
+      }
+    }
+    $tmp = implode(' ', $tmp3);
+    if (strlen($tmp) < strlen($str)) {
+      return $tmp . '...';
+    } else {
+      return $tmp;
+    }
+  }
+
+  // $tmp = implode(' ', $e);
+  // return strlen($tmp);
+}
+function nice_time($date)
+{
+  if (empty($date)) {
+    return false;
+  }
+
+  $periods         = array("detik", "menit", "jam", "hari", "minggu", "bulan", "tahun", "dekade");
+  $lengths         = array("60", "60", "24", "7", "4.35", "12", "10");
+
+  $now             = time();
+  $unix_date       = strtotime($date);
+
+  // check validity of date
+  if (empty($unix_date)) {
+    return false;
+  }
+  // is it future date or past date
+  if ($now > $unix_date) {
+    $difference     = $now - $unix_date;
+    $tense         = "yang lalu";
+  } else {
+    $difference     = $unix_date - $now;
+    $tense         = "dari sekarang";
+  }
+
+  for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
+    $difference /= $lengths[$j];
+  }
+
+  $difference = round($difference);
+
+  if ($difference != 1) {
+    //$periods[$j].= "s";
+  }
+
+  return "$difference $periods[$j] {$tense}";
+}
+function nice_date($format, $tanggal = "now")
+{
+  $en = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Jan", "Feb",  "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+  $id = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu",  "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",  "Oktober", "November", "Desember");
+
+  return str_replace($en, $id, date($format, strtotime($tanggal)));
+}
+
+function video_access($path, $filename = 'kosong', $default = NULL)
+{
+
+  $filepath = $path . $filename;
+
+  $tmp = explode(".", $filename);
+  $video_default = explode(".", $default);
+  $extfile = $tmp[1];
+
+  if ($filename != 'kosong' || $filename != NULL) {
+    if (file_exists($path . $filename)) {
+      $im = file_get_contents($path . $filename);
+      header("Content-type: video/mp4");
+      echo $im;
+    }
+  } else {
+    echo 'not-found';
+  }
+}
+
+function API_URL($url = null)
+{
+  if ($url != null) {
+    $uri  = 'https://sd.klasq.id/api/siswa/' . $url;
+  } else {
+    $uri = 'https://sd.klasq.id/api/siswa/';
+  }
+
+  return $uri;
 }

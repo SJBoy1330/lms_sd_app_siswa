@@ -29,7 +29,7 @@ class Function_ctl extends MY_Welcome
             $arrPost['kode_sekolah'] = $kode_sekolah;
             $arrPost['username'] = $username;
             $arrPost['password'] = $kata_sandi;
-            $response = curl_post('https://sd.klasq.id/api/siswa/login', $arrPost);
+            $response = curl_post(API_URL() . 'login', $arrPost);
             if ($response->status == 200) {
                 $arrSession['lms_siswa_id_siswa'] = $response->data->id_siswa;
                 $arrSession['lms_siswa_id_sekolah'] = $response->data->id_sekolah;

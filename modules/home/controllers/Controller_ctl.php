@@ -16,9 +16,14 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Home';
 
 		// LOAD DATA SISWA
-		$mydata['nama'] = curl_get('https://sd.klasq.id/api/siswa/profil/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&id_siswa=' . $this->session->userdata('lms_siswa_id_siswa'))->data->nama;
-		$mydata['jadwal'] = curl_get('https://sd.klasq.id/api/siswa/jadwal/today?id_sekolah=1&hari=3&aktif=N&id_kelas=1&kbm=Y');
+		$mydata['user'] = $user = curl_get(API_URL() . 'profil/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&id_siswa=' . $this->session->userdata('lms_siswa_id_siswa'))->data;
 
+		$mydata['result_aktif'] = curl_get(API_URL() . 'jadwal/today?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&hari=' . date('N') . '&aktif=Y&id_kelas=' . $mydata['user'][0]->id_kelas . '&kbm=Y')->data;
+		$mydata['result_old'] = curl_get(API_URL() . 'jadwal/today?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&hari=' . date('N') . '&aktif=N&id_kelas=' . $mydata['user'][0]->id_kelas . '&kbm=Y')->data;
+		$mydata['pengumuman'] = curl_get(API_URL() . 'pengumuman/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&limit=3')->data;
+		$mydata['berita'] = curl_get(API_URL() . 'berita/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&limit=5')->data;
+
+		$mydata['presensi_setting'] = curl_get(API_URL() . 'presensi_siswa/setting?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah'));
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
