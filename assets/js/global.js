@@ -8,12 +8,13 @@ const unreload = (element, event) => {
 };
 
 const handleLocation = async (root) => {
-    const route = root + '?routing=true' || routes[404];
-    const html = await fetch(route).then((data) => data.text());
+    // const route = root + '?routing=true' || routes[404];
+    // const html = await fetch(route).then((data) => data.text());
     var body = document.querySelector('body');
     var htmls = document.querySelector('html');
     $('footer').load(root + ' #footer');
-    $('.main-container').fadeIn('slow');
+
+    $('#reload_halaman').fadeIn('slow');
     $('main').load(root + ' #reload_halaman');
     $('#sidemenu').load(root + ' #content_sidemenu');
 
@@ -31,8 +32,8 @@ const handleLocation = async (root) => {
 
 };
 
-window.onpopstate = handleLocation;
-window.route = route;
+// window.onpopstate = handleLocation;
+// window.route = route;
 
 
 handleLocation();

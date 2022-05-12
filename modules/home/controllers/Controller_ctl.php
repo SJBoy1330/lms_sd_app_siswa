@@ -18,6 +18,7 @@ class Controller_ctl extends MY_Frontend
 		// LOAD DATA SISWA
 		$mydata['nama'] = curl_get('https://sd.klasq.id/api/siswa/profil/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&id_siswa=' . $this->session->userdata('lms_siswa_id_siswa'))->data->nama;
 		$mydata['jadwal'] = curl_get('https://sd.klasq.id/api/siswa/jadwal/today?id_sekolah=1&hari=3&aktif=N&id_kelas=1&kbm=Y');
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

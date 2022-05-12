@@ -128,14 +128,18 @@
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
 
-<?php
+<div id="script">
+    <div id="scripting">
+        <?php
 
-if (isset($js_add) && is_array($js_add)) {
-    foreach ($js_add as $js) {
-        echo $js;
-    }
-} else {
-    echo (isset($js_add) && ($js_add != "") ? $js_add : "");
-}
+        if (isset($js_add) && is_array($js_add)) {
+            foreach ($js_add as $js) {
+                echo $js;
+            }
+        } else {
+            echo (isset($js_add) && ($js_add != "") ? $js_add : "");
+        }
 
-?>
+        ?>
+    </div>
+</div>
