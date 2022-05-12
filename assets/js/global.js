@@ -105,12 +105,12 @@ function submit_form(element, id_form) {
                     buttonsStyling: !1,
                     confirmButtonText: "Ok",
                     customClass: {
-                        confirmButton: "btn btn-primary"
+                        confirmButton: "btn btn-lg shadow-sm btn-pribadi"
                     }
                 }).then(function () {
                     if (data.redirect) {
                         location.href = data.redirect;
-                    } else {
+                    } else if (data.reload) {
                         location.reload();
                     }
                 });
