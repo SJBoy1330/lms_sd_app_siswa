@@ -12,9 +12,9 @@ const handleLocation = async (root) => {
     const html = await fetch(route).then((data) => data.text());
     var body = document.querySelector('body');
     var htmls = document.querySelector('html');
-    $('#script').load(root + ' #scripting');
     $('footer').load(root + ' #footer');
-    $('header').load(root + ' #header');
+    $('.main-container').fadeIn('slow');
+    $('main').load(root + ' #reload_halaman');
     $('#sidemenu').load(root + ' #content_sidemenu');
 
     // $('main').fadeIn('slow');
@@ -24,7 +24,7 @@ const handleLocation = async (root) => {
         $('main').css('padding-bottom', $('.footer').outerHeight() + 10);
     }
 
-    document.getElementById("reload-content").innerHTML = html;
+    // document.getElementById("reload-content").innerHTML = html;
     body.classList.remove('menu-open');
     htmls.classList.remove('menu-open');
 

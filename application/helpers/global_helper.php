@@ -394,11 +394,6 @@ function is_logged_in()
   if ($ci->session->userdata('lms_siswa_id_siswa')) {
     if ($ci->session->userdata('lms_siswa_role') != 'siswa') {
       redirect('auth/login');
-    } else {
-      $ci->db2 = $ci->load->database('db_sekolah', TRUE);
-      $ci->db2->set('last_access', date('Y-m-d H:i:s'));
-      $ci->db2->where('id_siswa', $ci->session->userdata('lms_siswa_id_siswa'));
-      $ci->db2->update('siswa');
     }
   } else {
     redirect('auth/login');
@@ -416,6 +411,19 @@ function curl_post($url, $fields = array())
   curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
   curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+  curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+  $response = curl_exec($ch);
+  return json_decode($response);
+  curl_close($ch);
+}
+
+function curl_get($url)
+{
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
   curl_setopt($ch, CURLOPT_TIMEOUT, 20);

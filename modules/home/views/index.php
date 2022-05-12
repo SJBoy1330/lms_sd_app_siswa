@@ -3,7 +3,7 @@
     <!-- Ucapan Selamat Datang -->
     <div class="row my-4 text-start">
         <div class="col-9">
-            <p class="mb-0 ms-2 title-2">Halo, Saka</p>
+            <p class="mb-0 ms-2 title-2">Halo, <?= explode(' ', $nama)[0]; ?></p>
             <p class="mb-0 ms-2 title-1-home">Selamat Datang</p>
         </div>
         <div class="col-3 d-flex justify-content-center align-items-center">
@@ -510,7 +510,7 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center border-0">
-                <a href="<?= base_url('kbm/detail_kbm')?>" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
+                <a href="<?= base_url('kbm/detail_kbm') ?>" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
             </div>
         </div>
     </div>
