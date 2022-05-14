@@ -2,11 +2,15 @@
 
 class Controller_ctl extends MY_Frontend
 {
+	protected $id_sekolah = '';
+	protected $id_siswa = '';
 	public function __construct()
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
 		is_logged_in();
+		$this->id_sekolah = $this->session->userdata('lms_siswa_id_sekolah');
+		$this->id_siswa = $this->session->userdata('lms_siswa_id_siswa');
 	}
 
 
@@ -16,14 +20,14 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Home';
 
 		// LOAD DATA SISWA
-		$mydata['user'] = $user = curl_get(API_URL() . 'profil/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&id_siswa=' . $this->session->userdata('lms_siswa_id_siswa'))->data;
+		$mydata['user'] = $user = curl_get('profil', array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
 
-		$mydata['result_aktif'] = curl_get(API_URL() . 'jadwal/today?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&hari=' . date('N') . '&aktif=Y&id_kelas=' . $mydata['user'][0]->id_kelas . '&kbm=Y')->data;
-		$mydata['result_old'] = curl_get(API_URL() . 'jadwal/today?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&hari=' . date('N') . '&aktif=N&id_kelas=' . $mydata['user'][0]->id_kelas . '&kbm=Y')->data;
-		$mydata['pengumuman'] = curl_get(API_URL() . 'pengumuman/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&limit=3')->data;
-		$mydata['berita'] = curl_get(API_URL() . 'berita/?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah') . '&limit=5')->data;
+		$mydata['result_aktif'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'Y', 'id_kelas' =>  $mydata['user'][0]->id_kelas, 'kbm' => 'Y'))->data;
+		$mydata['result_old'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'N', 'id_kelas' =>  $mydata['user'][0]->id_kelas, 'kbm' => 'Y'))->data;
+		$mydata['pengumuman'] = curl_get('pengumuman', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
+		$mydata['berita'] = curl_get('berita', array('id_sekolah' => $this->id_sekolah, 'limit' => 5))->data;
 
-		$mydata['presensi_setting'] = curl_get(API_URL() . 'presensi_siswa/setting?id_sekolah=' . $this->session->userdata('lms_siswa_id_sekolah'));
+		$mydata['presensi_setting'] = curl_get('presensi_siswa/setting', array('id_sekolah' => $this->id_sekolah));
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
@@ -35,6 +39,8 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Pengumuman';
 
+		// LOAD DATA
+		$mydata['result'] = curl_get('pengumuman/all', array('id_sekolah' => $this->id_sekolah))->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

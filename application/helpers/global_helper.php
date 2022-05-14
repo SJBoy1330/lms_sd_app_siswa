@@ -404,8 +404,9 @@ function is_logged_in()
 function curl_post($url, $fields = array())
 {
   $ch = curl_init();
+  $CI = &get_instance();
   $postvars = http_build_query($fields);
-  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_URL, API_URL($url));
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
   curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -416,10 +417,10 @@ function curl_post($url, $fields = array())
   return json_decode($response);
 }
 
-function curl_get($url)
+function curl_get($url, $fields = array())
 {
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
+  $request_url = API_URL($url) . "?" . http_build_query($fields);
+  $ch = curl_init($request_url);
   curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
@@ -526,6 +527,17 @@ function API_URL($url = null)
     $uri  = 'https://sd.klasq.id/api/siswa/' . $url;
   } else {
     $uri = 'https://sd.klasq.id/api/siswa/';
+  }
+
+  return $uri;
+}
+
+function DATA_URL($url = null)
+{
+  if ($url != null) {
+    $uri  = 'https://sd.klasq.id/path/linker/' . $url;
+  } else {
+    $uri = 'https://sd.klasq.id/path/linker/';
   }
 
   return $uri;
