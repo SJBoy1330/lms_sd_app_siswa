@@ -534,10 +534,11 @@ function API_URL($url = null)
 
 function DATA_URL($url = null)
 {
+  $CI = &get_instance();
   if ($url != null) {
-    $uri  = 'https://sd.klasq.id/path/linker/' . $url;
+    $uri  = 'https://sd.klasq.id/path/linker/' . base64url_encode($CI->session->userdata('lms_siswa_id_sekolah')) . '/' . $url;
   } else {
-    $uri = 'https://sd.klasq.id/path/linker/';
+    $uri = 'https://sd.klasq.id/path/linker/' . base64url_encode($CI->session->userdata('lms_siswa_id_sekolah')) . '/';
   }
 
   return $uri;
