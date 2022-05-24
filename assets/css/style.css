@@ -16045,7 +16045,7 @@ form input {
   animation: pulse 2s infinite;
 }
 
-p {
+/* p {
   opacity: 0;
   -webkit-animation: fadeInUp 1s ease-in-out 0s forwards;
   animation: fadeInUp 1s ease-in-out 0s forwards;
@@ -16079,7 +16079,7 @@ p.second {
   100% {
     transform: translateY(-10px);
   }
-}
+} */
 
 .boba-besar {
   width: 70px;
