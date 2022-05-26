@@ -27,7 +27,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['pengumuman'] = curl_get('pengumuman', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
 		$mydata['berita'] = curl_get('berita', array('id_sekolah' => $this->id_sekolah, 'limit' => 5))->data;
 
-		$mydata['presensi_setting'] = curl_get('presensi_siswa/setting', array('id_sekolah' => $this->id_sekolah));
+		$mydata['presensi_setting'] = curl_get('presensi/setting', array('id_sekolah' => $this->id_sekolah));
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
