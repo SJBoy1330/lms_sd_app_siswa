@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="col-2 d-flex justify-content-center align-items-center ps-0">
-                    <button class="btn btn-secondary filter-tugas border-0" data-bs-toggle="modal" data-bs-target="#filterTugasModal">
+                    <button class="btn btn-secondary bg-button filter-tugas border-0" data-bs-toggle="modal" data-bs-target="#filterTugasModal">
                         <i class="fa-regular fa-filter" style="color: #EC3528;"></i>
                     </button>
                 </div>
