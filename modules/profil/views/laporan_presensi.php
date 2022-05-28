@@ -69,14 +69,6 @@
                         <div class="col-12">
                             <div id="calendar_2" class="my-2 mx-1 shadow-sm"></div>
                         </div>
-                        <div class="row mt-4 mb-3 px-1">
-                            <div class="col">
-                                <h6 class="title">Pengumuman</h6>
-                            </div>
-                            <div class="col-auto align-self-center">
-                                <a href="<?= base_url('home/list_pengumuman'); ?>" class="label-merah">Lihat Semua</a>
-                            </div>
-                        </div>
                         <div class="col-12">
                             <div class="card mb-3">
                                 <div class="card-body">

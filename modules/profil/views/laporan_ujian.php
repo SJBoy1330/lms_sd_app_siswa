@@ -297,6 +297,24 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-bullseye-pointer size-24 text-white"></i>
+                                           </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Nilai Ujian</p>
+                                        <p class="text-success size-15">125</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
