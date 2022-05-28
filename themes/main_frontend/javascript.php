@@ -128,6 +128,8 @@
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>
 
+<script src="<?= base_url('assets/js/page/function.js') ?>"></script>
+
 <div id="script">
     <div id="scripting">
         <?php
