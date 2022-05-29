@@ -108,7 +108,11 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col align-self-center">
+                                    <div class="col-12 mb-2">
+                                        <figure class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
+                                        </figure>
+                                    </div>
+                                    <div class="col-12 align-self-center">
                                         <p class="mb-0 size-14 text-dark fw-normal">Siapakah pendiri dari perusahaan Google awalnya dan siapakah yang menjadi CEO google saat ini dan berikan penjelasan jelas kenapa dia bisa berhasil menjadi CEO dari google?</p>
                                     </div>
                                 </div>

@@ -216,102 +216,101 @@
 
 
 <!-- Modal Mapel -->
-    <div class="modal fade" id="detailUjian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header py-4">
-                <h5 class="modal-title">Detail Ujian</h5>
-                <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row mt-3">
-                    <div class="col-12">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-calendar-week size-22 text-white"></i>
-                                           </div>
+<div class="modal fade" id="detailUjian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header py-4">
+            <h5 class="modal-title">Detail Ujian</h5>
+            <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row mt-3">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                            <i class="fa-solid fa-calendar-week size-22 text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Tanggal Ujian</p>
-                                        <p class="text-secondary size-12">01 - 01 -2022</p>
-                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-1">
+                                    <p class="mb-0 size-15 fw-medium">Tanggal Ujian</p>
+                                    <p class="text-secondary size-12">01 - 01 -2022</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-book-bookmark size-24 text-white"></i>
-                                           </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                        <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Nama Ujian</p>
-                                        <p class="text-secondary size-12">Paket Ujian 01</p>
-                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-1">
+                                    <p class="mb-0 size-15 fw-medium">Nama Ujian</p>
+                                    <p class="text-secondary size-12">Paket Ujian 01</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-brands fa-stack-overflow size-26 text-white"></i>
-                                           </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                            <i class="fa-brands fa-stack-overflow size-26 text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Studi Pembelajaran</p>
-                                        <p class="text-secondary size-12">Pelajaran 01</p>
-                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-1">
+                                    <p class="mb-0 size-15 fw-medium">Studi Pembelajaran</p>
+                                    <p class="text-secondary size-12">Pelajaran 01</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-clock size-24 text-white"></i>
-                                           </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 42px;">
+                                            <i class="fa-solid fa-clock size-24 text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Waktu Ujian</p>
-                                        <p class="text-danger size-15">20 Menit</p>
-                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-1">
+                                    <p class="mb-0 size-15 fw-medium">Waktu Ujian</p>
+                                    <p class="text-danger size-15">20 Menit</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                           <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-bullseye-pointer size-24 text-white"></i>
-                                           </div>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                            <i class="fa-solid fa-bullseye-pointer size-24 text-white"></i>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Nilai Ujian</p>
-                                        <p class="text-success size-15">125</p>
-                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-1">
+                                    <p class="mb-0 size-15 fw-medium">Nilai Ujian</p>
+                                    <p class="text-success size-15">125</p>
                                 </div>
                             </div>
                         </div>
@@ -319,5 +318,6 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
+    </div>
+</div>

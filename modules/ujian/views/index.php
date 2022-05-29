@@ -10,9 +10,7 @@
             <h6 class="text-white">Ujian Online</h6>
         </div>
         <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44 rounded-circle">
-
-            </a>
+            <a href="#" target="_self" class="btn btn-44"></a>
         </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -44,7 +42,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium text-dark">Paket Ujian 01</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
@@ -65,7 +63,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium text-dark">Paket Ujian 02</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
@@ -86,7 +84,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium text-dark">Paket Ujian 03</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
@@ -113,7 +111,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium">Paket Ujian 01</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
@@ -134,7 +132,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium">Paket Ujian 02</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
@@ -155,7 +153,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-auto align-self-center ps-0">
+                                        <div class="col align-self-center ps-0">
                                             <p class="mb-0 size-15 fw-medium">Paket Ujian 03</p>
                                             <p class="mb-0 size-10 fw-normal text-secondary">Bahasa Indonesia | 11 Jan 2021</p>
                                         </div>
