@@ -37,6 +37,24 @@
 
     <!-- Font Awesome-->
     <script src="https://kit.fontawesome.com/b2ed95a515.js" crossorigin="anonymous"></script>
+
+    <style>
+        h2.swal2-title{
+            font-size: 1.5rem !important;
+        }
+
+        div#swal2-content{
+            font-size: 1rem !important;
+        }
+
+        button.swal2-confirm{
+            background-color: #1AB64F !important;
+            border-color: #1AB64F !important;
+            width: 100px !important;
+            border-radius: 10px !important;
+            color: #FFFFFF !important;
+        }
+    </style>
     
 </head>
 
