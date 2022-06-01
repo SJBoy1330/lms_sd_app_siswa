@@ -17,9 +17,14 @@ function openCity(evt, cityName) {
       document.getElementById("defaultOpen").click();
 
 $(document).ready(function() {
-    $('#calendar').evoCalendar();
+  $('#calendar').evoCalendar({
+      'language': 'ina'
+  });
 })
+    
 
 $(document).ready(function() {
-    $('#calendar_2').evoCalendar();
+  $('#calendar_2').evoCalendar({
+      'language': 'ina'
+  });
 })

@@ -48,7 +48,7 @@
             background-color: #1AB64F !important;
             border-color: #1AB64F !important;
             width: 100px;
-            height 75px;
+            height: 75px;
             border-radius: 10px;
         }
     </style>

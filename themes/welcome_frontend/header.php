@@ -53,6 +53,8 @@
             width: 100px !important;
             border-radius: 10px !important;
             color: #FFFFFF !important;
+            height: 38px !important;
+            line-height: 0;
         }
     </style>
     
