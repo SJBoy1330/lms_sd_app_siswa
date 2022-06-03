@@ -39,7 +39,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['result'] = $result->data;
 
 		// LOAD CSS
-		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/notifikasi.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/notifikasi/notifikasi.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/notifikasi/notifikasi.js"></script>';
