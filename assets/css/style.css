@@ -16572,6 +16572,15 @@ a.btn-filter {
   padding-top: 10px;
 }
 
+button.btn-filter {
+  width: 100%;
+  background-color: #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 45px;
+  padding-top: 10px;
+}
+
 .avatar.bg-document {
   background-color: #E5E5E5;
 }

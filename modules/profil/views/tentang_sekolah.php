@@ -1,22 +1,3 @@
-<!-- Header -->
-<header class="header position-fixed">
-    <div class="row">
-        <div class="col-auto">
-            <a href="<?= base_url('profil'); ?>" class="btn btn-44">
-                <i class="fa-solid fa-chevron-left text-dark"></i>
-            </a>
-        </div>
-        <div class="col text-center">
-            <div class="logo-small">
-                <h6>Tentang Sekolah</h6>
-            </div>
-        </div>
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44"></a>
-        </div>
-    </div>
-</header>
-<!-- Header ends -->
 <!-- main page content -->
 <div class="main-container container top-20">
     <div class="row">
@@ -29,10 +10,10 @@
                         </div>
                         <div class="col-6 align-self-center ps-2">
                             <p class="mb-0 fw-bold size-16">Nama Sekolah</p>
-                            <p class="text-secondary size-14">SDN PERCOBAAN 1</p>
+                            <p class="text-secondary size-14"><?= $data_sekolah->nama_sekolah ?></p>
                         </div>
                         <div class="logo-sekolah position-absolute" style="top: 45px; left: 65px; width:50px;">
-                            <img src="<?= base_url(); ?>assets/images/logo-grafika.png" alt="" width="30">
+                            <img src="<?= $data_sekolah->logo; ?>" alt="" width="30">
                         </div>
                     </div>
                 </div>
@@ -46,7 +27,7 @@
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <p class="mb-0 fw-bold size-16">NPSM Sekolah</p>
-                            <p class="text-secondary size-14">1234</p>
+                            <p class="text-secondary size-14"><?= $data_sekolah->npsm ?></p>
                         </div>
                     </div>
                 </div>
@@ -57,7 +38,7 @@
                     <div class="row p-2">
                         <div class="col-6 align-self-center ps-3">
                             <p class="mb-0 fw-bold size-16">Alamat Sekolah</p>
-                            <p class="text-secondary size-12">Jl. Danau Kelimutu C4 B8 Sawojajar Malang lesanpuro kedung kandang kandang babi</p>
+                            <p class="text-secondary size-12"><?= $data_sekolah->alamat ?></p>
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <img src="<?= base_url(); ?>assets/images/tentang_alamat_sekolah.svg" alt="" width="115">
@@ -74,7 +55,7 @@
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <p class="mb-0 fw-bold size-16">Jumlah Siswa</p>
-                            <p class="text-secondary size-14">2 Siswa</p>
+                            <p class="text-secondary size-14"><?= $count_siswa ?> Siswa</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +66,7 @@
                     <div class="row p-2">
                         <div class="col-6 align-self-center ps-3">
                             <p class="mb-0 fw-bold size-16">Jumlah Staf</p>
-                            <p class="text-secondary size-14">10 Staf</p>
+                            <p class="text-secondary size-14"><?= $count_staf ?> Staf</p>
                         </div>
                         <div class="col-6 align-self-center p-0">
                             <img src="<?= base_url(); ?>assets/images/tentang_jumlah_staf.svg" alt="" width="115">
@@ -97,3 +78,4 @@
     </div>
 </div>
 <!-- main page content ends -->
+</main>

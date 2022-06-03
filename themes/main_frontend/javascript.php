@@ -131,16 +131,16 @@
     </div>
 </div>
 <!-- Required jquery and libraries -->
+<script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
+<script src="<?= base_url() ?>assets/js/popper.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
 <script>
     var BASE_URL = baseUrl = '<?= base_url(); ?>';
     var API_URL = apiUrl = '<?= API_URL() ?>';
     var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
     var css_button = 'btn btn-block btn-md';
 </script>
-<script src="<?= base_url() ?>assets/js/jquery-3.3.1.min.js"></script>
-<script src="<?= base_url() ?>assets/js/popper.min.js"></script>
-<script src="<?= base_url() ?>assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
-
 <!-- Customized jquery file  -->
 <script src="<?= base_url() ?>assets/js/main.js"></script>
 <script src="<?= base_url() ?>assets/js/color-scheme.js"></script>
@@ -155,6 +155,7 @@
 <!--evo calender-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.js"></script>
 
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert/scriptalert.js') ?>"></script>

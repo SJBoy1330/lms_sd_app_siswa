@@ -9,7 +9,7 @@
         <div class="col-3 d-flex justify-content-center align-items-center">
             <?php if ($presensi_setting != NULL) : ?>
                 <?php if ($presensi_setting->presensi_checkin == true) : ?>
-                    <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" data-bs-toggle="modal" data-bs-target="#presensiModal">
+                    <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" id="button_get_lokasi" data-bs-toggle="modal" data-bs-target="#presensiModal">
                         <i class="fa-solid fa-user-check" style="font-size:1.2rem"></i>
                     </button>
                 <?php endif; ?>
@@ -144,7 +144,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-auto position-absolute badge-status">
-                                                <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $row->nama; ?></span>
+                                                <span class="badge rounded-pill px-3 py-2 bg-badge fw-normal"><?= $row->nama_kategori; ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -168,95 +168,123 @@
 <!-- main page content ends -->
 
 <!-- Modal Presensi -->
-<div class="modal fade" id="presensiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header py-4">
-                <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div id="map-container-google-1" class="z-depth-1-half map-container">
-                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+<?php if ($presensi_setting->presensi_checkin == true) : ?>
+    <div class="modal fade" id="presensiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <form method="POST" action="<?= base_url('presensi/presensi_siswa'); ?>" id="form_presensi_siswa" class=" modal-content">
+                <div class="modal-header py-4">
+                    <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="map-container-google-1" class="z-depth-1-half map-container">
+                                <iframe id="map_iframe" src="<?= $map; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto ps-2 pe-1">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
-                                                <i class="fa-solid fa-clock size-20 text-white"></i>
+                    <div id="parent_presensi">
+                        <div id="reload_presensi">
+                            <div class="row mt-3">
+                                <div class=" col">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto ps-2 pe-1">
+                                                    <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                                        <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
+                                                            <i class="fa-solid fa-clock size-20 text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col align-self-center ps-1">
+                                                    <p class="mb-0 size-12 fw-medium">Jam Masuk</p>
+                                                    <p class="fw-normal text-secondary size-12"><?= ifnull($presensi->presensi_sekolah->scan_masuk, ' - '); ?></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-12 fw-medium">Jam Masuk</p>
-                                        <p class="fw-normal text-secondary size-12">07:00 WIB</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto ps-2 pe-1">
-                                        <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
-                                                <i class="fa-solid fa-clock size-20 text-white"></i>
+                                <?php if ($presensi_setting->checkout == TRUE) : ?>
+                                    <?php if ($presensi->presensi_sekolah->scan_pulang != NULL) : ?>
+                                        <div class="col">
+                                            <div class="card mb-3">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-auto ps-2 pe-1">
+                                                            <div class="avatar avatar-40 shadow-sm rounded-circle avatar-presensi-outline">
+                                                                <div class="avatar avatar-30 rounded-circle avatar-presensi-inline" style="line-height: 33px;">
+                                                                    <i class="fa-solid fa-clock size-20 text-white"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col align-self-center ps-1">
+                                                            <p class="mb-0 size-12 fw-medium">Jam Pulang</p>
+                                                            <p class="fw-normal text-secondary size-12"><?= ifnull($presensi->presensi_sekolah->scan_pulang, ' - '); ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-12 fw-medium">Jam Pulang</p>
-                                        <p class="fw-normal text-secondary size-12">16:00 WIB</p>
-                                    </div>
-                                </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
+                            <!-- BUTTON PRESENSI -->
+                            <input type="hidden" id="lat" name="lat" value="<?= $lat; ?>">
+                            <input type="hidden" id="long" name="long" value="<?= $long; ?>">
+
+                            <input type="hidden" id="jam_masuk" name="jam_masuk" value="<?= $presensi_setting->jam_masuk; ?>">
+                            <input type="hidden" id="jam_pulang" name="jam_pulang" value="<?= $presensi_setting->jam_pulang; ?>">
+                            <?php if ($presensi_setting->checkout == true) : ?>
+                                <input type="hidden" id="checkout" name="checkout" value="Y">
+                            <?php else : ?>
+                                <input type="hidden" id="checkout" name="checkout" value="N">
+                            <?php endif; ?>
+                            <?php if ($presensi_setting->status_presensi->masuk == true) : ?>
+                                <?php if (!isset($presensi->presensi_sekolah->scan_masuk)) :  ?>
+                                    <input type="hidden" name="scan_masuk" value="Y">
+                                    <div class="modal-footer d-flex justify-content-center border-0">
+                                        <button type="button" id="button_submit_masuk" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</button>
+                                    </div>
+                                <?php else : ?>
+                                    <?php if ($presensi_setting->checkout == true) : ?>
+                                        <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
+                                            <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
+                                                <input type="hidden" name="scan_masuk" value="N">
+                                                <div class="modal-footer d-flex justify-content-center border-0">
+                                                    <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</button>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
+                            <?php endif; ?>
+                            <?php if ($presensi_setting->checkout == true) : ?>
+                                <?php if ($presensi_setting->status_presensi->masuk == false) : ?>
+                                    <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
+                                        <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
+                                            <input type="hidden" name="scan_masuk" value="N">
+                                            <div class="modal-footer d-flex justify-content-center border-0">
+                                                <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</button>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     </div>
+
                 </div>
-            </div>
 
-            <!-- BUTTON PRESENSI -->
 
-            <?php if ($presensi_setting->status_presensi->masuk == true) : ?>
-                <?php if (!isset($cek_presensi_staf->scan_masuk)) :  ?>
-                    <div class="modal-footer d-flex justify-content-center border-0">
-                        <a href="<?= base_url('kbm/detail_kbm') ?>" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
-                    </div>
-                <?php else : ?>
-                    <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
-                        <?php if (!isset($cek_presensi_staf->scan_pulang)) : ?>
-                            <div class="modal-footer d-flex justify-content-center border-0">
-                                <a href="<?= base_url('kbm/detail_kbm') ?>" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</a>
-                            </div>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                <?php endif; ?>
-
-            <?php endif; ?>
-            <?php if ($presensi_setting->status_presensi->masuk == false) : ?>
-                <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
-                    <?php if (!isset($cek_presensi_staf->scan_pulang)) : ?>
-                        <div class="modal-footer d-flex justify-content-center border-0">
-                            <a href="<?= base_url('kbm/detail_kbm') ?>" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</a>
-                        </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-            <?php endif; ?>
+            </form>
         </div>
     </div>
-</div>
+<?php endif; ?>
 
- <!-- Modal Presensi Mapel -->
- <div class="modal fade" id="presensiMapelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Presensi Mapel -->
+<div class="modal fade" id="presensiMapelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content rounded-0">
             <div class="modal-header py-4">
@@ -266,9 +294,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="map-container-google-1" class="z-depth-1-half map-container">
-                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                                style="border:0" allowfullscreen></iframe>
-                            </div>
+                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt-3">

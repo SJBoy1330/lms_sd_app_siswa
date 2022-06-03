@@ -39,25 +39,24 @@
     <script src="https://kit.fontawesome.com/b2ed95a515.js" crossorigin="anonymous"></script>
 
     <style>
-        h2.swal2-title{
-            font-size: 1.5rem !important;
+        h2.swal2-title {
+            font-size: 1.5rem;
         }
 
-        div#swal2-content{
-            font-size: 1rem !important;
+        div#swal2-content {
+            font-size: 1rem;
         }
 
-        button.swal2-confirm{
-            background-color: #1AB64F !important;
-            border-color: #1AB64F !important;
-            width: 100px !important;
-            border-radius: 10px !important;
-            color: #FFFFFF !important;
-            height: 38px !important;
-            line-height: 0;
+        button.swal2-confirm {
+            background-color: #f73563 !important;
+            border-color: #f73563 !important;
+            color: #FFFFFF;
+            width: 100px;
+            /* height: 75px; */
+            border-radius: 10px;
         }
     </style>
-    
+
 </head>
 
 <body class="body-scroll d-flex flex-column h-100" data-page="signin" style="background-image: url(<?= base_url(); ?>assets/images/bg-2.png); background-repeat: no-repeat; background-size: cover; background-position: center;">

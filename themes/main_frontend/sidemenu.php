@@ -9,11 +9,11 @@
                 <div class="col-12 profile-sidebar">
                     <div class="row mt-3">
                         <div class="col-auto">
-                            <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                                <img src="<?= $profil->foto; ?>" alt="" class="rounded-18">
+                            <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm" id="reload_side_foto">
+                                <img src=" <?= $profil->foto; ?>" alt="" class="rounded-18" id="side_foto_profil">
                             </figure>
                         </div>
-                        <div class="col px-0 align-self-center">
+                        <div class=" col px-0 align-self-center">
                             <h5 class="mb-0 fw-normal text-white"><?= $profil->nama; ?></h5>
                             <p class="text-muted size-12"><?= $profil->nama_kelas; ?></p>
                         </div>
@@ -116,7 +116,7 @@
                         <?php endif; ?>
                     </div>
                     <div class="col-auto">
-                        <?php if (!isset($config_hidden['notifikasi']) && $config_hidden['notifikasi'] != true) : ?>
+                        <?php if (!isset($config_hidden['notifikasi']) || $config_hidden['notifikasi'] != true) : ?>
                             <a href="<?= base_url('notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
                                 <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
                                 <span class="count-indicator"></span>
@@ -124,7 +124,7 @@
                         <?php endif; ?>
 
                         <?php if (isset($right_button['profil'])) : ?>
-                            <button type="button" class="btn btn-44" id="button_submit_atas" onclick="submit_form(this,'#form_ubah_profil')">
+                            <button type="button" class="btn btn-44" id="button_submit_atas" onclick="submit_form(this,'#form_ubah_profil',0,'#ec3528')">
                                 <i class="fa-solid fa-check"></i>
                             </button>
 
@@ -132,7 +132,7 @@
 
 
                         <?php if (isset($right_button['ubah_password'])) : ?>
-                            <button type="button" class="btn btn-44" id="button_submit_atas" onclick="submit_form(this,'#form_ubah_password')">
+                            <button type="button" class="btn btn-44" id="button_submit_password_atas" onclick="submit_form(this,'#form_update_password',0,'#ec3528')">
                                 <i class="fa-solid fa-check"></i>
                             </button>
 
@@ -140,6 +140,10 @@
 
                         <?php if (isset($config_hidden['notifikasi']) && !isset($right_button)) : ?>
                             <a href="#" target="_self" class="btn btn-44"> </a>
+                        <?php endif; ?>
+
+                        <?php if (isset($right_button['laporan_ujian'])) : ?>
+                            <a href="#" target="_self" class="btn btn-44" data-bs-toggle="modal" data-bs-target="#filterUjian"><i class="fa-regular fa-filter"></i></a>
                         <?php endif; ?>
 
                     </div>

@@ -25,8 +25,19 @@ class Controller_ctl extends MY_Frontend
 		$mydata['result_old'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'N', 'id_kelas' =>  $user->id_kelas, 'kbm' => 'Y'))->data;
 		$mydata['pengumuman'] = curl_get('pengumuman', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
 		$mydata['berita'] = curl_get('berita', array('id_sekolah' => $this->id_sekolah, 'limit' => 5))->data;
-
+		$mydata['presensi'] = curl_get('presensi/today', array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
 		$mydata['presensi_setting'] = curl_get('presensi/setting', array('id_sekolah' => $this->id_sekolah));
+
+		if (isset($_COOKIE['LAT']) && isset($_COOKIE['LONG'])) {
+			$mydata['map'] = "https://maps.google.com/maps?q=" . $_COOKIE['LAT'] . "," . $_COOKIE['LONG'] . "&hl=en;z=14&output=embed";
+			$mydata['lat'] = $_COOKIE['LAT'];
+			$mydata['long'] = $_COOKIE['LONG'];
+		} else {
+			$mydata['map'] = NULL;
+			$mydata['lat'] = NULL;
+			$mydata['long'] = NULL;
+			$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/get_location.js"></script>';
+		}
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
