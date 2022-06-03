@@ -10,12 +10,12 @@
                     <div class="row mt-3">
                         <div class="col-auto">
                             <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                                <img src="<?= base_url('assets/images/mia-khalifa.png') ?>" alt="" class="rounded-18">
+                                <img src="<?= $profil->foto; ?>" alt="" class="rounded-18">
                             </figure>
                         </div>
                         <div class="col px-0 align-self-center">
-                            <h5 class="mb-0 fw-normal text-white">Mia Khalifah</h5>
-                            <p class="text-muted size-12">XI IPA 1</p>
+                            <h5 class="mb-0 fw-normal text-white"><?= $profil->nama; ?></h5>
+                            <p class="text-muted size-12"><?= $profil->nama_kelas; ?></p>
                         </div>
                     </div>
                 </div>
@@ -79,23 +79,83 @@
 <!-- Sidebar main menu ends -->
 <main class="h-100" style="background-image: url(<?= base_url(); ?>assets/images/bg-3.pn); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
-    <div id="reload_halaman">
-        <!-- Header -->
-        <header class="header position-fixed">
-            <div id="header" class="row">
-                <div class="col-auto">
-                    <a href="javascript:void(0)" target="_self" class="btn btn-44 menu-btn">
-                        <img src="<?= base_url(); ?>assets/icons/hamburger.png" width="24" alt="">
-                    </a>
+    <!-- Header -->
+    <?php if (isset($khusus['rapot'])) : ?>
+        <header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
+        <?php else : ?>
+            <header class="header position-fixed">
+            <?php endif; ?>
+            <div id="reload_header">
+                <div class="row" id="header_config">
+                    <div class="col-auto">
+                        <?php if (isset($button_back)) : ?>
+                            <a href="<?= $button_back ?>" target="_self" class="btn btn-44">
+                                <?php if (isset($text['white'])) : ?>
+                                    <i class="fa-solid fa-chevron-left text-white"></i>
+                                <?php else : ?>
+                                    <i class="fa-solid fa-chevron-left text-dark"></i>
+                                <?php endif; ?>
+                            </a>
+                        <?php else : ?>
+                            <div class="col-auto">
+                                <a href="javascript:void(0)" target="_self" class="btn btn-44 menu-btn">
+                                    <img src="<?= base_url(); ?>assets/icons/hamburger.png" width="24" alt="">
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center text-center">
+                        <?php if (isset($text['white'])) : ?>
+                            <h6 class="text-white"><?php if (isset($judul_halaman)) {
+                                                        echo $judul_halaman;
+                                                    }; ?></h6>
+                        <?php else : ?>
+                            <h6 class="text-dark"><?php if (isset($judul_halaman)) {
+                                                        echo $judul_halaman;
+                                                    }; ?></h6>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-auto">
+                        <?php if (!isset($config_hidden['notifikasi']) && $config_hidden['notifikasi'] != true) : ?>
+                            <a href="<?= base_url('notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
+                                <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
+                                <span class="count-indicator"></span>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if (isset($right_button['profil'])) : ?>
+                            <button type="button" class="btn btn-44" id="button_submit_atas" onclick="submit_form(this,'#form_ubah_profil')">
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+
+                        <?php endif; ?>
+
+
+                        <?php if (isset($right_button['ubah_password'])) : ?>
+                            <button type="button" class="btn btn-44" id="button_submit_atas" onclick="submit_form(this,'#form_ubah_password')">
+                                <i class="fa-solid fa-check"></i>
+                            </button>
+
+                        <?php endif; ?>
+
+                        <?php if (isset($config_hidden['notifikasi']) && !isset($right_button)) : ?>
+                            <a href="#" target="_self" class="btn btn-44"> </a>
+                        <?php endif; ?>
+
+                    </div>
+
                 </div>
-                <div class="col text-center">
-                </div>
-                <div class="col-auto">
-                    <a href="<?= base_url('home/notifikasi'); ?>" target="_self" class="btn btn-44 rounded-circle btn-notifikasi">
-                        <img src="<?= base_url(); ?>assets/icons/notif.png" width="24" alt="">
-                        <span class="count-indicator"></span>
-                    </a>
-                </div>
+                <?php if (isset($khusus['notifikasi'])) : ?>
+                    <div class="row mt-2 d-none" id="action_notifikasi">
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><span class="span-notifikasi">Tandai sudah dibaca</span></button>
+                        </div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">
+                            <button type="button" id="btn_hps_ntf" onclick="submit_form(this,'#form_action_notifikasi')" class="btn btn-danger rounded-pill btn-notifikasi-outline"><span class="span-notifikasi">Hapus Notifikasi</span></button>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
-        </header>
-        <!-- Header ends -->
+
+            </header>
+            <!-- Header ends -->

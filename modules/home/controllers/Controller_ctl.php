@@ -8,7 +8,6 @@ class Controller_ctl extends MY_Frontend
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
-		is_logged_in();
 		$this->id_sekolah = $this->session->userdata('lms_siswa_id_sekolah');
 		$this->id_siswa = $this->session->userdata('lms_siswa_id_siswa');
 	}
@@ -22,8 +21,8 @@ class Controller_ctl extends MY_Frontend
 		// LOAD DATA SISWA
 		$mydata['user'] = $user = curl_get('profil', array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
 
-		$mydata['result_aktif'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'Y', 'id_kelas' =>  $mydata['user'][0]->id_kelas, 'kbm' => 'Y'))->data;
-		$mydata['result_old'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'N', 'id_kelas' =>  $mydata['user'][0]->id_kelas, 'kbm' => 'Y'))->data;
+		$mydata['result_aktif'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'Y', 'id_kelas' =>  $user->id_kelas, 'kbm' => 'Y'))->data;
+		$mydata['result_old'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'N', 'id_kelas' =>  $user->id_kelas, 'kbm' => 'Y'))->data;
 		$mydata['pengumuman'] = curl_get('pengumuman', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
 		$mydata['berita'] = curl_get('berita', array('id_sekolah' => $this->id_sekolah, 'limit' => 5))->data;
 
@@ -35,22 +34,53 @@ class Controller_ctl extends MY_Frontend
 
 	public function list_pengumuman()
 	{
-
 		// LOAD TITLE
 		$mydata['title'] = 'Pengumuman';
+		$result = curl_get(
+			'pengumuman/all',
+			[
+				"id_sekolah" => $this->id_sekolah
+			]
+		);
+		$mydata['data_pengumuman'] = $result->data;
 
-		// LOAD DATA
-		$mydata['result'] = curl_get('pengumuman/all', array('id_sekolah' => $this->id_sekolah))->data;
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Pengumuman';
+		$this->data['button_back'] = base_url('home');
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
-	public function detail_pengumuman()
+	public function detail_pengumuman($id = NULL)
 	{
 
+		if ($id == NULL) {
+			redirect('home');
+		}
 		// LOAD TITLE
-		$mydata['title'] = 'Detail Pengumuman';
+		$result = curl_get(
+			'pengumuman/all/',
+			[
+				"id_sekolah" => $this->id_sekolah,
+				"id_pengumuman" => $id
+			]
+		);
+		$mydata['result'] = $result->data;
+
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Detail Pengumuman';
+		if ($this->input->get('redirect') == true) {
+			$this->data['button_back'] = base_url('home');
+		} else {
+			$this->data['button_back'] = base_url('home/list_pengumuman');
+		}
+
+		// LOAD CONFIG PAGE
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_pengumuman', $mydata, TRUE);
@@ -65,31 +95,56 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/berita/listberita.js"></script>';
 
+		// meta data
+		$idkategori = $this->input->get('kategori', TRUE);
+
+		$filter_berita['id_sekolah'] = $this->id_sekolah;
+
+		$result = curl_get('berita', $filter_berita);
+		$mydata['result'] = $result->data;
+
+		$result = curl_get('berita/kategori', [
+			"id_sekolah" => $this->id_sekolah,
+		]);
+		$mydata['kategori'] = $result->data;
+
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('home');
+		$this->data['judul_halaman'] = 'Berita';
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
-	public function detail_berita()
+	public function detail_berita($id = NULL)
 	{
+		if ($id == NULL) {
+			redirect('home');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Detail Berita';
 
+		$result = curl_get('berita', [
+			"id_sekolah" => $this->id_sekolah,
+			'id_konten' => $id
+		]);
+		$mydata['result'] = $result->data;
+		// LOAD CONFIG PAGE
+		$this->data['judul_halaman'] = 'Detail Berita';
+		if ($this->input->get('redirect')) {
+			$this->data['button_back'] = base_url('home');
+		} else {
+			$this->data['button_back'] = base_url('home/list_berita');
+		}
+
+		// LOAD CONFIG PAGE
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_berita', $mydata, TRUE);
-		$this->display($this->input->get('routing'));
-	}
-
-	public function notifikasi()
-	{
-		// LOAD TITLE
-		$mydata['title'] = 'Notifikasi';
-
-		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/notifikasi/notifikasi.js"></script>';
-
-		// LOAD VIEW
-		$this->data['content'] = $this->load->view('notifikasi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 }

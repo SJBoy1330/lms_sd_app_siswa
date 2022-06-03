@@ -401,11 +401,20 @@ function is_logged_in()
 }
 
 
-function curl_post($url, $fields = array())
+function curl_post($url, $fields = array(), $files = NULL)
 {
   $ch = curl_init();
   $CI = &get_instance();
   $postvars = http_build_query($fields);
+
+  if ($files != NULL) {
+    foreach ($files as $file => $value) {
+      $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
+      $postfile[$file] = $cfile;
+    }
+
+    $postvars = (object) array_merge((array) $fields, (array) $postfile);
+  }
   curl_setopt($ch, CURLOPT_URL, API_URL($url));
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
   curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
@@ -455,6 +464,15 @@ function nice_title($str, $limit = 75)
 
   // $tmp = implode(' ', $e);
   // return strlen($tmp);
+}
+function nice_date_time($tanggal = "now")
+{
+  $en = array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Jan", "Feb",  "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+  $id = array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu",  "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",  "Oktober", "November", "Desember");
+  $format = 'D, j M Y H:i';
+
+  $date_formated = date($format, strtotime($tanggal));
+  return str_replace($en, $id, $date_formated);
 }
 function nice_time($date)
 {
@@ -521,25 +539,142 @@ function video_access($path, $filename = 'kosong', $default = NULL)
   }
 }
 
-function API_URL($url = null)
+function API_URL($path = null)
 {
-  if ($url != null) {
-    $uri  = 'https://sd.klasq.id/api/siswa/' . $url;
-  } else {
-    $uri = 'https://sd.klasq.id/api/siswa/';
+  $uri = 'https://sd.klasq.id/api/siswa/';
+  if ($path != null) {
+    $uri .= $path;
   }
-
   return $uri;
 }
 
-function DATA_URL($url = null)
+
+function data_url($path = null, $id_sekolah = true)
 {
-  $CI = &get_instance();
-  if ($url != null) {
-    $uri  = 'https://sd.klasq.id/path/linker/' . base64url_encode($CI->session->userdata('lms_siswa_id_sekolah')) . '/' . $url;
+  $ci = &get_instance();
+  $uri = 'https://sd.klasq.id/linker/';
+  if ($path != null) {
+    $uri .= $path;
+  }
+  if ($id_sekolah == true) {
+    $uri .= '/' . base64url_encode($ci->session->userdata('lms_wali_id_sekolah'));
+  }
+  return $uri;
+}
+
+
+function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdapat record data. Hubungi admin jika terdapat kesalahan', $id = NULL, $status = 0)
+{
+  if ($id != NULL) {
+    $idfix = 'id="' . $id . '"';
   } else {
-    $uri = 'https://sd.klasq.id/path/linker/' . base64url_encode($CI->session->userdata('lms_siswa_id_sekolah')) . '/';
+    $idfix = NULL;
   }
 
-  return $uri;
+  if ($status > 0) {
+    $stts = 'd-none';
+  } else {
+    $stts = NULL;
+  }
+  $html  = '<div ' . $idfix . ' class="row mb-4 ' . $stts . '">';
+  $html .= '<div class="col-12 d-flex justify-content-center align-items-center flex-wrap"><div class="image-kosong">';
+  $html .= '  <img src="' . data_url('img_default/' . base64url_encode('vector') . '/' . base64url_encode($image), FALSE) . '" width="275" alt="">';
+  $html .= '</div><h5 class="fw-medium mb-2">' . $judul . '</h5>';
+  $html .= '<p class="fw-normal text-secondary text-center size-14">' . $text . '</p>';
+  $html .= '</div></div>';
+
+  return $html;
+}
+
+function month_from_number($nomor = NULL)
+{
+  switch ($nomor) {
+    case 1:
+      return "Januari";
+    case 2:
+      return "Februari";
+    case 3:
+      return "Maret";
+    case 4:
+      return "April";
+    case 5:
+      return "Mei";
+    case 6:
+      return "Juni";
+    case 7:
+      return "Juli";
+    case 8:
+      return "Agustus";
+    case 9:
+      return "September";
+    case 10:
+      return "Oktober";
+    case 11:
+      return "November";
+    case 12:
+      return "Desember";
+    default:
+      return array(1 => "Januari", 2 => "Februari", 3 => "Maret", 4 => "April", 5 => "Mei", 6 => "Juni", 7 => "Juli", 8 => "Agustus", 9 => "September", 10 => "Oktober", 11 => "November", 12 => "Desember");
+  }
+}
+
+function day_from_number($nomor = NULL)
+{
+  switch ($nomor) {
+    case 1:
+      return "Senin";
+    case 2:
+      return "Selasa";
+    case 3:
+      return "Rabu";
+    case 4:
+      return "Kamis";
+    case 5:
+      return "Jumat";
+    case 6:
+      return "Sabtu";
+    case 7:
+      return "Minggu";
+    default:
+      return array(1 => "Senin", 2 => "Selasa", 3 => "Rabu", 4 => "Kamis", 5 => "Jumat", 6 => "Sabtu", 7 => "Minggu");
+  }
+}
+
+
+function get_tipe_notif($num = NULL)
+{
+  switch ($num) {
+    case 1:
+      return "Presensi";
+    case 2:
+      return "Spp";
+    case 3:
+      return "Tugas";
+    case 4:
+      return "Kbm";
+    case 5:
+      return "Pengumuman";
+    case 6:
+      return "Berita";
+    case 7:
+      return "Jadwal Ujian";
+    case 8:
+      return "Pesan Balasan";
+    case 9:
+      return "Broadcast";
+    default:
+      return array(1 => "Presensi", 2 => "Spp", 3 => "Tugas", 4 => "Kbm", 5 => "Pengumuman", 6 => "Berita", 7 => "Jadwal Ujian", 8 => "Pesan Balasan", 9 => "Broadcast");
+  }
+}
+
+
+function convert_link($link)
+{
+  if (strpos('a' . $link, "|*|")) {
+    $link_fix_sub = str_replace('|*|', base_url(), $link);
+  } else {
+    $link_fix_sub = $link;
+  }
+
+  return $link_fix_sub;
 }

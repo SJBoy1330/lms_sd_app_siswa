@@ -13479,7 +13479,7 @@ linearGradient stop:last-child {
   width: 50px;
 }
 
-.avatar.avatar-55{
+.avatar.avatar-55 {
   line-height: 55px;
   height: 55px;
   width: 55px;
@@ -15918,21 +15918,21 @@ p.label-merah {
   color: #EC3528;
 }
 
-a.label-hijau{
+a.label-hijau {
   font-weight: 500;
   color: #03BD62;
 }
 
-p.label-hijau{
+p.label-hijau {
   color: #03BD62;
 }
 
-a.label-biru{
+a.label-biru {
   font-weight: 500;
   color: #199DFD;
 }
 
-p.label-biru{
+p.label-biru {
   color: #199DFD;
 }
 
@@ -15958,6 +15958,32 @@ p.label-biru{
 .input-group-text {
   background-color: transparent;
   border: transparent;
+}
+
+.zoom-filter {
+  transition: all 0.3s ease;
+}
+
+.zoom-filter.showing {
+  animation: animate 0.4s ease;
+}
+
+.zoom-filter.hiding {
+  display: none;
+}
+
+.notif-active {
+  background-color: #e3fffa !important;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .show-hide {
@@ -16032,7 +16058,7 @@ form input {
   }
 }
 
-.jam-presensi-2{
+.jam-presensi-2 {
   width: 55px;
   height: 26px;
   position: absolute;
@@ -16221,7 +16247,7 @@ p.second {
   background-color: #B8B8B8;
 }
 
-figure.detail-pengumuman{
+figure.detail-pengumuman {
   height: 200px;
 }
 
@@ -16256,7 +16282,7 @@ figure.detail-pengumuman{
   border-radius: 0px 0px 15px 15px;
 }
 
-figure.detail-berita{
+figure.detail-berita {
   height: 200px;
 }
 
@@ -16530,14 +16556,14 @@ a.btn-detail-tugas {
   background-color: #E5E5E5;
 }
 
-button.filter-tugas{
-  width: 100vw; 
+button.filter-tugas {
+  width: 100vw;
   height: 100%;
-  border-radius: 10px; 
+  border-radius: 10px;
   background-color: #E5E5E5;
 }
 
-a.btn-filter{
+a.btn-filter {
   background-color: #EC3528;
   border-radius: 8px;
   color: #FFFFFF;
@@ -16546,11 +16572,11 @@ a.btn-filter{
   padding-top: 10px;
 }
 
-.avatar.bg-document{
+.avatar.bg-document {
   background-color: #E5E5E5;
 }
 
-.btn.btn-md.bg-cancel{
+.btn.btn-md.bg-cancel {
   background-color: #E5E5E5;
 }
 
@@ -16701,31 +16727,31 @@ button.button-kirim-pesan {
   display: inline-block;
 }
 
-.btn-notifikasi-fill{
+.btn-notifikasi-fill {
   min-width: 140px;
   background-color: #EC3528;
   color: #FFFFFF;
 }
 
-.btn-notifikasi-fill:hover{
+.btn-notifikasi-fill:hover {
   min-width: 140px;
   background-color: #EC3528;
   color: #FFFFFF;
 }
 
-.btn-notifikasi-outline{
+.btn-notifikasi-outline {
   min-width: 140px;
   background-color: #FFFFFF;
   color: #EC3528;
   border: 1px solid #EC3528;
 }
 
-.btn-notifikasi-outline:hover{
+.btn-notifikasi-outline:hover {
   background-color: #EC3528;
   transition: 0.1s;
   color: #FFFFFF;
 }
 
-.span-notifikasi{
+.span-notifikasi {
   line-height: 24px;
 }

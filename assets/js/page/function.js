@@ -26,7 +26,7 @@ function submit_form(element, id_form, num = 0) {
 
             $('.fadedin').remove();
 
-            if (data.status == true) {
+            if (data.status == 200 || data.status == true) {
                 var icon = 'success';
             } else {
                 var icon = 'warning';
@@ -39,13 +39,22 @@ function submit_form(element, id_form, num = 0) {
                     buttonsStyling: !1,
                     confirmButtonText: "Ok",
                     customClass: {
-                        confirmButton: "btn btn-primary"
+                        confirmButton: css_button
                     }
                 }).then(function () {
                     if (data.redirect) {
                         location.href = data.redirect;
-                    } else {
+                    }
+                    if (data.reload == true) {
                         location.reload();
+                    }
+                    if (data.load != null) {
+                        console.log(data.load.parent);
+                        console.log(data.load.reload);
+                        $(data.load.parent).load(data.load.reload);
+                    }
+                    if (data.modal != null) {
+                        $(data.modal.id).moda(data.modal.action);
                     }
                 });
             } else {
@@ -58,8 +67,23 @@ function submit_form(element, id_form, num = 0) {
                 if (data.redirect) {
                     location.href = data.redirect;
                 }
+
+                if (data.load != null) {
+                    $(data.load.parent).load(data.load.reload);
+                }
+
+                if (data.reload == true) {
+                    location.reload();
+                }
             }
         }
     });
 
+}
+
+
+function search(element, id_tabel, property = 'tbody tr') {
+    $(id_tabel + ' ' + property).filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) > -1);
+    });
 }

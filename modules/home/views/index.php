@@ -3,14 +3,16 @@
     <!-- Ucapan Selamat Datang -->
     <div class="row my-4 text-start">
         <div class="col-9">
-            <p class="mb-0 ms-2 title-2">Halo, <?= explode(' ', $user[0]->nama)[0]; ?></p>
+            <p class="mb-0 ms-2 title-2">Halo, <?= explode(' ', $user->nama)[0]; ?></p>
             <p class="mb-0 ms-2 title-1-home">Selamat Datang</p>
         </div>
         <div class="col-3 d-flex justify-content-center align-items-center">
-            <?php if ($presensi_setting->presensi_checkin == true) : ?>
-                <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" data-bs-toggle="modal" data-bs-target="#presensiModal">
-                    <i class="fa-solid fa-user-check" style="font-size:1.2rem"></i>
-                </button>
+            <?php if ($presensi_setting != NULL) : ?>
+                <?php if ($presensi_setting->presensi_checkin == true) : ?>
+                    <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" data-bs-toggle="modal" data-bs-target="#presensiModal">
+                        <i class="fa-solid fa-user-check" style="font-size:1.2rem"></i>
+                    </button>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     </div>
@@ -101,24 +103,13 @@
         <div class="row">
             <?php foreach ($pengumuman as $row) : ?>
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="<?= base_url('home/detail_pengumuman/' . $row->id_pengumuman) ?>" class="card mb-3">
+                    <a href="<?= base_url('home/detail_pengumuman/' . $row->id_pengumuman . '?redirect=true') ?>" class="card mb-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-60 shadow-sm rounded-10 coverimg">
-                                        <?php
 
-                                        if ($row->gambar != '' || $row->gambar != NULL) {
-
-                                            $gambar = base64url_encode($row->gambar);
-                                        } else {
-
-                                            $gambar = base64url_encode('kosong');
-                                        }
-
-                                        ?>
-
-                                        <img src="<?= site_url('linker/img_konten/' . $gambar . '/' . base64url_encode($row->create_date)) ?>" loading="lazy" alt="">
+                                        <img src="<?= $row->gambar; ?>" loading="lazy" alt="">
                                     </div>
                                 </div>
                                 <div class=" col align-self-center ps-0">
@@ -147,20 +138,9 @@
                 <div class="swiper-container cardswiper cardswiper-berita">
                     <div class="swiper-wrapper">
                         <?php foreach ($berita as $row) : ?>
-                            <a href="<?= base_url('home/detail_berita/' . $row->id_konten) ?>" class="swiper-slide">
-                                <?php
+                            <a href="<?= base_url('home/detail_berita/' . $row->id_konten . '?redirect=true') ?>" class="swiper-slide">
 
-                                if ($row->gambar != '' || $row->gambar != NULL) {
-
-                                    $gambar = base64url_encode($row->gambar);
-                                } else {
-
-                                    $gambar = base64url_encode('kosong');
-                                }
-
-                                ?>
-
-                                <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= site_url('linker/img_konten/' . $gambar . '/' . base64url_encode($row->create_date)); ?>');">
+                                <div class="card theme-bg shadow-sm shadow-purple card-berita" style="background-image: url('<?= $row->gambar; ?>');">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-auto position-absolute badge-status">
@@ -173,7 +153,7 @@
                                     <div class="row px-3 py-3">
                                         <p class="mb-1 title-1-home-text text-dark">
                                             <?= nice_title($row->judul, 40) ?></p>
-                                        <p class="mb-0 title-4-home-text"><?= nice_title($row->keterangan, 100) ?></p>
+                                        <p class="mb-0 title-4-home-text"><?= nice_title($row->keterangan, 70) ?></p>
                                     </div>
                                 </div>
                             </a>
