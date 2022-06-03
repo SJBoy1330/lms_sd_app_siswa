@@ -254,3 +254,102 @@
         </div>
     </div>
 </div>
+
+ <!-- Modal Presensi Mapel -->
+ <div class="modal fade" id="presensiMapelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header py-4">
+                <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="map-container-google-1" class="z-depth-1-half map-container">
+                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                                style="border:0" allowfullscreen></iframe>
+                            </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 44px;">
+                                                <i class="fa-solid fa-building-user size-18 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Nama Kelas</p>
+                                        <p class="text-secondary size-13">XII IPA 1</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Nama Mata Pelajaran</p>
+                                        <p class="text-secondary size-13">Bahasa Indonesia</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 44px;">
+                                                <i class="fa-solid fa-chalkboard-user size-18 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Nama Guru</p>
+                                        <p class="text-secondary size-13">Drs. Sri Handayani S.Pd</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-clock size-24 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center ps-1">
+                                        <p class="mb-0 size-15 fw-medium">Jam Masuk & Jam Selesai</p>
+                                        <p class="text-danger size-13">07:00 - 11:00 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center border-0">
+                <a href="detail-kbm-SD.html" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
+            </div>
+        </div>
+    </div>
+</div>
