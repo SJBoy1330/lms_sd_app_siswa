@@ -236,7 +236,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-1">
+                                <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-15 fw-medium">Tanggal Ujian</p>
                                     <p class="text-secondary size-12">01 - 01 -2022</p>
                                 </div>
@@ -254,7 +254,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-1">
+                                <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-15 fw-medium">Nama Ujian</p>
                                     <p class="text-secondary size-12">Paket Ujian 01</p>
                                 </div>
@@ -272,7 +272,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-1">
+                                <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-15 fw-medium">Studi Pembelajaran</p>
                                     <p class="text-secondary size-12">Pelajaran 01</p>
                                 </div>
@@ -290,7 +290,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-1">
+                                <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-15 fw-medium">Waktu Ujian</p>
                                     <p class="text-danger size-15">20 Menit</p>
                                 </div>
@@ -308,7 +308,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-1">
+                                <div class="col align-self-center ps-0">
                                     <p class="mb-0 size-15 fw-medium">Nilai Ujian</p>
                                     <p class="text-success size-15">125</p>
                                 </div>
