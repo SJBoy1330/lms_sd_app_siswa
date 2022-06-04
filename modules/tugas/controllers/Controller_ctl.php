@@ -6,7 +6,6 @@ class Controller_ctl extends MY_Frontend
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
-		is_logged_in();
 	}
 
 
@@ -16,8 +15,20 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Tugas';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/tugas/tugas.css') .'">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/tugas/tugas.css') . '">';
 
+		// LOAD CONFIG PAGE
+		if ($_SERVER['HTTP_REFERER'] == NULL || $_SERVER['HTTP_REFERER'] == base_url('tugas')) {
+			$link = base_url('home');
+		} else {
+			$link = $_SERVER['HTTP_REFERER'];
+		}
+
+		// LOAD CONFIG HALAMAN
+		$this->data['button_back'] = $link;
+		$this->data['config_hidden']['notifikasi'] = true;
+		$this->data['config_hidden']['footer'] = true;
+		$this->data['judul_halaman'] = "Tugas Sekolah";
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

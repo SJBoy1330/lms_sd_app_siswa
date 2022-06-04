@@ -21,6 +21,19 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/chatting/chatting.js"></script>';
 
+		// LOAD CONFIG PAGE
+		if ($_SERVER['HTTP_REFERER'] == NULL || $_SERVER['HTTP_REFERER'] == base_url('qna')) {
+			$link = base_url('home');
+		} else {
+			$link = $_SERVER['HTTP_REFERER'];
+		}
+
+		// LOAD CONFIG PAGE 
+		$this->data['button_back'] = $link;
+		$this->data['config_hidden']['notifikasi'] = true;
+		$this->data['config_hidden']['footer'] = true;
+		$this->data['khusus']['qna'] = true;
+		$this->data['judul_halaman'] = 'Pesan';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

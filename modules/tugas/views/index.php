@@ -1,26 +1,7 @@
-<!-- Header -->
-<header class="header position-fixed">
-    <div class="row">
-        <div class="col-auto">
-            <a href="<?= base_url('home'); ?>" class="btn btn-44">
-                <i class="fa-solid fa-chevron-left text-dark"></i>
-            </a>
-        </div>
-        <div class="col text-center">
-            <div class="logo-small">
-                <h6>Tugas Sekolah</h6>
-            </div>
-        </div>
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44"></a>
-        </div>
-    </div>
-</header>
-<!-- Header ends -->
 <div class="main-container container">
     <div class="row">
         <div class="wrapper-searching-tugas">
-            <div class="wrapper-samaran"></div> 
+            <div class="wrapper-samaran"></div>
             <div class="row bg-white">
                 <div class="col-10">
                     <div class="input-group">
@@ -75,7 +56,7 @@
                         </div>
 
                         <div class="row mt-4 mx-1">
-                            <a href="<?= base_url('tugas/detail_tugas')?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
+                            <a href="<?= base_url('tugas/detail_tugas') ?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
                         </div>
 
                     </div>
@@ -121,7 +102,7 @@
                         </div>
 
                         <div class="row mt-4 mx-1">
-                            <a href="<?= base_url('tugas/detail_tugas')?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
+                            <a href="<?= base_url('tugas/detail_tugas') ?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
                         </div>
 
                     </div>
@@ -167,7 +148,7 @@
                         </div>
 
                         <div class="row mt-4 mx-1">
-                            <a href="<?= base_url('tugas/detail_tugas')?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
+                            <a href="<?= base_url('tugas/detail_tugas') ?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
                         </div>
 
                     </div>
@@ -182,8 +163,8 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="box-shadow: 100px 0px 100px 100px rgb(0 0 0 / 10%)">
             <div class="modal-header border-0">
-            <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">

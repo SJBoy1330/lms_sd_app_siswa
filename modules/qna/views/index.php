@@ -1,56 +1,20 @@
-<!-- Header -->
-<header class="header tugas-ujian position-fixed bg-white">
-    <div class="row">
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44">
-                <i class="fa-solid fa-chevron-left text-dark"></i>
-            </a>
-        </div>
-        <div class="col d-flex justify-content-center align-items-center text-center">
-            <h6 class="text-dark">Pesan</h6>
-        </div>
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44 rounded-circle"></a>
-        </div>
-    </div>
-
-    <div class="row my-3">
-        <div class="col-12 mx-auto">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
-                <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-        <div class="tablinknya-tugas-ujian">
-            <div class="col-12 align-self-center tab" style="display: flex; justify-content:center; align-items:center;">
-                <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'Personal')" style=" width: 100%; height: 100%; padding: 5px;">Pesan <span class="badge rounded-pill bg-danger ms-1">3</span></button>
-                <button class="tablinks" onclick="openCity(event, 'Grup')" style="width: 100%; height: 100%; padding: 5px;">Pesan Grup</button>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Header ends -->
-
 <!-- main page content -->
 <div class="main-container container top-20">
-    <div class="row" style="margin-top: 125px;">
+    <div class="row" style="margin-top: 40px;">
         <div class="col-12 col-md-10 col-lg-8 mx-auto">
             <div class="row mb-2">
                 <div class="col-12 col-md-12 col-lg-12">
                     <div class="card shadow-none bg-transparent">
                         <div class="card-body tabcontent" id="Personal">
-                            <a href="<?= base_url('qna/kontak_personal')?>" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
+                            <a href="<?= base_url('qna/kontak_personal') ?>" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
                                 <i class="fa-solid fa-message-lines size-26 text-white mt-1"></i>
                             </a>
-                            <a href="<?= base_url('qna/chatting')?>" class="card mb-3">
+                            <a href="<?= base_url('qna/chatting') ?>" class="card mb-3 target_search_1">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user2.jpg')?>" alt="">
+                                                <img src="<?= base_url('assets/img/user2.jpg') ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-0">
@@ -70,7 +34,7 @@
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user1.jpg')?>" alt="">
+                                                <img src="<?= base_url('assets/img/user1.jpg') ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-0">
@@ -130,7 +94,7 @@
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user3.jpg')?>" alt="">
+                                                <img src="<?= base_url('assets/img/user3.jpg') ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-0">
@@ -150,12 +114,12 @@
                             <a href="<?= base_url('qna/kontak_grup'); ?>" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
                                 <i class="fa-solid fa-messages size-26 text-white mt-1"></i>
                             </a>
-                            <a href="<?= base_url('qna/chatting_grup')?>" class="card mb-3">
+                            <a href="<?= base_url('qna/chatting_grup') ?>" class="card mb-3 target_search_2">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/company2.png')?>" alt="">
+                                                <img src="<?= base_url('assets/img/company2.png') ?>" alt="">
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-0">
