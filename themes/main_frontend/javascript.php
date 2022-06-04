@@ -85,9 +85,6 @@
                         </div>
 
                         <div class="col-auto text-center">
-                            <div class="notifikasi-chat">
-                                <p>2</p>
-                            </div>
                             <a href="<?= base_url('qna') ?>" onclick="unreload(this)" class="avatar avatar-60 p-1 shadow-sm shadow-success rounded-20 bg-success mb-2">
                                 <div class="circle-bg-top"></div>
                                 <div class="circle-bg-bottom"></div>
