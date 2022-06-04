@@ -78,7 +78,12 @@
                         <p class="fw-bolder size-15">Tugas Anda</p>
                     </div>
                     <div class="col-auto align-self-center">
-                        <a href="#" class="label-biru fw-bold size-13"><i class="fa-regular fa-plus"></i> Upload Tugas</a>
+                        <div class="file-input pe-1">
+                            <input type="file" name="file-input" id="file-input" class="file-input__input" />
+                            <label class="file-input__label" for="file-input">
+                                <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
