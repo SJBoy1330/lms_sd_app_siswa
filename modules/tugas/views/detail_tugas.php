@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="row py-1 px-2 mt-2 mb-2 ">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                            <div class="d-flex col-auto ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
                                         <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
@@ -38,25 +38,25 @@
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                 <p class="mb-0 fw-normal size-13 text-secondary">Mata Pelajaran</p>
-                                <p class="mb-0 fw-bold size-15">Bahasa Indonesia</p>
+                                <p class="mb-0 fw-normal size-14">Bahasa Indonesia</p>
                             </div>
                         </div>
                         <div class="row py-1 px-2 mb-3">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                            <div class="d-flex col-auto ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 44px;">
                                         <i class="fa-regular fa-hourglass-clock size-18 text-white"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                 <p class="mb-0 fw-normal size-13 text-secondary">Batas Waktu</p>
-                                <p class="mb-0 fw-bold size-15">11 Januari 2022</p>
+                                <p class="mb-0 fw-normal size-14">11 Januari 2022</p>
                             </div>
                         </div>
 
-                        <div class="row py-1 px-2">
-                            <div class="d-flex col-auto align-items-center ps-0 pe-2">
+                        <div class="row py-1 px-2 mb-2">
+                            <div class="d-flex col-auto ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
                                         <i class="fa-regular fa-memo-pad size-20 text-white"></i>
@@ -65,7 +65,24 @@
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                 <p class="mb-0 fw-normal size-13 text-secondary">Keterangan</p>
-                                <p class="mb-0 fw-bold size-15">Tugas Bahasa Indonesia</p>
+                                <!-- <p class="mb-0 fw-normal size-15 flex-column flex-wrap">1. Mengerjakan Halaman 1 & 2 & 3, 2. Mengerjakan Algoritma </p> -->
+                                <div class="d-flex flex-column flex-wrap">
+                                    <p class="mb-1 fw-normal size-14">1. Mengerjakan Paket Matematika Halaman 1 dan 2</p>
+                                    <p class="mb-1 fw-normal size-14">1. Mengerjakan Paket BIG Halaman 1 dan 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row py-1 px-2">
+                            <div class="d-flex col-auto ps-0 pe-2">
+                                <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 44px;">    
+                                        <i class="fa-solid fa-list-check size-20 text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                <p class="mb-1 fw-normal size-13 text-secondary">Tugas Anda</p>
+                                <button class="btn btn-success btn-xs text-white btn-download-tugas"><i class="fa-regular fa-download me-2"></i>Download Tugas</button>
                             </div>
                         </div>
                     </div>
