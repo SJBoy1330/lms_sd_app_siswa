@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="input-group searching" style="width: 92vw;">
-                                <input type="text" onkeyup="search(this, '#display_bantuan', '.showing')" id="cari_bantuan" class="form-control form-control-pribadi text-start pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                <input type="text" onkeyup="search(this, '#display_bantuan', '.showing','#vector_bantuan')" id="cari_bantuan" class="form-control form-control-pribadi text-start pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                                 <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                             </div>
                         </div>

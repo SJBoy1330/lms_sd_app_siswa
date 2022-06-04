@@ -9,7 +9,7 @@
         <div class="col-3 d-flex justify-content-center align-items-center">
             <?php if ($presensi_setting != NULL) : ?>
                 <?php if ($presensi_setting->presensi_checkin == true) : ?>
-                    <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint" id="button_get_lokasi" data-bs-toggle="modal" data-bs-target="#presensiModal">
+                    <button type="button" class="btn btn-sm btn-outline-danger btn-fingerprint button_get_lokasi" data-bs-toggle="modal" data-bs-target="#presensiModal">
                         <i class="fa-solid fa-user-check" style="font-size:1.2rem"></i>
                     </button>
                 <?php endif; ?>
@@ -19,65 +19,84 @@
     <?php if ($result_aktif || $result_old) :  ?>
         <div class="row" style="margin-bottom : 0.75rem;" id="jadwal-list">
             <?php foreach ($result_aktif as $row) : ?>
-                <div class="col-6 mb-3 jadwal">
-                    <div class="card card-jadwalmapel">
-                        <div class="card-body">
-                            <?php if ((date('H:i:s') >= $row->jam_mulai) && (date('H:i:s') <= $row->jam_selesai)) : ?>
-                                <div class="boba-besar"></div>
-                                <div class="boba-kecil-1"></div>
-                                <div class="boba-kecil-2"></div>
-                            <?php endif ?>
+                <?php $uniq = "presensi_" . date('Ymd') . $row->id_kelas . $row->id_staf . $row->id_pelajaran; ?>
+                <?php if ((date('H:i:s') >= $row->jam_mulai) && (date('H:i:s') <= $row->jam_selesai)) : ?>
+                    <?php if ($presensi_setting->presensi_mapel == true) : ?>
+                        <?php if (!isset($presensi->presensi_mapel->$uniq)) : ?>
+                            <a data-bs-toggle="modal" data-bs-target="#presensiMapelModal" class="col-6 mb-3 jadwal text-dark button_get_lokasi">
+                            <?php else : ?>
+                                <a href="<?= base_url('kbm/detail_kbm'); ?>" class="col-6 mb-3 jadwal text-dark">
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <a href="<?= base_url('kbm/detail_kbm'); ?>" class="col-6 mb-3 jadwal text-dark">
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <a class="col-6 mb-3 jadwal text-dark">
+                                <?php endif ?>
 
-                            <div class="row flex-column">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-circle">
+
+                                <div class="card card-jadwalmapel">
+                                    <div class="card-body">
                                         <?php if ((date('H:i:s') >= $row->jam_mulai) && (date('H:i:s') <= $row->jam_selesai)) : ?>
-                                            <div class="icons text-white rounded-circle bg-icon-jadwal">
-                                                <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
-                                            </div>
-                                        <?php else : ?>
-                                            <div class="icons text-white rounded-circle bg-icon-jadwal-pending">
-                                                <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
+                                            <div class="boba-besar"></div>
+                                            <div class="boba-kecil-1"></div>
+                                            <div class="boba-kecil-2"></div>
+                                        <?php endif ?>
+                                        <?php if ($presensi->presensi_mapel != NULL && isset($presensi->presensi_mapel->$uniq)) : ?>
+                                            <div class="jam-presensi">
+                                                <p class="mb-0 text-white size-13"><?= $presensi->presensi_mapel->$uniq; ?></p>
                                             </div>
                                         <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-3 mt-2">
-                                    <p class="mb-1 title-1-home-text"><?= $row->nama_pelajaran ?></p>
-                                    <p class="mb-0 title-4-home-text"><?= $row->pengajar ?></p>
-                                </div>
-                                <div class="col text-end mt-3">
-                                    <p class="mb-0 fw-medium size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-            <?php foreach ($result_old as $row) : ?>
-                <div class="col-6 mb-3 jadwal">
-                    <div class="card bg-opac-50 card-jadwalmapel">
-                        <div class="card-body">
-                            <div class="row flex-column">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-circle">
-                                        <div class="icons text-white rounded-circle bg-icon-jadwal opacity-5">
-                                            <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
+                                        <div class="row flex-column">
+                                            <div class="col-auto">
+                                                <div class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-circle">
+                                                    <?php if ((date('H:i:s') >= $row->jam_mulai) && (date('H:i:s') <= $row->jam_selesai)) : ?>
+                                                        <div class="icons text-white rounded-circle bg-icon-jadwal">
+                                                            <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
+                                                        </div>
+                                                    <?php else : ?>
+                                                        <div class="icons text-white rounded-circle bg-icon-jadwal-pending">
+                                                            <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <div class="col align-self-center ps-3 mt-2">
+                                                <p class="mb-1 title-1-home-text"><?= $row->nama_pelajaran ?></p>
+                                                <p class="mb-0 title-4-home-text"><?= $row->pengajar ?></p>
+                                            </div>
+                                            <div class="col text-end mt-3">
+                                                <p class="mb-0 fw-medium size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col align-self-center ps-3 mt-2">
-                                    <p class="mb-1 title-1-home-text opacity-5"><?= $row->nama_pelajaran ?></p>
-                                    <p class="mb-0 title-4-home-text opacity-5"><?= $row->pengajar ?></p>
+                                </a>
+                            <?php endforeach; ?>
+                            <?php foreach ($result_old as $row) : ?>
+                                <div class="col-6 mb-3 jadwal">
+                                    <div class="card bg-opac-50 card-jadwalmapel">
+                                        <div class="card-body">
+                                            <div class="row flex-column">
+                                                <div class="col-auto">
+                                                    <div class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-circle">
+                                                        <div class="icons text-white rounded-circle bg-icon-jadwal opacity-5">
+                                                            <img src="<?= base_url(); ?>assets/icons/clipboard.png" width="24" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col align-self-center ps-3 mt-2">
+                                                    <p class="mb-1 title-1-home-text opacity-5"><?= $row->nama_pelajaran ?></p>
+                                                    <p class="mb-0 title-4-home-text opacity-5"><?= $row->pengajar ?></p>
+                                                </div>
+                                                <div class="col text-end mt-3">
+                                                    <p class="mb-0 fw-medium size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col text-end mt-3">
-                                    <p class="mb-0 fw-medium size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+                            <?php endforeach; ?>
 
         </div>
         <nav aria-label=...>
@@ -230,8 +249,8 @@
                                 <?php endif; ?>
                             </div>
                             <!-- BUTTON PRESENSI -->
-                            <input type="hidden" id="lat" name="lat" value="<?= $lat; ?>">
-                            <input type="hidden" id="long" name="long" value="<?= $long; ?>">
+                            <input type="hidden" class="lat" name="lat" value="<?= $lat; ?>">
+                            <input type="hidden" class="long" name="long" value="<?= $long; ?>">
 
                             <input type="hidden" id="jam_masuk" name="jam_masuk" value="<?= $presensi_setting->jam_masuk; ?>">
                             <input type="hidden" id="jam_pulang" name="jam_pulang" value="<?= $presensi_setting->jam_pulang; ?>">
@@ -294,7 +313,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="map-container-google-1" class="z-depth-1-half map-container">
-                            <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <iframe id="map_mapel" src="<?= $map; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -374,8 +393,11 @@
                     </div>
                 </div>
             </div>
+            <!-- BUTTON PRESENSI -->
+            <input type="hidden" class="lat" name="lat" value="<?= $lat; ?>">
+            <input type="hidden" class="long" name="long" value="<?= $long; ?>">
             <div class="modal-footer d-flex justify-content-center border-0">
-                <a href="detail-kbm-SD.html" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</a>
+                <button type="button" id="button_presensi_mapel" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</button>
             </div>
         </div>
     </div>

@@ -85,8 +85,16 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
 }
 
 
-function search(element, id_tabel, property = 'tbody tr') {
+function search(element, id_tabel, property = 'tbody tr', backup = null) {
     $(id_tabel + ' ' + property).filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) > -1);
+        if (backup != null) {
+            var vector = document.querySelector(backup);
+            if ($(this).text().toLowerCase().indexOf(element.value.toLowerCase()) <= -1) {
+                vector.classList.remove('d-none');
+            } else {
+                vector.classList.add('d-none');
+            }
+        }
     });
 }

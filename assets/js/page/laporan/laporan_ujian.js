@@ -1,4 +1,5 @@
 function filter_ujian() {
+    var vector_riwayat = document.querySelector('#vector_riwayat');
     var id_pelajaran = $('#pelajaran').val();
     var status = $('#status').val();
     const prop_display = document.querySelectorAll("#display_ujian .zoom-filter");
@@ -15,4 +16,11 @@ function filter_ujian() {
             div.classList.remove("showing"); //remove show class from the image
         }
     });
+
+    var count = $('.showing').length;
+    if (count <= 0) {
+        vector_riwayat.classList.remove('d-none');
+    } else {
+        vector_riwayat.classList.add('d-none');
+    }
 }

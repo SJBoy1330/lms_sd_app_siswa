@@ -22,13 +22,26 @@ class Controller_ctl extends MY_Frontend
 		$this->data['judul_halaman'] = 'Materi Pelajaran';
 		$this->data['config_hidden']['notifikasi'] = true;
 		$this->data['config_hidden']['footer'] = true;
+
+		// LOAD API 
+		$result = curl_get('materi/pelajaran', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa]);
+		$mydata['result'] = $result->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
-	public function detail_bab()
+	public function detail_bab($id_pelajaran = NULL)
 	{
+		if ($id_pelajaran == NULL) {
+			redirect('materi');
+		}
+
+		// LOAD CONFIG PAGE
+		$this->data['button_back'] = base_url('materi');
+		$this->data['judul_halaman'] = 'Detail Bab';
+		$this->data['config_hidden']['notifikasi'] = true;
+		$this->data['config_hidden']['footer'] = true;
 		// LOAD TITLE
 		$mydata['title'] = 'Detail Bab';
 		// LOAD VIEW

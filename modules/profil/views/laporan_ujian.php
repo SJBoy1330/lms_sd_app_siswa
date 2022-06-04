@@ -1,15 +1,16 @@
 <!-- Header ends -->
 <!-- main page content -->
 <div class="main-container container">
-    <div class="row bg-white mb-3" style="width: 100vw;">
-        <div class="col-12">
-            <div class="input-group">
-                <input type="text" onkeyup="search(this, '#display_ujian', 'a.showing')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
-                <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
+
+    <?php if ($result->ujian) : ?>
+        <div class="row bg-white mb-3" style="width: 100vw;">
+            <div class="col-12">
+                <div class="input-group">
+                    <input type="text" onkeyup="search(this, '#display_ujian', 'a.showing','#vector_riwayat')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                    <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
+                </div>
             </div>
         </div>
-    </div>
-    <?php if ($result->ujian) : ?>
         <div class="row" id="display_ujian">
 
             <?php foreach ($result->ujian as $row) : ?>

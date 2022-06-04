@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
 
 
-    $('#button_get_lokasi').on('click', function () {
+    $('.button_get_lokasi').on('click', function () {
         x = navigator.geolocation;
 
         x.getCurrentPosition(success, failure);
@@ -26,8 +26,9 @@ $(document).ready(function () {
         var myLat = position.coords.latitude;
         var myLong = position.coords.longitude;
         $('#map_iframe').attr("src", "https://maps.google.com/maps?q=" + myLat + "," + myLong + "&hl=en;z=14&output=embed");
-        $("#lat").val(myLat);
-        $("#long").val(myLong);
+        $('#map_mapel').attr("src", "https://maps.google.com/maps?q=" + myLat + "," + myLong + "&hl=en;z=14&output=embed")
+        $(".lat").val(myLat);
+        $(".long").val(myLong);
     }
     function failure(position) {
         alert('error : ' + position.message);
