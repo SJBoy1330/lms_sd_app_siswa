@@ -20,11 +20,11 @@
                                                                                         } ?>" data-pelajaran="<?= $row->id_pelajaran; ?>" href="#detailUjian" role="button" class="col-6 mb-3 jadwal zoom-filter showing">
                     <div class="card card-jadwalmapel">
                         <div class="card-body">
-                            <div class="row flex-column">
+                            <div class="row flex-column pt-2 ps-1">
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                         <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                            <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
+                                            <i class="fa-solid fa-book-bookmark size-20 text-white"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-calendar-week size-22 text-white"></i>
+                                                <i class="fa-solid fa-calendar-week size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
+                                                <i class="fa-solid fa-book-bookmark size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-brands fa-stack-overflow size-26 text-white"></i>
+                                                <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 42px;">
-                                                <i class="fa-solid fa-clock size-24 text-white"></i>
+                                                <i class="fa-solid fa-clock size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-bullseye-pointer size-24 text-white"></i>
+                                                <i class="fa-solid fa-bullseye-pointer size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>

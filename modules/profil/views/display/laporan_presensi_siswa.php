@@ -4,11 +4,11 @@
         <h6 class="fw-medium pt-1 ps-3 mb-2">Presensi Harian</h6>
         <div class="row">
             <div class="<?php if ($result->presensi_siswa->checkout == 'Y') {
-                            echo 'col-6';
+                            echo 'col-6 ps-4 pe-1';
                         } else {
-                            echo 'col-12';
+                            echo 'col-12 px-4';
                         } ?>">
-                <div class="card card-laporan-presensi">
+                <div class="card mb-3 card-laporan-presensi">
                     <div class="card-body d-flex justify-content-center align-items-center">
                         <div class="row flex-column">
                             <div class="col align-self-center">
@@ -20,8 +20,8 @@
                 </div>
             </div>
             <?php if ($result->presensi_siswa->checkout == 'Y') : ?>
-                <div class="col-6">
-                    <div class="card card-laporan-presensi">
+                <div class="col-6 ps-1 pe-4">
+                    <div class="card mb-3 card-laporan-presensi">
                         <div class="card-body d-flex justify-content-center align-items-center">
                             <div class="row flex-column">
                                 <div class="col align-self-center">

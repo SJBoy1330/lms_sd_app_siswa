@@ -16086,12 +16086,12 @@ p.second {
   -webkit-animation-delay: 1.2s;
   animation-delay: 1.2s;
 }
+ */
 
-@-webkit-keyframes up-down {
+ @-webkit-keyframes up-down {
   0% {
     transform: translateY(10px);
   }
-
   100% {
     transform: translateY(-10px);
   }
@@ -16101,11 +16101,10 @@ p.second {
   0% {
     transform: translateY(10px);
   }
-
   100% {
     transform: translateY(-10px);
   }
-} */
+}
 
 .boba-besar {
   width: 70px;
@@ -16473,8 +16472,8 @@ figure.detail-berita {
 
 /* Detail KBM */
 .card .card-body.detail-kbm {
-  min-height: 130px;
-  max-height: 130px;
+  min-height: 125px;
+  max-height: 125px;
 }
 
 .avatar-detail-kbm {

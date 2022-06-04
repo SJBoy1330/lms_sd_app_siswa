@@ -91,7 +91,7 @@
                             <div class="row d-flex">
                                 <div class="col-auto">
                                     <div class="avatar avatar-46 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 37px;">
+                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 39px;">
                                             <i class="fa-solid fa-book-open-cover size-16 text-white"></i>
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@
                             <div class="row mt-3 d-flex">
                                 <div class="col-auto">
                                     <div class="avatar avatar-46 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 37px;">
+                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 39px;">
                                             <i class="fa-solid fa-book-open-cover size-16 text-white"></i>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@
                             <div class="row mt-3 d-flex">
                                 <div class="col-auto">
                                     <div class="avatar avatar-46 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 37px;">
+                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 39px;">
                                             <i class="fa-solid fa-book-open-cover size-16 text-white"></i>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@
                             <div class="row mt-3 d-flex">
                                 <div class="col-auto">
                                     <div class="avatar avatar-46 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 37px;">
+                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 39px;">
                                             <i class="fa-solid fa-book-open-cover size-16 text-white"></i>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@
                             <div class="row mt-3 d-flex">
                                 <div class="col-auto">
                                     <div class="avatar avatar-46 shadow-sm rounded-circle avatar-presensi-outline">
-                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 37px;">
+                                        <div class="avatar avatar-36 rounded-circle avatar-presensi-inline" style="line-height: 39px;">
                                             <i class="fa-solid fa-book-open-cover size-16 text-white"></i>
                                         </div>
                                     </div>

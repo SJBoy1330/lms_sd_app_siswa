@@ -33,9 +33,9 @@
             <div class="card shadow-none bg-transparent">
                 <div class="card-body tabcontent-wali" id="Tugas" style="padding: 6px 0px;">
                     <div class="row">
-                        <div class="col-6 mb-3 jadwal">
+                        <div class="col-6 mb-3 jadwal pe-1">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -52,14 +52,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-3 jadwal">
+                        <div class="col-6 mb-3 jadwal ps-1">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
+                                                    <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,14 +71,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-3 jadwal">
+                        <div class="col-6 mb-3 jadwal pe-1">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
+                                                    <i class="fa-solid fa-timer size-20 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,19 +90,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 mb-3 jadwal">
+                        <div class="col-6 mb-3 jadwal ps-1">
                             <div class="card">
-                                <div class="card-body">
+                                <div class="card-body pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-book-bookmark size-22 text-white"></i>
+                                                    <i class="fa-solid fa-clipboard-question size-22 text-white"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-3 mt-2">
-                                            <p class="mb-1 fw-medium text-dark size-14">Jumlah Soal Ujian</p>
+                                            <p class="mb-1 fw-medium text-dark size-14">Jumlah Soal</p>
                                             <p class="mb-0 text-secondary size-13">50 Soal Ujian</p>
                                         </div>
                                     </div>

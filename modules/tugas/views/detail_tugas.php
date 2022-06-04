@@ -45,7 +45,7 @@
                             <div class="d-flex col-auto align-items-center ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-regular fa-hourglass-clock size-20 text-white"></i>
+                                        <i class="fa-regular fa-hourglass-clock size-18 text-white"></i>
                                     </div>
                                 </div>
                             </div>
