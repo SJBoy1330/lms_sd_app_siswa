@@ -26,7 +26,7 @@
         </div>
     <?php endif; ?>
     <div class="row" id="parent_notif">
-        <div class=" col-12 px-0" id="reload_content_notif">
+        <div class="col-12 px-0" id="reload_content_notif">
             <?php if ($result) : ?>
                 <!-- <div class="d-none ms-3 mb-2 align-self-center" id="pilih_semua" style="display : flex; justify-content: flex-start; align-items : flex-start">
                     <input class="form-check-input" type="checkbox"  id="notif_parent_checkbox" style="width : 18px; height: 18px; border-radius: 5px;">
