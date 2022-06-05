@@ -2,7 +2,7 @@
     <h6 class="pt-3 ps-3 my-2" style="color: #EC3528;"><?= $tanggal; ?></h6>
     <?php if ($result) : ?>
         <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Harian</h6>
-        <div class="row">
+        <!-- <div class="row">
             <div class="<?php if ($result->presensi_siswa->checkout == 'Y') {
                             echo 'col-6 ps-4 pe-1';
                         } else {
@@ -33,9 +33,8 @@
                     </div>
                 </div>
             <?php endif; ?>
-        </div>
+        </div> -->
 
-        <!-- Design Absensi yang baru -->
         <div class="row">
             <div class="col-12 px-4">
                 <div class="card mb-3">
@@ -45,21 +44,25 @@
                                 <img src="<?= base_url('assets/images/vector_absensi.svg')?>" width="135">
                             </div>
                             <div class="col-7 mt-3 align-self-center">
-                                <div class="jam-masuk d-flex justify-content-center align-items-center">
-                                    <i class="fa-regular fa-door-open" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
-                                    <p class="text-secondary fw-normal size-15">Jam Masuk 
-                                        <br>
-                                        <span class="fw-medium size-1%" style="color: #EC3528;">07:00</span>
-                                    </p>
-                                </div>
-                                <div class="solid-line my-3"></div>
-                                <div class="jam-pulang d-flex justify-content-center align-items-center">
-                                    <i class="fa-regular fa-door-closed" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
-                                    <p class="text-secondary fw-normal size-15">Jam Pulang 
-                                        <br>
-                                        <span class="fw-medium size-15" style="color: #EC3528;">--:--</span>
-                                    </p>
-                                </div>
+                                <?php if ($result->presensi_siswa->checkout == 'Y') :?>
+                                    <div class="jam-masuk d-flex justify-content-center align-items-center">
+                                        <i class="fa-regular fa-door-open" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
+                                        <p class="text-secondary fw-normal size-15">Jam Masuk 
+                                            <br>
+                                            <span class="fw-medium size-1%" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->masuk, ' --:-- '); ?></span>
+                                        </p>
+                                    </div>
+
+                                    <div class="solid-line my-3"></div>
+
+                                    <div class="jam-pulang d-flex justify-content-center align-items-center">
+                                        <i class="fa-regular fa-door-closed" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
+                                        <p class="text-secondary fw-normal size-15">Jam Pulang 
+                                            <br>
+                                            <span class="fw-medium size-15" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->pulang, ' --:-- '); ?></span>
+                                        </p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -69,8 +72,8 @@
 
         <?php if ($result->mapel) : ?>
             <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
-            <?php foreach ($result->mapel as $row) : ?>
-                <a class="card mb-3 mx-2">
+            <?php// foreach ($result->mapel as $row) : ?>
+                <!-- <a class="card mb-3 mx-2">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -97,9 +100,9 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </a> -->
 
-                <!-- Design jika sudah absensi yang baru -->
+            <?php foreach ($result->mapel as $row) : ?>
                 <a class="card mb-3 mx-2">
                     <div class="card-body">
                         <div class="row">
@@ -111,11 +114,22 @@
                                 </div>
                             </div>
                             <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-15 fw-medium">Pelajaran Sekolah Dasar</p>
+                                <p class="mb-0 size-15 fw-medium"><?= $row->nama_pelajaran ?></p>
+                                <?php
+                                if ($row->status == 1) {
+                                    $warna = 'text-success';
+                                } elseif ($row->status == 2) {
+                                    $warna = 'text-info';
+                                } elseif ($row->status == 3) {
+                                    $warna = 'text-warning';
+                                } else {
+                                    $warna = 'text-danger';
+                                }
+                                ?>
                                 <div class="jam-laporan-presensi">
                                     <p class="mb-0 text-white size-13">07:00</p>
                                 </div>
-                                <p class="mb-0 size-13 fw-normal text-success">Telah melakukan presensi</p>
+                                <p class="mb-0 size-13 fw-normal <?= $warna; ?>"><?= $row->status_presensi; ?></p>
                             </div>
                         </div>
                     </div>
