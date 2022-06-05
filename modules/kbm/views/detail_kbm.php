@@ -108,13 +108,13 @@
                     <p class="mb-1 fw-medium size-15">Meeting Online Bersama</p>
                 </div>
                 <div class="col-8 pe-0">
-                    <div class="card mb-3">
+                    <a href="#" class="card mb-3">
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row">   
                                 <div class="col-auto">
                                     <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
                                         <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
-                                            <i class="fa-solid fa-circle-video size-20 text-white"></i>
+                                            <i class="fa-solid fa-circle-video size-22 text-white"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -127,14 +127,46 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-4">
-                    <div class="card mb-3">
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <div class="card card-chatting mb-3">
                         <div class="card-body">
                             <div class="row d-flex justify-content-center align-items-center">
                                 <div class="col-auto">
-                                    <a href="#" class="avatar avatar-50 rounded-18 avatar-presensi-inline">
+                                    <a href="#" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
+                                        <i class="fa-regular fa-messages size-22 text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8 pe-0">
+                    <a href="#" class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">   
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline-disabled">
+                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline-disabled">
+                                            <i class="fa-solid fa-circle-video size-22 text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto align-self-center ps-0">
+                                    <p class="mb-0 size-13 fw-medium color-8F8F8F">Google Meet</p>
+                                    <p class="mb-0 size-12 fw-normal text-danger">Tidak ada meet online</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <div class="card card-chatting mb-3">
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-auto">
+                                    <a href="#" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
                                         <i class="fa-regular fa-messages size-22 text-white"></i>
                                     </a>
                                 </div>
