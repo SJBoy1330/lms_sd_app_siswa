@@ -8,7 +8,7 @@
                 <?php if ($result) : ?>
                     <div class="row mb-3 px-1">
                         <div class="col align-self-center">
-                            <h5 class="title">Jadwal Pelajaran</h5>
+                            <h6 class="title">Jadwal Pelajaran</h6>
                         </div>
                         <div class="col-auto align-self-center">
                             <select onchange="get_jadwal(this)" class="form-select form-select-pribadi" aria-label="Default select example">
@@ -35,52 +35,52 @@
                                                     <div class="card-body">
                                                         <div class="row mb-3">
                                                             <div class="col-auto">
-                                                                <div class="avatar avatar-50 shadow-sm rounded-12 avatar-presensi-outline">
-                                                                    <div class="avatar avatar-40 rounded-10 avatar-presensi-inline">
+                                                                <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                                                    <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
                                                                         <i class="fa-brands fa-stack-overflow size-24 text-white"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col align-self-center ps-0">
                                                                 <?php if ($jadwal->kbm == 'Y' && $jadwal->jadwal == true) : ?>
-                                                                    <p class="mb-0 size-12 fw-normal text-secondary">Mata Pelajaran</p>
-                                                                    <p class="mb-0 size-13 fw-medium"><?= ifnull($jadwal->nama_pelajaran, ' - '); ?></p>
+                                                                    <p class="mb-0 size-13 fw-normal text-secondary">Mata Pelajaran</p>
+                                                                    <p class="mb-0 size-14 fw-normal"><?= ifnull($jadwal->nama_pelajaran, ' - '); ?></p>
                                                                 <?php else : ?>
-                                                                    <p class="mb-0 size-12 fw-normal text-secondary">Kegiatan</p>
-                                                                    <p class="mb-0 size-13 fw-medium"><?= ifnull($jadwal->kegiatan_lain, ' - '); ?></p>
+                                                                    <p class="mb-0 size-13 fw-normal text-secondary">Kegiatan</p>
+                                                                    <p class="mb-0 size-14 fw-normal"><?= ifnull($jadwal->kegiatan_lain, ' - '); ?></p>
                                                                 <?php endif; ?>
                                                             </div>
                                                         </div>
 
                                                         <div class="row mb-3">
                                                             <div class="col-auto">
-                                                                <div class="avatar avatar-50 shadow-sm rounded-12 avatar-presensi-outline">
-                                                                    <div class="avatar avatar-40 rounded-10 avatar-presensi-inline">
+                                                                <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                                                    <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
                                                                         <i class="fa-solid fa-clock size-24 text-white"></i>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-auto align-self-center ps-0">
                                                                 <?php if ($jadwal->kbm == 'Y' && $jadwal->jadwal == true) : ?>
-                                                                    <p class="mb-0 size-12 fw-normal text-secondary">Jam Pelajaran</p>
+                                                                    <p class="mb-0 size-13 fw-normal text-secondary">Jam Pelajaran</p>
                                                                 <?php else : ?>
-                                                                    <p class="mb-0 size-12 fw-normal text-secondary">Waktu</p>
+                                                                    <p class="mb-0 size-13 fw-normal text-secondary">Waktu</p>
                                                                 <?php endif; ?>
-                                                                <p class="mb-0 size-13 fw-medium"><?= ifnull($jadwal->jam_mulai); ?> - <?= ifnull($jadwal->jam_selesai, ' - '); ?></p>
+                                                                <p class="mb-0 size-14 fw-normal"><?= ifnull($jadwal->jam_mulai); ?> - <?= ifnull($jadwal->jam_selesai, ' - '); ?></p>
                                                             </div>
                                                         </div>
                                                         <?php if ($jadwal->kbm == 'Y' && $jadwal->jadwal == true) : ?>
                                                             <div class="row">
                                                                 <div class="col-auto">
-                                                                    <div class="avatar avatar-50 shadow-sm rounded-12 avatar-presensi-outline">
-                                                                        <div class="avatar avatar-40 rounded-10 avatar-presensi-inline">
+                                                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
                                                                             <i class="fa-solid fa-chalkboard-user size-20 text-white"></i>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col align-self-center ps-0">
-                                                                    <p class="mb-0 size-12 fw-normal text-secondary">Nama Guru</p>
-                                                                    <p class="mb-0 size-13 fw-medium"><?= ifnull($jadwal->nama_staf, ' - '); ?></p>
+                                                                    <p class="mb-0 size-13 fw-normal text-secondary">Nama Guru</p>
+                                                                    <p class="mb-0 size-14 fw-normal"><?= ifnull($jadwal->nama_staf, ' - '); ?></p>
                                                                 </div>
                                                             </div>
                                                         <?php endif; ?>

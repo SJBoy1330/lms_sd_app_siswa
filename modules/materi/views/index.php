@@ -15,8 +15,8 @@
                                     </div>
                                 </div>
                                 <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-15 fw-medium"><?= $row->nama_pelajaran; ?></p>
-                                    <p class="mb-0 size-13 fw-normal text-secondary"><?= $row->nama_staf; ?></p>
+                                    <p class="mb-0 size-14 fw-normal"><?= $row->nama_pelajaran; ?></p>
+                                    <p class="mb-0 size-13 fw-normal text-muted text-secondary"><?= $row->nama_staf; ?></p>
                                 </div>
                                 <div class="col-auto align-self-center text-end ms-3">
                                     <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>

@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <a href="#modalPDF" data-bs-toggle="modal" role="button" class="card shadow-sm mb-3">
+                <div class="card shadow-sm mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -112,18 +112,18 @@
                                     <i class="fa-solid fa-file-pdf size-30 text-danger"></i>
                                 </div>
                             </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-normal">tugas_ba.pdf</p>
+                            <a href="#modalPDF" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
+                                <p class="mb-0 size-14 text-dark fw-normal">tugas_ba.pdf</p>
                                 <p class="mb-0 size-12 fw-normal text-secondary">PDF document</p>
-                            </div>
+                            </a>
                             <div class="col-auto align-self-center text-end ms-3">
                                 <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="#modalWord" data-bs-toggle="modal" role="button" class="card shadow-sm mb-3">
+                <div class="card shadow-sm mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -131,56 +131,18 @@
                                     <i class="fa-solid fa-file-word size-30 text-primary"></i>
                                 </div>
                             </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-normal">tugas_il.docx</p>
+                            <a href="#modalWord" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
+                                <p class="mb-0 size-14 text-dark fw-normal">tugas_il.docx</p>
                                 <p class="mb-0 size-12 fw-normal text-secondary">Word document</p>
-                            </div>
+                            </a>
                             <div class="col-auto align-self-center text-end ms-3">
                                 <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <a href="#" data-bs-toggle="modal" role="button" class="card shadow-sm mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="avatar avatar-50 rounded-10 bg-document">
-                                    <i class="fa-solid fa-file-excel size-30 text-success"></i>
-                                </div>
-                            </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-normal">tugas_ner.docx</p>
-                                <p class="mb-0 size-12 fw-normal text-secondary">Excel document</p>
-                            </div>
-                            <div class="col-auto align-self-center text-end ms-3">
-                                <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" data-bs-toggle="modal" role="button" class="card shadow-sm mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="avatar avatar-50 rounded-10 bg-document">
-                                    <i class="fa-solid fa-file-video size-30" style="color: #5153FF;"></i>
-                                </div>
-                            </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-normal">tugas_ha.mp4</p>
-                                <p class="mb-0 size-12 fw-normal text-secondary">Video document</p>
-                            </div>
-                            <div class="col-auto align-self-center text-end ms-3">
-                                <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#modalGambar" data-bs-toggle="modal" role="button" class="card shadow-sm mb-3">
+                <div class="card shadow-sm mb-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-auto">
@@ -188,16 +150,16 @@
                                     <i class="fa-solid fa-file-image size-30 text-warning"></i>
                                 </div>
                             </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-14 fw-normal">tugas_me.png</p>
+                            <a href="#modalGambar" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
+                                <p class="mb-0 size-14 text-dark fw-normal">tugas_me.png</p>
                                 <p class="mb-0 size-12 fw-normal text-secondary">Gambar document</p>
-                            </div>
+                            </a>
                             <div class="col-auto align-self-center text-end ms-3">
                                 <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
 
                 <div class="row mt-4 mx-1">
                     <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Batalkan Pengiriman</a>

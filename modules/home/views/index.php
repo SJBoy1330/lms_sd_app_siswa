@@ -62,11 +62,11 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center ps-3 mt-2">
-                                                <p class="mb-1 title-1-home-text"><?= $row->nama_pelajaran ?></p>
-                                                <p class="mb-0 title-4-home-text"><?= $row->pengajar ?></p>
+                                                <p class="fw-normal mb-0 size-17"><?= $row->nama_pelajaran ?></p>
+                                                <p class="fw-normal mb-0 text-secondary size-13"><?= $row->pengajar ?></p>
                                             </div>
                                             <div class="col text-end mt-3">
-                                                <p class="mb-0 fw-medium size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
+                                                <p class="mb-0 fw-normal size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -86,11 +86,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="col align-self-center ps-3 mt-2">
-                                                    <p class="mb-1 title-1-home-text opacity-5"><?= $row->nama_pelajaran ?></p>
-                                                    <p class="mb-0 title-4-home-text opacity-5"><?= $row->pengajar ?></p>
+                                                    <p class="fw-normal mb-0 size-17 opacity-5"><?= $row->nama_pelajaran ?></p>
+                                                    <p class="fw-normal mb-0 text-secondary size-13 opacity-5"><?= $row->pengajar ?></p>
                                                 </div>
                                                 <div class="col text-end mt-3">
-                                                    <p class="mb-0 fw-medium size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
+                                                    <p class="mb-0 fw-normal size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="wrapper-text shadow-sm">
                                     <div class="row px-3 py-3">
-                                        <p class="mb-1 title-1-home-text text-dark">
+                                        <p class="mb-1 fw-medium size-15 text-dark">
                                             <?= nice_title($row->judul, 40) ?></p>
                                         <p class="mb-0 title-4-home-text"><?= nice_title($row->keterangan, 70) ?></p>
                                     </div>

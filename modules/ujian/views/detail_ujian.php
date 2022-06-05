@@ -45,7 +45,7 @@
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-3 mt-2">
-                                            <p class="mb-1 fw-medium text-dark size-14">Nama Paket Ujian</p>
+                                            <p class="mb-0 fw-medium text-dark size-14">Nama Paket Ujian</p>
                                             <p class="mb-0 text-secondary size-13">Paket Ujian 01</p>
                                         </div>
                                     </div>
@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-3 mt-2">
-                                            <p class="mb-1 fw-medium text-dark size-14">Nama Pelajaran</p>
+                                            <p class="mb-0 fw-medium text-dark size-14">Nama Pelajaran</p>
                                             <p class="mb-0 text-secondary size-13">Bahasa Indonesia</p>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-3 mt-2">
-                                            <p class="mb-1 fw-medium text-dark size-14">Waktu Ujian</p>
+                                            <p class="mb-0 fw-medium text-dark size-14">Waktu Ujian</p>
                                             <p class="mb-0 text-secondary size-13">60 Menit</p>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                                             </div>
                                         </div>
                                         <div class="col align-self-center ps-3 mt-2">
-                                            <p class="mb-1 fw-medium text-dark size-14">Jumlah Soal</p>
+                                            <p class="mb-0 fw-medium text-dark size-14">Jumlah Soal</p>
                                             <p class="mb-0 text-secondary size-13">50 Soal Ujian</p>
                                         </div>
                                     </div>
