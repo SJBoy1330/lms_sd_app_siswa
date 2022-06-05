@@ -28,6 +28,7 @@
 
     <!--evo calender-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/vendor/evo-calendar/css/evo-calendar.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/loader.css" />
 
     <!-- style css for this template -->
     <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet" id="style">

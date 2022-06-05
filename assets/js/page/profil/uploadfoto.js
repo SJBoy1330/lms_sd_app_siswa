@@ -20,6 +20,9 @@ function previewImage() {
         method: 'POST',
         dataType: 'json',
         cache: false,
+        beforeSend: function () {
+            $('#loading_scene').modal('show');
+        },
         success: function (data) {
             $('#reload_side_foto').load(BASE_URL + 'profil #side_foto_profil');
             if (data.status == 200) {
@@ -32,6 +35,8 @@ function previewImage() {
                     customClass: {
                         confirmButton: css_button
                     }
+                }).then(function () {
+                    $('#loading_scene').modal('hide');
                 })
 
             } else {

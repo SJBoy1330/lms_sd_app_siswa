@@ -23,12 +23,12 @@
                 <?php if ((date('H:i:s') >= $row->jam_mulai) && (date('H:i:s') <= $row->jam_selesai)) : ?>
                     <?php if ($presensi_setting->presensi_mapel == true) : ?>
                         <?php if (!isset($presensi->presensi_mapel->$uniq)) : ?>
-                            <a data-bs-toggle="modal" data-bs-target="#presensiMapelModal" class="col-6 mb-3 jadwal text-dark button_get_lokasi">
+                            <a data-bs-toggle="modal" data-id="<?= $row->id_jadwal; ?>" data-bs-target="#presensiMapelModal" class="col-6 mb-3 jadwal text-dark button_get_lokasi button_presensi_mapel">
                             <?php else : ?>
-                                <a href="<?= base_url('kbm/detail_kbm'); ?>" class="col-6 mb-3 jadwal text-dark">
+                                <a href="<?= base_url('kbm/detail_kbm/' . $row->id_pelajaran . '/' . $row->id_kelas . '/' . $row->id_staf); ?>" class="col-6 mb-3 jadwal text-dark">
                                 <?php endif; ?>
                             <?php else : ?>
-                                <a href="<?= base_url('kbm/detail_kbm'); ?>" class="col-6 mb-3 jadwal text-dark">
+                                <a href="<?= base_url('kbm/detail_kbm/' . $row->id_pelajaran . '/' . $row->id_kelas . '/' . $row->id_staf); ?>" class="col-6 mb-3 jadwal text-dark">
                                 <?php endif; ?>
                             <?php else : ?>
                                 <a class="col-6 mb-3 jadwal text-dark">
@@ -305,7 +305,7 @@
 <!-- Modal Presensi Mapel -->
 <div class="modal fade" id="presensiMapelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-        <div class="modal-content rounded-0">
+        <form id="form_presensi_mapel" method="POST" action="<?= base_url('presensi/mapel'); ?>" class="modal-content rounded-0">
             <div class="modal-header py-4">
                 <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -324,24 +324,6 @@
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 44px;">
-                                                <i class="fa-solid fa-building-user size-18 text-white"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Nama Kelas</p>
-                                        <p class="text-secondary size-13">XII IPA 1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
                                                 <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
                                             </div>
@@ -349,7 +331,7 @@
                                     </div>
                                     <div class="col align-self-center ps-1">
                                         <p class="mb-0 size-15 fw-medium">Nama Mata Pelajaran</p>
-                                        <p class="text-secondary size-13">Bahasa Indonesia</p>
+                                        <p id="nama_pelajaran" class="text-secondary size-13">-</p>
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +349,7 @@
                                     </div>
                                     <div class="col align-self-center ps-1">
                                         <p class="mb-0 size-15 fw-medium">Nama Guru</p>
-                                        <p class="text-secondary size-13">Drs. Sri Handayani S.Pd</p>
+                                        <p id="nama_staf" class="text-secondary size-13">-</p>
                                     </div>
                                 </div>
                             </div>
@@ -384,8 +366,8 @@
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-1">
-                                        <p class="mb-0 size-15 fw-medium">Jam Masuk & Jam Selesai</p>
-                                        <p class="text-danger size-13">07:00 - 11:00 </p>
+                                        <p class="mb-0 size-15 fw-medium">Jam Pelajaran</p>
+                                        <p id="jam_pelajaran" class="text-danger size-13">--:--</p>
                                     </div>
                                 </div>
                             </div>
@@ -396,9 +378,12 @@
             <!-- BUTTON PRESENSI -->
             <input type="hidden" class="lat" name="lat" value="<?= $lat; ?>">
             <input type="hidden" class="long" name="long" value="<?= $long; ?>">
+            <input type="hidden" id="id_pelajaran" name="id_pelajaran">
+            <input type="hidden" id="id_staf" name="id_staf">
+            <input type="hidden" id="id_kelas" name="id_kelas">
             <div class="modal-footer d-flex justify-content-center border-0">
-                <button type="button" id="button_presensi_mapel" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</button>
+                <button type="button" onclick="submit_form(this,'#form_presensi_mapel',1)" id="button_presensi_mapel" class="btn shadow-sm btn-presensi mb-2">Presensi</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>

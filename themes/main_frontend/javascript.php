@@ -102,7 +102,7 @@
 <?php endif; ?>
 
 <!-- Modal Loader -->
-<div class="modal fade" id="loading_scene" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
+<div class="modal fade" id="loading_scene" tabindex="-1" aria-labelledby="loading_scene" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content loader" style="border-radius: 0px;">
             <div class="modal-body loader">
@@ -136,6 +136,7 @@
     var BASE_URL = baseUrl = '<?= base_url(); ?>';
     var API_URL = apiUrl = '<?= API_URL() ?>';
     var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
+    var loading = $('#loading_scene');
     var css_button = 'btn btn-block btn-md';
 </script>
 <!-- Customized jquery file  -->

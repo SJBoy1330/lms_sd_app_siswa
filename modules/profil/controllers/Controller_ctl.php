@@ -226,4 +226,16 @@ class Controller_ctl extends MY_Frontend
 		$mydata['result'] = $data->data;
 		$this->load->view('display/laporan_presensi_siswa', $mydata);
 	}
+
+	public function get_detail_bantuan()
+	{
+		$id_bantuan = $this->input->post('id_bantuan');
+		// LOAD API 
+		$result = curl_get(
+			'attribut/bantuan/',
+			['id_bantuan' => $id_bantuan]
+		);
+
+		$this->load->view('display/modal_detail_bantuan', $result->data);
+	}
 }

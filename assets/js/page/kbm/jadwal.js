@@ -11,3 +11,31 @@ function get_jadwal(element) {
         }
     });
 }
+
+
+
+$(document).ready(function () {
+
+
+    $('.button_presensi_mapel').on('click', function () {
+        var id_jadwal = $(this).data('id');
+
+        $.ajax({
+            url: BASE_URL + 'presensi/get_modal',
+            data: { id_jadwal: id_jadwal },
+            method: 'POST',
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $('#nama_pelajaran').text(data.nama_pelajaran);
+                $('#nama_staf').text(data.nama_staf);
+                $('#jam_pelajaran').text(data.waktu);
+                $('#id_pelajaran').val(data.id_pelajaran);
+                $('#id_kelas').val(data.id_kelas);
+                $('#id_staf').val(data.id_staf);
+            }
+        })
+    });
+
+});
