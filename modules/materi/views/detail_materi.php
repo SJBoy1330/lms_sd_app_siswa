@@ -96,8 +96,7 @@
                         </div>
                         <div class="card-body tabcontent" id="Video">
                             <div class="mb-3">
-                                <iframe class="video-detail-materi" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                </iframe>
+                                <iframe class="video-detail-materi" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                             </div>
                             <a href="#" class="card mb-3">
                                 <div class="card-body">

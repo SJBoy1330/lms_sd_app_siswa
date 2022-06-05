@@ -19,7 +19,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_1.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
@@ -35,7 +35,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_1.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_ujian', $mydata, TRUE);
@@ -51,7 +51,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_2.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam', $mydata, TRUE);
@@ -67,7 +67,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_2.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam_multiple', $mydata, TRUE);
@@ -83,7 +83,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink2.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam_esai', $mydata, TRUE);
@@ -99,7 +99,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_2.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam_esai_panjang', $mydata, TRUE);
@@ -115,7 +115,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/ujian.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_2.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam_penjodohan', $mydata, TRUE);

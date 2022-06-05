@@ -173,3 +173,64 @@ div.timer-exam{
     width: 45px;
     height: 45px;
 }
+
+.solid-line{
+    width: 100%;
+    border: 1px solid #303030;
+}
+
+/* Tablink Penomoran */
+.tab {
+    color: #C4C4C4;
+  }
+  
+  .tab button {
+    background-color: inherit;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: #EC3528;
+    border: 1px solid #EC3528;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 13px;
+    line-height: 10px
+  }
+  
+  .tab button.active {
+    border: 2px solid #EC3528;
+    color: #FFFFFF;
+    background-color: #EC3528;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+  }
+
+  button.btn-ragu_ragu{
+    width: 45px;
+    height: 45px;
+    font-size: 13px;
+    line-height: 10px;
+    border-radius: 100px;
+    background-color: #ffbd17;
+    border: #ffbd17;
+    color: #FFFFFF
+  }
+
+.offcanvas-top{
+    height: 100vh;
+}
+
+.offcanvas.offcanvas-top.show{
+    background-color: #FFE6E6;
+}
+
+figure.image-ujian{
+    height: 129px;
+}

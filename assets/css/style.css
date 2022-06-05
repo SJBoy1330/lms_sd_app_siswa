@@ -16537,6 +16537,14 @@ a.btn-detail-tugas {
   padding-top: 10px;
 }
 
+button.btn-detail-tugas {
+  background-color: #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 45px;
+  padding-top: 10px;
+}
+
 .col-auto.detail-tugas-sd {
   border-right: 2px solid #C4C4C4;
 }

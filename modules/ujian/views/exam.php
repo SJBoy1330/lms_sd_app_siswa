@@ -1,85 +1,36 @@
-<div id="sidemenu" class="sidebar-wrap  sidebar-overlay sidebar-fullmenu">
-    <!-- Add pushcontent or fullmenu instead overlay -->
-    <div id="content_sidemenu">
-        <div class="closemenu text-muted">Close Menu</div>
-        <div class="sidebar">
-            <!-- user information -->
-            <div class="row my-3">
-                <div class="col-12 profile-sidebar">
-                    <div class="row mt-3">
-                        <div class="col-auto">
-                            <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm">
-                                <img src="<?= base_url('assets/images/mia-khalifa.png') ?>" alt="" class="rounded-18">
-                            </figure>
-                        </div>
-                        <div class="col px-0 align-self-center">
-                            <h5 class="mb-0 text-dark">Mia Khalifah</h5>
-                            <p class="text-muted size-12">XI IPA 1</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- user emnu navigation -->
-            <div class="row">
-                <div class="col-12">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item">
-                            <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" aria-current="page" href="<?= base_url('home'); ?>" onclick="unreload(this)">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-house"></i></div>
-                                <div class="col">Dashboard</div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link <?= (set_active($this->uri->segment(1), 'kbm', $this->uri->segment(2), array())) ?>" href="<?= base_url('kbm') ?>" tabindex="-1" onclick="unreload(this)">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-calendar-days"></i></div>
-                                <div class="col">Jadwal</div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= (set_active($this->uri->segment(1), 'materi', $this->uri->segment(2), array())) ?>" href="<?= base_url('materi') ?>" tabindex="-1" onclick="unreload(this)">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-book-open-cover"></i></div>
-                                <div class="col">Materi</div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link <?= (set_active($this->uri->segment(1), 'tugas', $this->uri->segment(2), array())) ?>" href="<?= base_url('tugas') ?>" onclick="unreload(this)" tabindex="-1">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-list-check"></i></div>
-                                <div class="col">Tugas</div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link <?= (set_active($this->uri->segment(1), 'toko', $this->uri->segment(2), array())) ?>" href="<?= base_url('toko') ?>" onclick="unreload(this)" tabindex="-1">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-shop"></i></div>
-                                <div class="col">Toko</div>
-                                <div class="arrow"><i class="bi bi-chevron-right"></i></div>
-                            </a>
-                        </li>
-                        <li class="nav-item logout">
-                            <a class="nav-link" href="<?= base_url('auth/logout') ?>" tabindex="-1">
-                                <div class="avatar avatar-40 icon"><i class="fa-solid fa-right-from-bracket"></i></div>
-                                <div class="col">Keluar</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<!-- Sidebar Penomoran -->
+<div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" styele="background-color: #FFE6E6;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+    <button type="button" class="btn-close text-reset mt-1 me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body ujian">
+    <div class="row">
+        <div class="col-12">
+            <h5>Paket Ujian 01</h5>
+            <p class="fw-normal text-dark size-15">Bahasa Indonesia</p>
+            <div class="solid-line mb-4"></div>
+        </div>
+        <div class="col-12 tab">
+            <div class="wrapper-ujian d-flex justify-content-center align-items-center flex-wrap">
+                <button id="defaultOpen" class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event,'ForSoal')">1</button>
+                <button class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event, 'ForSoal2')">2</button>
+                <button class="btn btn-ragu_ragu mx-2 mb-3">3</button>
             </div>
         </div>
     </div>
-
+  </div>
+  <div class="offcanvas-footer bg-none my-3 mx-4">
+        <div class="wrapper-button">
+            <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" style="width: 100%;">Selesai Ujian</a>
+        </div>
+  </div>
 </div>
 <!-- Header -->
 <header class="header position-fixed">
     <div id="header" class="row">
         <div class="col-auto">
-            <a href="javascript:void(0)" target="_self" class="btn btn-44 rounded-circle menu-btn number-exam">
+            <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="btn btn-44 rounded-circle menu-btn number-exam">
                 <i class="fa-regular fa-objects-column" style="font-size:20px; color: #EC3528;"></i>
             </a>
         </div>
@@ -96,83 +47,94 @@
 
 <!-- main page content -->
 <div class="main-container container">
-        <div class="col-12 col-md-12 col-lg-12">
-            <div class="card shadow-none bg-transparent">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="row mt-2">
-                                    <div class="col align-self-center">
-                                        <p class="mb-0 size-15 text-dark fw-medium">Pertanyaan <span>1</span> dari <span>40</span> soal</p>
-                                    </div>
+    <div class="col-12 col-md-12 col-lg-12 tabcontent" id="ForSoal">
+        <div class="card shadow-none bg-transparent">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row mt-2">
+                                <div class="col align-self-center">
+                                    <p class="mb-0 size-15 text-dark fw-medium">Pertanyaan <span>1</span> dari <span>40</span> soal</p>
                                 </div>
-                                <div class="row mt-3">
-                                    <div class="col-12 mb-2">
-                                        <figure class="overflow-hidden rounded-15 text-center detail-pengumuman" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
-                                        </figure>
-                                    </div>
-                                    <div class="col-12 align-self-center">
-                                        <p class="mb-0 size-14 text-dark fw-normal">Siapakah pendiri dari perusahaan Google awalnya dan siapakah yang menjadi CEO google saat ini dan berikan penjelasan jelas kenapa dia bisa berhasil menjadi CEO dari google?</p>
-                                    </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6 mb-2">
+                                    <figure class="overflow-hidden rounded-15 text-center image-ujian" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
+                                    </figure>
                                 </div>
-                                <div class="row mt-3">
-    
-                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
-                                        
-                                        <label>
-                                        <input type="radio" name="product" selected checked class="card-input-element" />
+                                <div class="col-6 mb-2">
+                                    <figure class="overflow-hidden rounded-15 text-center image-ujian" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
+                                    </figure>
+                                </div>
+                                <div class="col-6 mb-2">
+                                    <figure class="overflow-hidden rounded-15 text-center image-ujian" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
+                                    </figure>
+                                </div>
+                                <div class="col-6 mb-2">
+                                    <figure class="overflow-hidden rounded-15 text-center image-ujian" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('<?= base_url('assets/images/no-photo-big.png');?>')">
+                                    </figure>
+                                </div>
+                                <div class="col-12 align-self-center">
+                                    <p class="mb-0 size-14 text-dark fw-normal">Siapakah pendiri dari perusahaan Google awalnya dan siapakah yang menjadi CEO google saat ini dan berikan penjelasan jelas kenapa dia bisa berhasil menjadi CEO dari google?</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
 
-                                            <div class="card card-default card-input">
-                                                <div class="card-body">
-                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
-                                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="radio" name="product" selected checked class="card-input-element" />
+
+                                        <div class="card card-default card-input">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
                                             </div>
+                                        </div>
 
-                                        </label>
-                                        
-                                    </div>
-                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
-                                        
-                                        <label>
-                                        <input type="radio" name="product" class="card-input-element" />
+                                    </label>
+                                    
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="radio" name="product" class="card-input-element" />
 
-                                            <div class="card card-default card-input">
-                                                <div class="card-body">
-                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
-                                                </div>
+                                        <div class="card card-default card-input">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
                                             </div>
-                                        </label>
-                                        
-                                    </div>
+                                        </div>
+                                    </label>
+                                    
+                                </div>
 
-                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
-                                        
-                                        <label>
-                                        <input type="radio" name="product" selected checked class="card-input-element" />
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="radio" name="product" selected checked class="card-input-element" />
 
-                                            <div class="card card-default card-input">
-                                                <div class="card-body">
-                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
-                                                </div>
+                                        <div class="card card-default card-input">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
                                             </div>
+                                        </div>
 
-                                        </label>
-                                        
-                                    </div>
-                                    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
-                                        
-                                        <label>
-                                        <input type="radio" name="product" class="card-input-element" />
+                                    </label>
+                                    
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="radio" name="product" class="card-input-element" />
 
-                                            <div class="card card-default card-input">
-                                                <div class="card-body">
-                                                    <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
-                                                </div>
+                                        <div class="card card-default card-input">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
                                             </div>
-                                        </label>
-                                        
-                                    </div>
+                                        </div>
+                                    </label>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -180,7 +142,88 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 tabcontent" id="ForSoal2">
+        <div class="card shadow-none bg-transparent">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row mt-2">
+                                <div class="col align-self-center">
+                                    <p class="mb-0 size-15 text-dark fw-medium">Pertanyaan <span>2</span> dari <span>40</span> soal</p>
+                                    <p class="mb-0 size-13 text-watning fw-normal fst-italic">Nb : Jawaban bisa dipilih lebih dari 1</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col align-self-center">
+                                    <p class="mb-0 size-14 text-dark fw-normal">Siapakah pendiri dari perusahaan Google awalnya dan siapakah yang menjadi CEO google saat ini dan berikan penjelasan jelas kenapa dia bisa berhasil menjadi CEO dari google?</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
 
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="checkbox" name="product" selected checked class="card-input-element-2" />
+
+                                        <div class="card card-default-2 card-input-2">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
+                                            </div>
+                                        </div>
+
+                                    </label>
+                                    
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="checkbox" name="product" class="card-input-element-2" />
+
+                                        <div class="card card-default-2 card-input-2">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                </div>
+
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="checkbox" name="product" selected checked class="card-input-element-2" />
+
+                                        <div class="card card-default-2 card-input-2">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non..</p>
+                                            </div>
+                                        </div>
+
+                                    </label>
+                                    
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-3">
+                                    
+                                    <label>
+                                    <input type="checkbox" name="product" class="card-input-element-2" />
+
+                                        <div class="card card-default-2 card-input-2">
+                                            <div class="card-body">
+                                                <p class="mb-0 size-14 text-dark fw-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Condimentum mattis vulputate ullamcorper etiam non.</p>
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- main page content ends -->
 
