@@ -61,7 +61,7 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
                         location.reload();
                     }
                     if (data.modal != null) {
-                        $(data.modal.id).moda(data.modal.action);
+                        $(data.modal.id).modal(data.modal.action);
                     }
                 });
             } else {

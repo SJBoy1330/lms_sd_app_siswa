@@ -15,8 +15,8 @@
                         <div class="card-body detail-kbm">
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
-                                    <p class="mb-0 size-15 fw-medium">Kelas</p>
-                                    <p class="fw-normal text-secondary size-12">XII IPA 1</p>
+                                    <p class="mb-0 size-15 fw-medium">Bab</p>
+                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->bab; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-14 fw-medium">Mata Pelajaran</p>
-                                    <p class="fw-normal text-secondary size-12">Bahasa Indonesia</p>
+                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->nama_pelajaran; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-13 fw-medium">Pembuat Materi</p>
-                                    <p class="fw-normal text-secondary size-12">Vincentius Harya Wibisana Coropun</p>
+                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->nama_staf; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-15 fw-medium">Materi</p>
-                                    <p class="fw-normal text-secondary size-12">Materi 1 Bab 1 Mapel 1</p>
+                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->materi; ?></p>
                                 </div>
                             </div>
                         </div>
@@ -95,127 +95,64 @@
                             </div>
                         </div>
                         <div class="card-body tabcontent" id="Video">
-                            <div class="mb-3">
-                                <iframe class="video-detail-materi" width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-                            </div>
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline" style="line-height: 43px;">
-                                                    <i class="fa-solid fa-circle-play size-22 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center px-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 01</p>
-                                            <p class="text-muted text-secondary size-12">10 Menit 2 detik</p>
-                                        </div>
-                                        <div class="col-auto align-self-center">
-                                            <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
 
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline" style="line-height: 43px;">
-                                                    <i class="fa-solid fa-circle-play size-22 text-white"></i>
+                            <?php if ($result->result->video) : ?>
+                                <?php foreach ($result->result->video as $row) : ?>
+                                    <div class="mb-3 zoom-filter hiding" id="display-<?= $row->id_materi_video; ?>">
+                                        <iframe class="video-detail-materi" width="420" height="345" src="<?= $row->url; ?>"></iframe>
+                                    </div>
+                                <?php endforeach; ?>
+                                <?php foreach ($result->result->video as $row) : ?>
+                                    <a class="card mb-3  show_video" data-id="<?= $row->id_materi_video; ?>">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline" style="line-height: 43px;">
+                                                            <i class="fa-solid fa-circle-play size-22 text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col align-self-center px-0">
+                                                    <p class="mb-1 size-13 fw-normal"><?= $row->judul; ?></p>
+                                                    <p class="text-muted text-secondary size-12"><?= $row->durasi; ?></p>
+                                                </div>
+                                                <div class="col-auto align-self-center">
+                                                    <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col align-self-center px-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 02</p>
-                                            <p class="text-muted text-secondary size-12">8 Menit 2 detik</p>
-                                        </div>
-                                        <div class="col-auto align-self-center">
-                                            <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline" style="line-height: 43px;">
-                                                    <i class="fa-solid fa-circle-play size-22 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center px-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 03</p>
-                                            <p class="text-muted text-secondary size-12">7 Menit 2 detik</p>
-                                        </div>
-                                        <div class="col-auto align-self-center">
-                                            <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                                    </a>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <?= vector_default('vector_video_kosong.svg', 'Tidak terdapat materi video', 'Sekolah belum menyediakan materi berbasis video, hubungi guru atau admin jika terjadi kesalahan!'); ?>
+                            <?php endif; ?>
                         </div>
 
                         <div class="card-body tabcontent" id="Download">
-                            <a href="#" class="card my-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
-                                                    <i class="fa-solid fa-download size-22 text-white"></i>
+                            <?php if ($result->result->dokumen) : ?>
+                                <?php foreach ($result->result->dokumen as $row) : ?>
+                                    <a href="<?= $row->file_dokumen ?>" class="card my-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                                            <i class="fa-solid fa-download size-22 text-white"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col align-self-center ps-0">
+                                                    <p class="mb-1 size-13 fw-normal"><?= $row->judul; ?></p>
+                                                    <p class="text-muted text-secondary size-12"><?= size($row->size); ?></p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 01</p>
-                                            <p class="text-muted text-secondary size-12">50 Mb</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card my-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
-                                                    <i class="fa-solid fa-download size-22 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 02</p>
-                                            <p class="text-muted text-secondary size-12">60 Mb</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card my-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
-                                                    <i class="fa-solid fa-download size-22 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-normal">Video Pembelajaran 03</p>
-                                            <p class="text-muted text-secondary size-12">65 Mb</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                                    </a>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <?= vector_default('vector_dokumen_kosong.svg', 'Tidak ada dokumen', 'Sekolah belum menyediakan materi dalam bentuk dokumen, hubungi guru atau sekolah jika terjadi kesalahan'); ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

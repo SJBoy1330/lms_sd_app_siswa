@@ -73,11 +73,14 @@ class Controller_ctl extends MY_Frontend
 		} else {
 			$this->data['button_back'] = $_SERVER['HTTP_REFERER'];
 		}
-
+		// LOAD API 
+		$result = curl_get('materi/detail_materi', ['id_sekolah' => $this->id_sekolah, 'id_materi' => $id_materi]);
 		$this->data['judul_halaman'] = 'Detail Materi';
 		$this->data['config_hidden']['notifikasi'] = true;
 		$this->data['config_hidden']['footer'] = true;
 
+		// LOAD MYDATA
+		$mydata['result'] = $result->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_materi', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

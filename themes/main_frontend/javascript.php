@@ -1,7 +1,7 @@
 </main>
 <!-- Footer -->
 <?php if (!isset($config_hidden) || $config_hidden['footer'] != true) : ?>
-    <footer class="footer d-none">
+    <footer class="footer">
         <div class="container">
             <ul class="nav nav-pills nav-justified">
                 <li class="nav-item">
