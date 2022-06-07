@@ -11,7 +11,7 @@
                             <h6 class="title">Jadwal Pelajaran</h6>
                         </div>
                         <div class="col-auto align-self-center">
-                            <select onchange="get_jadwal(this)" class="form-select form-select-pribadi" aria-label="Default select example">
+                            <select onchange="get_jadwal(this)" class="form-select form-select-solid rounded-10 border-0" aria-label="Default select example">
                                 <?php foreach (day_from_number() as $kode => $value) : ?>
                                     <option value="<?= $kode; ?>" <?php if ($kode == date('N')) {
                                                                         echo 'selected';

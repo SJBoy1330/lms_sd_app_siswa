@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                                 <div class=" col align-self-center ps-0">
-                                    <p class="mb-1 size-13 fw-normal"><?= nice_title($row->judul, 40) ?></p>
+                                    <p class="mb-1 size-15 fw-normal"><?= nice_title($row->judul, 40) ?></p>
                                     <p class="fw-normal text-secondary size-12"><?= nice_time($row->tanggal_mulai) ?></p>
                                 </div>
                             </div>

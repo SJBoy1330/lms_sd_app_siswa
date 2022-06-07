@@ -16650,9 +16650,9 @@ button.input-group-text {
 }
 
 .avatar-kontak {
-  z-index: 1;
-  bottom: 80px;
-  right: 25px;
+    z-index: 1;
+    bottom: 50px;
+    right: 35px;
 }
 
 .chat-list .right-chat .chat-block.pengirim {

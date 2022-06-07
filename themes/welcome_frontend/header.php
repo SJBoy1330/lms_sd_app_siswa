@@ -49,11 +49,12 @@
 
         button.swal2-confirm {
             background-color: #f73563 !important;
-            border-color: #f73563 !important;
-            color: #FFFFFF;
+            border-color: transparent !important;
             width: 100px;
-            /* height: 75px; */
+            height: 38px;
             border-radius: 10px;
+            text-transform: uppercase;
+            color: #FFFFFF !important;
         }
     </style>
 

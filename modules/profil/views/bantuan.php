@@ -79,15 +79,15 @@
 
 <div class="modal fade" id="modalDetailNotifikasi" tabindex="-1" aria-labelledby="detailTagihanModal" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-        <div class="modal-content detail-tagihan rounded-0">
-            <div class="modal-header border-0">
-                <h5 class="modal-title" id="detailTagihanModal">Detail Bantuan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="display_detail_bantuan">
+            <div class="modal-content detail-tagihan rounded-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="detailTagihanModal">Detail Bantuan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="display_detail_bantuan">
 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

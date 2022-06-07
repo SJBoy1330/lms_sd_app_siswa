@@ -16,9 +16,9 @@
                     </div>
                 </div> -->
 <div class="row mx-2">
-    <p class="mt-2 mb-1 title-1-home"><?= $judul; ?></p>
+    <p class="fw-medium mt-2 mb-1 size-17"><?= $judul; ?></p>
 </div>
 
 <div class="mt-3 mb-4 mx-2">
-    <p class="text-secondary deskripsi-berita"><?= $keterangan; ?></p>
+    <p class="text-secondary mt-3 mb-4"><?= $keterangan; ?></p>
 </div>
