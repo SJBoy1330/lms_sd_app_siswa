@@ -1,20 +1,28 @@
 button.btn.btn-notifikasi-fill{
-    background-color: #EC3528;
-    color: #FFFFFF;
+    /* background-color: #EC3528; */
+    background-color: transparent;
+    border-color: transparent;
+    color: #303030;
     height: 45px;
-    width: 150px;
     font-weight: 600;
     font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 button.btn.btn-notifikasi-outline{
     background-color: transparent;
-    border-color: #EC3528;
-    color: #EC3528;
+    border-color: transparent;
+    color: #303030;
     height: 45px;
-    width: 150px;
     font-weight: 600;
     font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-check-input:checked {

@@ -140,7 +140,6 @@
 
                                 <?php endif; ?>
 
-
                                 <?php if (isset($right_button['ubah_password'])) : ?>
                                     <button type="button" class="btn btn-44" id="button_submit_password_atas" onclick="submit_form(this,'#form_update_password',0,'#ec3528')">
                                         <i class="fa-solid fa-check"></i>
@@ -162,10 +161,10 @@
                         <?php if (isset($khusus['notifikasi'])) : ?>
                             <div class="row mt-2 d-none" id="action_notifikasi">
                                 <div class="col-6 d-flex justify-content-center align-items-center">
-                                    <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><span class="span-notifikasi">Tandai dibaca</span></button>
+                                    <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check"></i><span class="span-notifikasi">Tandai dibaca</span></button>
                                 </div>
                                 <div class="col-6 d-flex justify-content-center align-items-center">
-                                    <button type="button" id="btn_hps_ntf" onclick="submit_form(this,'#form_action_notifikasi')" class="btn btn-danger rounded-pill btn-notifikasi-outline"><span class="span-notifikasi">Hapus Notifikasi</span></button>
+                                    <button type="button" id="btn_hps_ntf" onclick="submit_form(this,'#form_action_notifikasi')" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
                                 </div>
                             </div>
                         <?php endif; ?>
