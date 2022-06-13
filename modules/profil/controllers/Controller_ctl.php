@@ -23,6 +23,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['id_wali'] = $this->id_wali;
 
 		$mydata['data'] = curl_get("profil", array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
+		
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/loader.css') . '">';

@@ -77,7 +77,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Chatting';
 
 		// LOAD CSS
-		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/chatting/chatting.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/chatting/chatting_2.js"></script>';
