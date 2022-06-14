@@ -6,7 +6,7 @@
         <div class="row bg-white mb-3" style="width: 100vw;">
             <div class="col-12">
                 <div class="input-group">
-                    <input type="text" onkeyup="search(this, '#display_ujian', 'a.showing','#vector_riwayat')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
+                    <input type="text" onkeyup="search(this, 'a.target_search','#vector_riwayat')" class=" form-control form-control-pribadi pencarian" placeholder="Pencarian" aria-label="Pencarian" aria-describedby="basic-addon2">
                     <button class="input-group-text searhing" id="basic-addon2" style="background-color:#EC3528;"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                                                                                             echo 'lulus';
                                                                                         } else {
                                                                                             echo 'gagal';
-                                                                                        } ?>" data-pelajaran="<?= $row->id_pelajaran; ?>" href="#detailUjian" role="button" class="col-6 mb-3 jadwal zoom-filter showing">
+                                                                                        } ?>" data-pelajaran="<?= $row->id_pelajaran; ?>" href="#detailUjian" role="button" class="col-6 mb-3 jadwal target_search zoom-filter showing">
                     <div class="card card-jadwalmapel">
                         <div class="card-body">
                             <div class="row flex-column pt-2 ps-1">

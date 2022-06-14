@@ -9,105 +9,33 @@
                             <a href="<?= base_url('qna/kontak_personal') ?>" class="avatar avatar-60 shadow-lg rounded-circle avatar-presensi-solid avatar-kontak position-fixed">
                                 <i class="fa-solid fa-message-lines size-26 text-white mt-1"></i>
                             </a>
-                            <a href="<?= base_url('qna/chatting') ?>" class="card mb-3 target_search_1">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user2.jpg') ?>" alt="">
+                            <?php if ($result) : ?>
+                                <?php foreach ($result as $row) : ?>
+                                    <div>
+                                        <a href="<?= base_url('qna/chatting/' . $row->id_diskusi_tanya) ?>" class="card mb-3 target_search_1 showing">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-50 rounded-circle avatar-pesan">
+                                                            <img src="<?= $row->foto; ?>" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col align-self-center ps-0">
+                                                        <p class="mb-1 size-13 fw-medium"><?= $row->nama_staf; ?></p>
+                                                        <p class="text-muted text-secondary size-12"><?= ifnull($row->last_chat, '.....') ?></p>
+                                                    </div>
+                                                    <div class="col-auto align-self-center pesan-sd position-absolute">
+                                                        <p class="mb-0 ms-1 size-10 fw-medium"><?= $row->waktu; ?></p>
+                                                        <!-- <span class="badge rounded-pill bg-danger badge-notifikasi">3</span> -->
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-medium">Drs. Sri Handayani S.Pd</p>
-                                            <p class="text-muted text-secondary size-12">Selamat pagi bu, ijin ber...</p>
-                                        </div>
-                                        <div class="col-auto align-self-center pesan-sd position-absolute">
-                                            <p class="mb-0 ms-1 size-13 fw-medium">7.30</p>
-                                            <span class="badge rounded-pill bg-danger badge-notifikasi">3</span>
-                                        </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </a>
 
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user1.jpg') ?>" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-medium">Sutiaji S.Pd</p>
-                                            <p class="text-muted text-secondary size-12">Selamat pagi bapak sutiaji...</p>
-                                        </div>
-                                        <div class="col-auto align-self-center pesan-sd position-absolute">
-                                            <p class="mb-0 ms-1 size-13 fw-medium">8.30</p>
-                                            <span class="badge rounded-pill bg-danger badge-notifikasi">3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <i class="fa-solid fa-user-astronaut size-26 text-secondary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-medium">Gunawan S.Pd</p>
-                                            <p class="text-muted text-secondary size-12">Selamat pagi bapak gunawan...</p>
-                                        </div>
-                                        <div class="col-auto align-self-center pesan-sd position-absolute">
-                                            <p class="mb-0 ms-1 size-13 fw-medium">8.30</p>
-                                            <span class="badge rounded-pill bg-danger badge-notifikasi">3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <i class="fa-solid fa-user-astronaut size-26 text-secondary"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-medium">Radit S.Pd</p>
-                                            <p class="text-muted text-secondary size-12">Selamat pagi bapak radit...</p>
-                                        </div>
-                                        <div class="col-auto align-self-center pesan-sd position-absolute">
-                                            <p class="mb-0 ms-1 size-13 fw-medium">8.30</p>
-                                            <span class="badge rounded-pill bg-danger badge-notifikasi">3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="card mb-3">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 rounded-circle avatar-pesan">
-                                                <img src="<?= base_url('assets/img/user3.jpg') ?>" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-1 size-13 fw-medium">Sri Wahyuni S.Pd</p>
-                                            <p class="text-muted text-secondary size-12">Selamat pagi bapak radit...</p>
-                                        </div>
-                                        <div class="col-auto align-self-center pesan-sd position-absolute">
-                                            <p class="mb-0 ms-1 size-13 fw-medium">8.30</p>
-                                            <span class="badge rounded-pill bg-danger badge-notifikasi">3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <?= vector_default('vector_chatting_kosong.svg', 'Tidak ada obrolan', 'Anda belum memulai obrolan apapun, hubungi pihak sekolah jika terjadi kesalahan!', 'vector_pesan', count($result)) ?>
                         </div>
 
                         <div class="card-body tabcontent" id="Grup">

@@ -55,7 +55,10 @@ $('.question_alert').on('click', function (e) {
 	const message = $(this).data('message');
 	const image = $(this).data('image');
 	const icon = $(this).data('icon');
-
+	const post = $(this).data('post');
+	const value = $(this).data('value');
+	const url_ajax = $(this).data('url_ajax');
+	// console.log(url_ajax);
 	if (image) {
 		Swal.fire({
 			title: title,
@@ -69,8 +72,53 @@ $('.question_alert').on('click', function (e) {
 			cancelButtonColor: '#d33',
 			confirmButtonhtml: 'Ya'
 		}).then((result) => {
-			if (result.isConfirmed) {
-				document.location.href = href;
+
+			if (url_ajax != null) {
+				$.ajax({
+					url: url_ajax,
+					data: { post: post },
+					method: 'POST',
+					cache: false,
+					dataType: 'json',
+					beforeSend: function () {
+						$('#loading_scene').modal('show');
+					},
+					success: function (data) {
+						$('#loading_scene').modal('hide');
+						// console.log(data);
+						if (data.status == 200 || data.status == true) {
+							if (data.alert) {
+								Swal.fire({
+									title: data.alert.title,
+									html: data.alert.message,
+									icon: data.alert.icon,
+									buttonsStyling: !1,
+									confirmButtonText: 'Ok',
+									customClass: { confirmButton: css_button }
+								});
+							}
+							if (data.reload) {
+								location.reload();
+							}
+							if (data.redirect) {
+								location.href = data.redirect;
+							}
+						} else {
+							Swal.fire({
+								title: 'PERINGATAN',
+								html: data.alert.message,
+								icon: 'warning',
+								buttonsStyling: !1,
+								confirmButtonText: 'Ok',
+								customClass: { confirmButton: css_button }
+							});
+						}
+					}
+				})
+			} else {
+				if (result.isConfirmed) {
+					document.location.href = href;
+				}
 			}
 		})
 	} else {
@@ -85,7 +133,52 @@ $('.question_alert').on('click', function (e) {
 			reverseButtons: true
 		}).then((result) => {
 			if (result.isConfirmed) {
-				document.location.href = href;
+				if (url_ajax != null) {
+					$.ajax({
+						url: url_ajax,
+						data: { post: post, value: value },
+						method: 'POST',
+						cache: false,
+						dataType: 'json',
+						beforeSend: function () {
+							$('#loading_scene').modal('show');
+						},
+						success: function (data) {
+							$('#loading_scene').modal('hide');
+							if (data.status == 200 || data.status == true) {
+								if (data.alert) {
+									Swal.fire({
+										title: data.alert.title,
+										html: data.alert.message,
+										icon: data.alert.icon,
+										buttonsStyling: !1,
+										confirmButtonText: 'Ok',
+										customClass: { confirmButton: css_button }
+									});
+								}
+								if (data.reload) {
+									location.reload();
+								}
+								if (data.redirect) {
+									location.href = data.redirect;
+								}
+							} else {
+								Swal.fire({
+									title: 'PERINGATAN',
+									html: data.alert.message,
+									icon: 'warning',
+									buttonsStyling: !1,
+									confirmButtonText: 'Ok',
+									customClass: { confirmButton: css_button }
+								});
+							}
+						}
+					})
+				} else {
+					if (result.isConfirmed) {
+						document.location.href = href;
+					}
+				}
 			}
 		})
 	}

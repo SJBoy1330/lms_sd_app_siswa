@@ -77,6 +77,12 @@
                                 <div class="col-6 mb-3 jadwal">
                                     <div class="card bg-opac-50 card-jadwalmapel">
                                         <div class="card-body">
+                                            <?php $uniqq = "presensi_" . date('Ymd') . $row->id_kelas . $row->id_staf . $row->id_pelajaran; ?>
+                                            <?php if ($presensi->presensi_mapel != NULL && isset($presensi->presensi_mapel->$uniqq)) : ?>
+                                                <div class="jam-presensi-disable">
+                                                    <p class="mb-0 text-white size-13"><?= $presensi->presensi_mapel->$uniqq; ?></p>
+                                                </div>
+                                            <?php endif; ?>
                                             <div class="row flex-column">
                                                 <div class="col-auto">
                                                     <div class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-circle">

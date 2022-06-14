@@ -11,7 +11,7 @@
                         <div class="row mt-3">
                             <div class="col-auto">
                                 <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm" id="reload_side_foto">
-                                    <img src=" <?= $profil->foto; ?>" alt="" class="rounded-18" id="side_foto_profil" style="height: 100%;>
+                                    <img src=" <?= $profil->foto; ?>" alt="" class="rounded-18" id="side_foto_profil" style="height: 100%;">
                                 </figure>
                             </div>
                             <div class=" col px-0 align-self-center">
@@ -154,6 +154,9 @@
                                 <?php if (isset($right_button['laporan_ujian'])) : ?>
                                     <a href="#" target="_self" class="btn btn-44" data-bs-toggle="modal" data-bs-target="#filterUjian"><i class="fa-regular fa-filter"></i></a>
                                 <?php endif; ?>
+                                <?php if (isset($right_button['chatting'])) :  ?>
+                                    <a href="#" target="_self" class="btn btn-44 rounded-circle btn-notifikasi" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="background-image: url(<?= $foto_staf; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+                                <?php endif; ?>
 
                             </div>
 
@@ -172,8 +175,8 @@
                             <div class="row my-3">
                                 <div class="col-12 mx-auto">
                                     <div class="input-group">
-                                        <input type="text" class="form-control form-control-pribadi pencarian" id="search_personal" onkeyup="search(this,'#Personal','a.target_search_1')" placeholder="Cari kontak" aria-label="Pencarian" aria-describedby="basic-addon2">
-                                        <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'#Grup','a.target_search_2')" placeholder="Cari nama grup" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control form-control-pribadi pencarian" id="search_personal" onkeyup="search(this,'a.target_search_1','#vector_pesan')" placeholder="Cari kontak" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'a.target_search_2')" placeholder="Cari nama grup" aria-label="Pencarian" aria-describedby="basic-addon2">
                                         <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                     </div>
                                 </div>

@@ -1,10 +1,10 @@
-function filter_ujian() {
-    var vector_riwayat = document.querySelector('#vector_riwayat');
+function filter_tugas() {
+    var vector_tugas = document.querySelector('#vector_tugas');
     var id_pelajaran = $('#pelajaran').val();
     var status = $('#status').val();
-    const prop_display = document.querySelectorAll("#display_ujian .zoom-filter");
+    const prop_display = document.querySelectorAll("#display_tugas .zoom-filter");
 
-    $('#filterUjian').modal('hide');
+    $('#filterTugas').modal('hide');
     prop_display.forEach((div) => {
         let val_status = div.getAttribute("data-status");
         let val_pelajaran = div.getAttribute("data-pelajaran");
@@ -19,10 +19,10 @@ function filter_ujian() {
 
     var count = $('.showing').length;
     if (count <= 0) {
-        vector_riwayat.classList.remove('hiding');
-        vector_riwayat.classList.add('showing');
+        vector_tugas.classList.remove('hiding');
+        vector_tugas.classList.add('showing');
     } else {
-        vector_riwayat.classList.add('hiding');
-        vector_riwayat.classList.remove('showing');
+        vector_tugas.classList.add('hiding');
+        vector_tugas.classList.remove('showing');
     }
 }

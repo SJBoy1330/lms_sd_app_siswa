@@ -572,7 +572,7 @@ function vector_default($image, $judul = 'Tidak ada data', $text = 'Tidak terdap
   }
 
   if ($status > 0) {
-    $stts = 'd-none';
+    $stts = 'hiding';
   } else {
     $stts = NULL;
   }
@@ -690,4 +690,43 @@ function size($file)
     $pos++;
   }
   return round($size, 2) . " " . $a[$pos];
+}
+
+
+function get_icon_file($ext = NULL)
+{
+  $arr['docx'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
+  $arr['words'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
+  $arr['pdf'] = '<i class="fa-solid fa-file-pdf size-30 text-danger"></i>';
+  $arr['jpg'] = '<i class="fa-solid fa-file-image size-30 text-warning"></i>';
+  $arr['png'] = '<i class="fa-solid fa-file-image size-30 text-info"></i>';
+  $arr['jpeg'] = '<i class="fa-solid fa-file-image size-30" stye="color : #ffa340"></i>';
+
+
+  if ($ext == NULL) {
+    return '<i class="fa-solid fa-floppy-disk size-30 text-secondary"></i>';
+  } else {
+    if (!isset($arr[$ext])) {
+      return '<i class="fa-solid fa-floppy-disk size-30 text-secondary"></i>';
+    } else {
+      return $arr[$ext];
+    }
+  }
+}
+
+function inisial($nama = NULL)
+{
+  if ($nama == NULL) {
+    $singkatan = 'U';
+  } else {
+    $arr = explode(' ', $nama);
+    $singkatan = '';
+    foreach ($arr as $kata) {
+      $singkatan .= substr($kata, 0, 1);
+    }
+
+    $singkatan = strtoupper($singkatan);
+  }
+
+  return $singkatan;
 }

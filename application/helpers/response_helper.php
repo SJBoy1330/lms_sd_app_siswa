@@ -53,7 +53,7 @@ function sweet_alert($judul = NULL, $text = NULL, $icon = NULL, $image = NULL)
   return $data;
 }
 
-function alert_question($judul, $text = NULL, $icon = NULL, $image = NULL)
+function alert_question($judul, $text = NULL, $icon = 'question', $image = NULL)
 {
 
   $data = '';

@@ -119,7 +119,7 @@
                                         </div>
                                     </div>
                                     <div class="col-auto align-self-center ps-0">
-                                        <p class="mb-0 size-13 fw-medium color-8F8F8F">Meet</p>
+                                        <p class="mb-0 size-13 fw-medium color-8F8F8F">Meet Online</p>
                                         <p class="mb-0 size-12 fw-normal text-danger">Tidak ada meet online</p>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                         </div>
                         <div class="col-12">
                             <?php foreach ($result->result->materi as $row) : ?>
-                                <a href="<?= base_url('kbm/detail_materi/' . $row->id_materi) ?>" class="card mb-3">
+                                <a href="<?= base_url('materi/detail_materi/' . $row->id_materi . '?redirect=true') ?>" class="card mb-3">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-auto">

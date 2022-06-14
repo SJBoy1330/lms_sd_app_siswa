@@ -15964,11 +15964,11 @@ p.label-biru {
   transition: all 0.3s ease;
 }
 
-.zoom-filter.showing {
+.showing {
   animation: animate 0.4s ease;
 }
 
-.zoom-filter.hiding {
+.hiding {
   display: none;
 }
 
@@ -16032,6 +16032,20 @@ form input {
   animation: pulse 2s infinite;
 }
 
+.jam-presensi-disable {
+  width: 65px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec3528;
+  opacity: 0.5;
+}
+
 @keyframes pulse {
   0% {
     background-color: #FF7676;
@@ -16088,10 +16102,11 @@ p.second {
 }
  */
 
- @-webkit-keyframes up-down {
+@-webkit-keyframes up-down {
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -16101,6 +16116,7 @@ p.second {
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -16650,9 +16666,9 @@ button.input-group-text {
 }
 
 .avatar-kontak {
-    z-index: 1;
-    bottom: 50px;
-    right: 35px;
+  z-index: 1;
+  bottom: 50px;
+  right: 35px;
 }
 
 .chat-list .right-chat .chat-block.pengirim {
