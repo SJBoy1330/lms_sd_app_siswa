@@ -53,6 +53,31 @@
             /* height: 75px; */
             border-radius: 10px;
         }
+
+        @media only screen and (max-width: 320px) {
+            .avatar.avatar-60.avatar-quicklinks {
+                line-height: 60px;
+                height: 50px;
+                width: 50px;
+                border-radius: -5px;
+            }
+
+            i.fa-solid.fa-book-open-cover{
+                font-size: 24px;
+            }
+
+            i.fa-solid.fa-book-bookmark{
+                font-size: 24px;
+            }
+
+            i.fa-solid.fa-list-check{
+                font-size: 24px;
+            }
+
+            i.fa-solid.fa-messages{
+                font-size: 24px;
+            }
+        }
     </style>
 
 </head>

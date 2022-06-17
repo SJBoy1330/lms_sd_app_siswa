@@ -11,7 +11,7 @@
             <p class="fw-normal text-dark size-15">Bahasa Indonesia</p>
             <div class="solid-line mb-4"></div>
         </div>
-        <div class="col-12 tab">
+        <div class="col-12 tab px-0">
             <div class="wrapper-ujian d-flex justify-content-center align-items-center flex-wrap">
                 <button id="defaultOpen" class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event,'ForSoal')">1</button>
                 <button class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event, 'ForSoal2')">2</button>

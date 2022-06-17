@@ -239,6 +239,18 @@ figure.image-ujian-jawaban{
     height: 114px;
 }
 
+@media only screen and (max-width: 320px) {
+    figure.image-ujian{
+        height: 114px !important;
+        width: 114px !important;
+    }
+
+    figure.image-ujian-jawaban{
+        height: 104px !important;
+        width: 104px !important;
+    }
+}
+
 .color-f73563{
     color: #f73563;
 }

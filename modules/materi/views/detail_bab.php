@@ -5,7 +5,7 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-auto pe-2">
                             <div class="avatar avatar-46 shadow-sm rounded-15 avatar-presensi-outline">
                                 <div class="avatar avatar-36 rounded-12 avatar-presensi-inline">
                                     <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
@@ -17,8 +17,8 @@
                             <p class="mb-0 size-14 fw-normal"><?= ifnull($result->detail->nama_pelajaran, ' - '); ?></p>
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-auto">
+                    <div class="row mt-3 flex-wrap">
+                        <div class="col-auto pe-2">
                             <div class="avatar avatar-46 shadow-sm rounded-15 avatar-presensi-outline">
                                 <div class="avatar avatar-36 rounded-12 avatar-presensi-inline">
                                     <i class="fa-regular fa-chart-bar size-20 text-white"></i>
@@ -30,7 +30,7 @@
                             <p class="mb-0 size-13 fw-normal"><?= ifnull($result->detail->jumlah_bab, 0); ?> Bab</p>
                         </div>
 
-                        <div class="col-auto ps-1">
+                        <div class="col-auto ps-0 pe-2">
                             <div class="avatar avatar-46 shadow-sm rounded-15 avatar-presensi-outline">
                                 <div class="avatar avatar-36 rounded-12 avatar-presensi-inline" style="line-height: 39px;">
                                     <i class="fa-solid fa-book-open-cover size-20 text-white"></i>

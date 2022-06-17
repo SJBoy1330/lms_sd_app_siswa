@@ -30,11 +30,11 @@
                                                                                                                                                                                                                                     echo 'ditolak';
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                             } ?>">
-                        <div class="row mb-3">
-                            <div class="col">
+                        <div class="row mb-3 mx-0 px-0">
+                            <div class="col ps-0">
                                 <p class="fw-bolder size-15"><?= nice_title($row->nama_pelajaran, 80); ?></p>
                             </div>
-                            <div class="col-auto align-self-center">
+                            <div class="col-auto align-self-center pe-0">
                                 <?php if ($row->dikerjakan == false) : ?>
                                     <?php if (strtotime($row->batas_waktu) < strtotime(date('Y-m-d H:i:s'))) : ?>
                                         <p class="fw-normal size-14 text-danger">Belum Dikerjakan</p>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
 
-                        <div class="row mt-4 mx-1">
+                        <div class="row mt-4 mx-1 ps-0">
                             <a href="<?= base_url('tugas/detail_tugas/' . $row->id_tugas) ?>" class="btn btn-block btn-md btn-danger btn-detail-tugas">Detail Tugas</a>
                         </div>
 

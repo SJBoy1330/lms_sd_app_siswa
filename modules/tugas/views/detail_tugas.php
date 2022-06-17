@@ -26,8 +26,8 @@
                         <div class="row py-1 px-2 mt-2 mb-2 ">
                             <div class="d-flex col-auto ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
+                                    <div class="avatar avatar-40 rounded-circle avatar-presensi-inline" style="line-height: 42px;">
+                                        <i class="fa-solid fa-hourglass-clock size-18 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="d-flex col-auto ps-0 pe-2">
                                 <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                     <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                        <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
+                                        <i class="fa-solid fa-memo-pad size-20 text-white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
                                     <div class="d-flex col-auto ps-0 pe-2">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
+                                                <i class="fa-solid fa-circle-dot size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
