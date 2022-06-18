@@ -1,5 +1,5 @@
 var numberOfItems = $('#jadwal-list .jadwal').length; // Get total number of the items that should be paginated
-console.log('jumlah list : ' + numberOfItems);
+// console.log('jumlah list : ' + numberOfItems);
 var limitPerPage = 4; // Limit of items per each page
 $('#jadwal-list .jadwal:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
 var totalPages = Math.round(numberOfItems / (limitPerPage - 1)); // Get number of pages

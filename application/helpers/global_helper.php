@@ -406,12 +406,22 @@ function curl_post($url, $fields = array(), $files = NULL)
   $ch = curl_init();
   $CI = &get_instance();
   $postvars = http_build_query($fields);
-
   if ($files != NULL) {
     foreach ($files as $file => $value) {
-      $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
-      $postfile[$file] = $cfile;
+      if (!isset($files[$file]['multiple'])) {
+        $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
+        $postfile[$file] = $cfile;
+      } else {
+        foreach ($value['file'] as $fil => $val) {
+          $cfile[] = new CURLFile($val['tmp_name'][$fil], $val['type'][$fil], $val['name'][$fil]);
+        }
+
+        $postfile[$file] = $cfile;
+      }
     }
+
+    var_dump($postfile);
+    die;
 
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
   }

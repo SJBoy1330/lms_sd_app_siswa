@@ -1,7 +1,6 @@
 <div class="main-container container">
-    <div class="row">
+    <div class=" row">
         <div class="col-12">
-
             <a class="row">
                 <a data-bs-toggle="modal" data-bs-target="#">
                     <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
@@ -109,7 +108,8 @@
                 </div>
             <?php endif; ?>
             <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                <div class="row mb-3">
+                <form method="POST" action="<?= base_url('tugas/upload'); ?>" id="form_submited_tugas" enctype="multipart/form-data" class="row mb-3">
+                    <input type="hidden" name="id_tugas" id="id_tugas" value="<?= $id_tugas; ?>">
                     <div class="col">
                         <p class="fw-bolder size-15">Tugas Anda</p>
                     </div>
@@ -118,7 +118,7 @@
                             <?php if ($result->detail->izin_terlambat == 'Y') : ?>
                                 <div class="col-auto align-self-center">
                                     <div class="file-input pe-1">
-                                        <input type="file" name="file-input" id="file-input" name="files[]" multiple="multiple" class="file-input__input" />
+                                        <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" name="files[]" multiple="multiple" class="file-input__input" />
                                         <label class="file-input__label" for="file-input">
                                             <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
                                         </label>
@@ -143,7 +143,7 @@
                             <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
                                 <div class="col-auto align-self-center">
                                     <div class="file-input pe-1">
-                                        <input type="file" name="file-input" id="file-input" name="files[]" multiple="multiple" class="file-input__input" />
+                                        <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" name="files[]" multiple="multiple" class="file-input__input" />
                                         <label class="file-input__label" for="file-input">
                                             <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
                                         </label>
@@ -159,7 +159,7 @@
                         <?php else : ?>
                             <div class="col-auto align-self-center">
                                 <div class="file-input pe-1">
-                                    <input type="file" name="file-input" id="file-input" class="file-input__input" />
+                                    <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" class="file-input__input" />
                                     <label class="file-input__label" for="file-input">
                                         <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
                                     </label>
@@ -167,29 +167,35 @@
                             </div>
                         <?php endif; ?>
                     <?php endif; ?>
-                </div>
-                <?php if ($result->tugas_siswa->file) : ?>
-                    <?php foreach ($result->tugas_siswa->file as $row) : ?>
-                        <div class="card shadow-sm mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <div class="avatar avatar-50 rounded-10 bg-document">
-                                            <?= get_icon_file($row->ext); ?>
+                </form>
+                <div id="reload_jawaban">
+                    <div id="load_jawaban_new">
+                        <?php if ($result->tugas_siswa->file) : ?>
+                            <?php foreach ($result->tugas_siswa->file as $row) : ?>
+                                <div class="card shadow-sm mb-3" id="jawaban-<?= $row->id_file; ?>">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <div class="avatar avatar-50 rounded-10 bg-document">
+                                                    <?= get_icon_file($row->ext); ?>
+                                                </div>
+                                            </div>
+                                            <a href="#modalPDF" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
+                                                <p class="mb-0 size-14 text-dark fw-normal"><?= nice_title($row->judul, 20); ?></p>
+                                                <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->ext); ?> document</p>
+                                            </a>
+                                            <div class="col-auto align-self-center text-end ms-3">
+                                                <button type="button" onclick="hapus_file(<?= $row->id_file; ?>)" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <a href="#modalPDF" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
-                                        <p class="mb-0 size-14 text-dark fw-normal"><?= nice_title($row->judul, 20); ?></p>
-                                        <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->ext); ?> document</p>
-                                    </a>
-                                    <div class="col-auto align-self-center text-end ms-3">
-                                        <button class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+
 
                 <?php if (!$result->tugas_siswa->file && strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s')) && $result->detail->izin_terlambat == 'N') : ?>
                     <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada jawaban', 'Anda belum mengirimkan jawaban tugas ini, silahkan hubungi guru atau admin sekolah jika terjadi kesalahan'); ?>
@@ -198,26 +204,26 @@
                 <?php if ($result->detail->izin_terlambat == 'Y') : ?>
                     <?php if ((strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s')))) : ?>
                         <div class="row mt-4 mx-1">
-                            <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Terlambat</a>
+                            <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Terlambat</a>
                         </div>
                     <?php else : ?>
                         <?php if ($result->tugas_siswa == NULL) : ?>
                             <div class="row mt-4 mx-1">
-                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                             </div>
                         <?php else : ?>
                             <?php if ($result->tugas_siswa->kode_status == NULL) : ?>
                                 <div class="row mt-4 mx-1">
-                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                                 </div>
                             <?php else : ?>
                                 <?php if ($result->tugas_siswa->kode_status != 2) : ?>
                                     <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Batalkan Tugas</a>
+                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Batalkan Tugas</a>
                                     </div>
                                 <?php else : ?>
                                     <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                                     </div>
                                 <?php endif; ?>
                             <?php endif; ?>
@@ -227,21 +233,21 @@
                     <?php if ((strtotime($result->detail->batas_waktu) >= strtotime(date('Y-m-d H:i:s')))) : ?>
                         <?php if ($result->tugas_siswa == NULL) : ?>
                             <div class="row mt-4 mx-1">
-                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                             </div>
                         <?php else : ?>
                             <?php if ($result->tugas_siswa->kode_status == NULL) : ?>
                                 <div class="row mt-4 mx-1">
-                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                                 </div>
                             <?php else : ?>
                                 <?php if ($result->tugas_siswa->kode_status != 2) : ?>
                                     <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Batalkan Tugas</a>
+                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Batalkan Tugas</a>
                                     </div>
                                 <?php else : ?>
                                     <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
                                     </div>
                                 <?php endif; ?>
                             <?php endif; ?>

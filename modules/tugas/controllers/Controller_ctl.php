@@ -76,10 +76,46 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD API 
 		$result = curl_get('tugas/single/', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa, 'id_tugas' => $id_tugas]);
-
+		// LOAD MYDATA
 		$mydata['result'] = $result->data;
+		$mydata['id_tugas'] = $id_tugas;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_tugas', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
+	}
+
+
+	public function hapus_file()
+	{
+		$id_file = $this->input->post('id_file');
+		$result = curl_post('tugas/hapus_file/', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa, 'id_file' => $id_file]);
+		if ($result->status == 200) {
+			$data['status'] = true;
+		} else {
+			$data['status'] = false;
+			$data['message'] = $result->message;
+		}
+
+		echo json_encode($data);
+	}
+
+
+	public function upload()
+	{
+		// var_dump($_FILES['file_jawaban']);
+		// die;
+
+		// $_FILES['tugas']
+		// $tugas = ;
+		$id_tugas = $this->input->post('id_tugas');
+		$arr['id_sekolah'] = $this->id_sekolah;
+		$arr['id_siswa'] = $this->id_siswa;
+		$arr['id_tugas'] = $id_tugas;
+		$arrFile['tugas']['multiple'] = true;
+		$arrFile['tugas']['file'][] = $_FILES['file_jawaban'];
+		$result = curl_post('tugas/upload/', $arr, $arrFile);
+
+		var_dump($result);
+		die;
 	}
 }
