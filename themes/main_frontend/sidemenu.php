@@ -175,8 +175,8 @@
                             <div class="row my-3">
                                 <div class="col-12 mx-auto">
                                     <div class="input-group">
-                                        <input type="text" class="form-control form-control-pribadi pencarian" id="search_personal" onkeyup="search(this,'a.target_search_1','#vector_pesan')" placeholder="Cari kontak" aria-label="Pencarian" aria-describedby="basic-addon2">
-                                        <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'a.target_search_2')" placeholder="Cari nama grup" aria-label="Pencarian" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control form-control-pribadi pencarian" id="search_personal" onkeyup="search(this,'a.target_search_1','#vector_pesan')" placeholder="Cari kontak" aria-label="Pencarian">
+                                        <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'a.target_search_2')" placeholder="Cari nama grup" aria-label="Pencarian" style="border-radius: 10px;">
                                         <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                     </div>
                                 </div>
