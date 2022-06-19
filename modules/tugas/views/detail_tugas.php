@@ -69,7 +69,7 @@
                                     <div class="d-flex col-auto ps-0 pe-2">
                                         <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                             <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-brands fa-stack-overflow size-22 text-white"></i>
+                                                <i class="fa-solid fa-feather size-20 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -107,6 +107,67 @@
 
                 </div>
             <?php endif; ?>
+
+            <!-- Begin New Design -->
+                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
+                    <div class="col mb-2">
+                        <p class="fw-bolder size-15">Download Tugas</p>
+                    </div>
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 rounded-10 bg-document">
+                                        <i class="fa-solid fa-file-pdf size-30 text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-0">
+                                    <p class="mb-0 size-14 text-dark fw-normal">Tugas 1 Aljabar</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">PDF File</p>
+                                </div>
+                                <div class="col-auto align-self-center text-end ms-3">
+                                    <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-arrow-down size-26 text-danger"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <p class="fw-bolder size-15">Tugas Anda</p>
+                        </div>
+                        <div class="col-auto align-self-center">
+                            <a href="#" class="label-merah fw-medium size-13">Tidak ada</a>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 rounded-10 bg-document">
+                                        <i class="fa-solid fa-file-pdf size-30 text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="col align-self-center ps-0">
+                                    <p class="mb-0 size-14 text-dark fw-normal">Tugas 1 Aljabar</p>
+                                    <p class="mb-0 size-12 fw-normal text-secondary">PDF File</p>
+                                </div>
+                                <div class="col-auto align-self-center text-end ms-3">
+                                    <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mx-1">
+                        <input id="inputUpload" type="file" hidden />
+                        <label for="inputUpload" class="btn btn-block btn-md btn-danger btn-detail-tugas-tambah mb-2">Tambah Tugas</label>
+                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
+                    </div>
+                </div>
+            <!-- End New Design -->
+
             <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
                 <form method="POST" action="<?= base_url('tugas/upload'); ?>" id="form_submited_tugas" enctype="multipart/form-data" class="row mb-3">
                     <input type="hidden" name="id_tugas" id="id_tugas" value="<?= $id_tugas; ?>">

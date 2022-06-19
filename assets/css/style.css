@@ -16553,6 +16553,33 @@ a.btn-detail-tugas {
   padding-top: 10px;
 }
 
+a.btn-detail-tugas-tambah {
+  background-color: transparent;
+  border: 1px solid #EC3528;
+  border-radius: 8px;
+  color: #EC3528;
+  height: 43px;
+  padding-top: 10px;
+}
+
+label.btn-detail-tugas-tambah {
+  background-color: transparent;
+  border: 1px solid #EC3528;
+  border-radius: 8px;
+  color: #EC3528;
+  height: 43px;
+  padding-top: 10px;
+}
+
+label.btn-detail-tugas-tambah:hover {
+  background-color: #EC3528;
+  border: 1px solid #EC3528;
+  border-radius: 8px;
+  color: #FFFFFF;
+  height: 43px;
+  padding-top: 10px;
+}
+
 button.btn-detail-tugas {
   background-color: #EC3528;
   border-radius: 8px;
@@ -16788,4 +16815,15 @@ button.button-kirim-pesan {
   line-height: 24px;
 }
 
+/* Input File Detail Tugas */
+#inputUpload {
+  display: none;
+}
 
+.custom-file-upload {
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  text-decoration: underline;
+}
