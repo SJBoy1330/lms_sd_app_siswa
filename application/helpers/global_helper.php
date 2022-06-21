@@ -412,18 +412,17 @@ function curl_post($url, $fields = array(), $files = NULL)
         $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
         $postfile[$file] = $cfile;
       } else {
-        foreach ($value['file'] as $fil => $val) {
-          $cfile[] = new CURLFile($val['tmp_name'][$fil], $val['type'][$fil], $val['name'][$fil]);
+        $jmlh = count($value['file']['name']);
+        for ($i = 0; $i < $jmlh; $i++) {
+          $cfile[$i] = new CURLFile($value['file']['tmp_name'][$i], $value['file']['type'][$i], $value['file']['name'][$i]);
+          $postfile[$file][$i] = $cfile[$i];
         }
-
-        $postfile[$file] = $cfile;
       }
     }
 
-    var_dump($postfile);
-    die;
-
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
+    // var_dump($postvars);
+    // die;
   }
   curl_setopt($ch, CURLOPT_URL, API_URL($url));
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
