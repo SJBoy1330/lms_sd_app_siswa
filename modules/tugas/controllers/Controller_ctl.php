@@ -102,17 +102,16 @@ class Controller_ctl extends MY_Frontend
 
 	public function upload()
 	{
-		// var_dump($_FILES['file_jawaban']);
-		// die;
-
-		// $_FILES['tugas']
-		// $tugas = ;
 		$id_tugas = $this->input->post('id_tugas');
 		$arr['id_sekolah'] = $this->id_sekolah;
 		$arr['id_siswa'] = $this->id_siswa;
 		$arr['id_tugas'] = $id_tugas;
 		$arrFile['tugas']['multiple'] = true;
-		$arrFile['tugas']['file'][] = $_FILES['file_jawaban'];
+		// $jmlh = count($_FILES['file_jawaban']['name']);
+		// for ($i=0; $i < $jmlh; $i++) {
+		// 	$arrFile['tugas'] = $_FILES['file_jawaban'];
+		// }
+		$arrFile['tugas'] = $_FILES['file_jawaban'];
 		$result = curl_post('tugas/upload/', $arr, $arrFile);
 
 		var_dump($result);
