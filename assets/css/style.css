@@ -12078,6 +12078,10 @@ fieldset:disabled .btn {
   background: linear-gradient(to bottom, transparent 0%, transparent 42%, rgba(0, 0, 0, 0.65) 100%);
 }
 
+main{
+  padding-top: 75px;
+}
+
 .transition-05,
 .bar-more>span,
 .header:after,
