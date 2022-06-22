@@ -12080,6 +12080,12 @@ fieldset:disabled .btn {
 
 main{
   padding-top: 75px;
+  animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .transition-05,
