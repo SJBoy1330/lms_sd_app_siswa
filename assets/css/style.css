@@ -12082,6 +12082,10 @@ main{
   padding-top: 75px;
 }
 
+main.welcome{
+  padding-top: 0px !important;
+}
+
 .transition-05,
 .bar-more>span,
 .header:after,
@@ -15938,6 +15942,24 @@ a.label-biru {
 
 p.label-biru {
   color: #199DFD;
+}
+
+a.label-kuning{
+  font-weight: 500;
+  color: #F7EC09;
+}
+
+p.label-kuning{
+  color: #F7EC09;
+}
+
+a.label-abu{
+  font-weight: 500;
+  color: #999999;
+}
+
+p.label-abu{
+  color: #999999;
 }
 
 .btn-pribadi {
