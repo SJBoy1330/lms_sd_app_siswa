@@ -181,7 +181,7 @@
                             <?php endforeach; ?>
                         <?php else : ?>
                             <?php if ($result->tugas_siswa->kode_status == 1 || $result->tugas_siswa->kode_status == 2) : ?>
-                                <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada lampiran', 'Tugas telah diserahkan tanpa melampirkan file'); ?>
+                                <?= vector_default('vector_tugas_diserahkan.svg', 'Tidak ada lampiran', 'Tugas telah diserahkan tanpa melampirkan file'); ?>
                             <?php else : ?>
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center align-items-center flex-wrap mt-2">
