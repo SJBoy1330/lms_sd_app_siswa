@@ -111,10 +111,34 @@ class Controller_ctl extends MY_Frontend
 		// for ($i=0; $i < $jmlh; $i++) {
 		// 	$arrFile['tugas'] = $_FILES['file_jawaban'];
 		// }
-		$arrFile['tugas'] = $_FILES['file_jawaban'];
+		$arrFile['tugas']['file'] = $_FILES['file_jawaban'];
 		$result = curl_post('tugas/upload/', $arr, $arrFile);
 
 		var_dump($result);
 		die;
+	}
+
+	public function serahkan()
+	{
+		$action = $this->input->post('action');
+		$id_tugas = $this->input->post('id_tugas');
+
+		if ($action == 1) {
+			$result = curl_post('tugas/serahkan', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa, 'id_tugas' => $id_tugas]);
+		} else {
+			$result = curl_post('tugas/batalkan', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa, 'id_tugas' => $id_tugas]);
+		}
+
+		if ($result->status == 200) {
+			$data['status'] = TRUE;
+			$data['load'][0]['parent'] = '#display_jawaban';
+			$data['load'][0]['reload'] = base_url('tugas/detail_tugas/' . $id_tugas) . ' #reload_jawaban';
+			$data['alert']['title'] = 'PEMBERITAHUAN';
+		} else {
+			$data['status'] = FALSE;
+			$data['alert']['title'] = 'PERINGATAN';
+		}
+		$data['alert']['message'] = $result->message;
+		echo json_encode($data);
 	}
 }

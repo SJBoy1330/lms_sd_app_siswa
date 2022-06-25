@@ -35,9 +35,7 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
             }
             $('#' + element.id).prop('disabled', false);
             $('#' + element.id).html(text_button);
-            if (data.modal != null) {
-                $(data.modal.id).modal(data.modal.action);
-            }
+
             if (data.status == 200 || data.status == true) {
                 var icon = 'success';
             } else {
@@ -73,6 +71,9 @@ function submit_form(element, id_form, num = 0, color = '#FFFFFF') {
                 }
                 if (data.redirect) {
                     location.href = data.redirect;
+                }
+                if (data.modal != null) {
+                    $(data.modal.id).modal(data.modal.action);
                 }
 
                 if (data.reload == true) {

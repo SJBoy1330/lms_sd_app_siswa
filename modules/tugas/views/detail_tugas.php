@@ -79,15 +79,34 @@
                                     </div>
                                 </div>
                             <?php endif; ?>
+                            <?php if ($result->tugas_siswa->komentar) : ?>
+                                <div class="row py-1 px-2 mt-2 mb-2 ">
+                                    <div class="d-flex col-auto ps-0 pe-2">
+                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                <i class="fa-solid fa-feather size-20 text-white"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                        <p class="mb-0 fw-normal size-13 text-secondary">Komentar Guru</p>
+                                        <p class="mb-0 fw-normal size-14"><?= $result->tugas_siswa->komentar; ?></p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                 </a>
             </a>
-            <?php if ($result->download) : ?>
-                <div class="list-group-item rounded-15 mb-3 shadow-sm position-relative overflow-hidden p-3">
 
+            <!-- Begin New Design -->
+            <?php if ($result->download) : ?>
+                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
+                    <div class="col mb-2">
+                        <p class="fw-bolder size-15">Download Tugas</p>
+                    </div>
                     <?php foreach ($result->download as $row) : ?>
-                        <div class="card shadow-sm mb-3">
+                        <a href="<?= $row->file; ?>" class=" card shadow-sm mb-3">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-auto">
@@ -96,226 +115,116 @@
                                             <?= get_icon_file($row->extension); ?>
                                         </div>
                                     </div>
-                                    <a href="<?= $row->file; ?>" role="button" class="col align-self-center ps-0">
+                                    <div class="col align-self-center ps-0">
                                         <p class="mb-0 size-14 text-dark fw-normal"><?= $row->nama; ?></p>
                                         <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->extension); ?> File</p>
-                                    </a>
+                                    </div>
+                                    <div class="col-auto align-self-center text-end ms-3">
+                                        <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-arrow-down size-26 text-danger"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     <?php endforeach; ?>
-
                 </div>
             <?php endif; ?>
 
-            <!-- Begin New Design -->
-                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
-                    <div class="col mb-2">
-                        <p class="fw-bolder size-15">Download Tugas</p>
-                    </div>
-                    <div class="card shadow-sm mb-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 rounded-10 bg-document">
-                                        <i class="fa-solid fa-file-pdf size-30 text-danger"></i>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-14 text-dark fw-normal">Tugas 1 Aljabar</p>
-                                    <p class="mb-0 size-12 fw-normal text-secondary">PDF File</p>
-                                </div>
-                                <div class="col-auto align-self-center text-end ms-3">
-                                    <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-arrow-down size-26 text-danger"></i></button>
-                                </div>
+            <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
+                <div id="display_jawaban">
+                    <div id="reload_jawaban">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p class="fw-bolder size-15">Tugas Anda</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
-                    <div class="row mb-3">
-                        <div class="col">
-                            <p class="fw-bolder size-15">Tugas Anda</p>
-                        </div>
-                        <div class="col-auto align-self-center">
-                            <a href="#" class="label-merah fw-medium size-13">Tidak ada</a>
-                        </div>
-                    </div>
-                    <div class="card shadow-sm mb-3">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <div class="avatar avatar-50 rounded-10 bg-document">
-                                        <i class="fa-solid fa-file-pdf size-30 text-danger"></i>
-                                    </div>
-                                </div>
-                                <div class="col align-self-center ps-0">
-                                    <p class="mb-0 size-14 text-dark fw-normal">Tugas 1 Aljabar</p>
-                                    <p class="mb-0 size-12 fw-normal text-secondary">PDF File</p>
-                                </div>
-                                <div class="col-auto align-self-center text-end ms-3">
-                                    <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4 mx-1">
-                        <input id="inputUpload" type="file" hidden />
-                        <label for="inputUpload" class="btn btn-block btn-md btn-danger btn-detail-tugas-tambah mb-2">Tambah Tugas</label>
-                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</a>
-                    </div>
-                </div>
-            <!-- End New Design -->
-
-            <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3">
-                <form method="POST" action="<?= base_url('tugas/upload'); ?>" id="form_submited_tugas" enctype="multipart/form-data" class="row mb-3">
-                    <input type="hidden" name="id_tugas" id="id_tugas" value="<?= $id_tugas; ?>">
-                    <div class="col">
-                        <p class="fw-bolder size-15">Tugas Anda</p>
-                    </div>
-                    <?php if (strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s'))) : ?>
-                        <?php if ($result->tugas_siswa == NULL) : ?>
-                            <?php if ($result->detail->izin_terlambat == 'Y') : ?>
-                                <div class="col-auto align-self-center">
-                                    <div class="file-input pe-1">
-                                        <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" name="files[]" multiple="multiple" class="file-input__input" />
-                                        <label class="file-input__label" for="file-input">
-                                            <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            <?php else : ?>
-                                <div class="col-auto align-self-center">
-                                    <div class="file-input pe-1">
-                                        <span class="text-danger">Tidak mengerjakan</span>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                        <?php else : ?>
                             <div class="col-auto align-self-center">
-                                <div class="file-input pe-1">
-                                    <span><?= $result->tugas_siswa->status; ?></span>
-                                </div>
+                                <?php
+                                if ($result->tugas_siswa->kode_status == 1) {
+                                    $color = 'text-warning';
+                                } elseif ($result->tugas_siswa->kode_status == 2) {
+                                    $color = 'label-hijau';
+                                } elseif ($result->tugas_siswa->kode_status == 3) {
+                                    $color = 'label-merah';
+                                } else {
+                                    if (strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s'))) {
+                                        $color = 'label-merah';
+                                    } else {
+                                        $color = 'text-dark';
+                                    }
+                                }
+                                ?>
+                                <a class="<?= $color; ?> fw-medium size-13"><?= $result->tugas_siswa->status; ?></a>
                             </div>
-                        <?php endif; ?>
-                    <?php else : ?>
-                        <?php if ($result->tugas_siswa != NULL) : ?>
-                            <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
-                                <div class="col-auto align-self-center">
-                                    <div class="file-input pe-1">
-                                        <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" name="files[]" multiple="multiple" class="file-input__input" />
-                                        <label class="file-input__label" for="file-input">
-                                            <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            <?php else : ?>
-                                <div class="col-auto align-self-center">
-                                    <div class="file-input pe-1">
-                                        <span><?= $result->tugas_siswa->status; ?></span>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                        <?php else : ?>
-                            <div class="col-auto align-self-center">
-                                <div class="file-input pe-1">
-                                    <input type="file" name="file_jawaban[]" id="file-input" onchange="upload_jawaban(this)" class="file-input__input" />
-                                    <label class="file-input__label" for="file-input">
-                                        <span><i class="fa-regular fa-plus me-1"></i>Upload Tugas</span>
-                                    </label>
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                </form>
-                <div id="reload_jawaban">
-                    <div id="load_jawaban_new">
+                        </div>
                         <?php if ($result->tugas_siswa->file) : ?>
                             <?php foreach ($result->tugas_siswa->file as $row) : ?>
                                 <div class="card shadow-sm mb-3" id="jawaban-<?= $row->id_file; ?>">
-                                    <div class="card-body">
+                                    <div class=" card-body">
                                         <div class="row">
                                             <div class="col-auto">
                                                 <div class="avatar avatar-50 rounded-10 bg-document">
+                                                    <!-- <i class="fa-solid fa-file-pdf size-30 text-danger"></i> -->
                                                     <?= get_icon_file($row->ext); ?>
                                                 </div>
                                             </div>
-                                            <a href="#modalPDF" data-bs-toggle="modal" role="button" class="col align-self-center ps-0">
-                                                <p class="mb-0 size-14 text-dark fw-normal"><?= nice_title($row->judul, 20); ?></p>
-                                                <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->ext); ?> document</p>
+                                            <a href="<?= $row->files; ?>" class="col align-self-center ps-0">
+                                                <p class="mb-0 size-14 text-dark fw-normal"><?= tampil_text($row->judul, 14) ?></p>
+                                                <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->ext); ?> File</p>
                                             </a>
                                             <div class="col-auto align-self-center text-end ms-3">
-                                                <button type="button" onclick="hapus_file(<?= $row->id_file; ?>)" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
+                                                <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
+                                                    <button type="button" onclick="hapus_file(<?= $row->id_file; ?>)" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
+                        <?php else : ?>
+                            <?php if ($result->tugas_siswa->kode_status == 1 || $result->tugas_siswa->kode_status == 2) : ?>
+                                <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada lampiran', 'Tugas telah diserahkan tanpa melampirkan file'); ?>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    </div>
+                        <form class="row mt-4 mx-1" method="post" action="<?= base_url('tugas/serahkan'); ?>" id="form_serahkan" enctype="multipart/form-data">
+                            <input type="hidden" name="id_tugas" id="id_tugas" value="<?= $id_tugas; ?>">
+                            <!-- BUTTON UPLOAD TUGAS -->
+                            <?php if (strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s'))) : ?>
+                                <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
+                                    <?php if ($result->detail->izin_terlambat == 'Y') : ?>
+                                        <input id="lapirkan_jawaban" name="file_jawaban[]" onchange="upload_jawaban(this)" multiple="multiple" type="file" hidden />
+                                        <label for="lapirkan_jawaban" class="btn btn-block btn-md btn-danger btn-detail-tugas-tambah mb-2">Lampirkan Jawaban</label>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
+                                    <input id="lapirkan_jawaban" name="file_jawaban[]" onchange="upload_jawaban(this)" multiple="multiple" type="file" hidden />
+                                    <label for="lapirkan_jawaban" class="btn btn-block btn-md btn-danger btn-detail-tugas-tambah mb-2">Lampirkan Jawaban</label>
+                                <?php endif; ?>
+                            <?php endif; ?>
 
+                            <!-- BUTTON SERAHKAAN TUGAS -->
+                            <?php if (strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s'))) : ?>
+                                <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
+                                    <?php if ($result->detail->izin_terlambat == 'Y') : ?>
+                                        <input type="hidden" name="action" id="action" value="1">
+                                        <button type="button" id="button_submited_tugas" onclick="submit_form(this,'#form_serahkan')" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Terlambat</button>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php else : ?>
+                                <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
+                                    <input type="hidden" name="action" id="action" value="1">
+                                    <button type="button" id="button_submited_tugas" onclick="submit_form(this,'#form_serahkan')" class="btn btn-block btn-md btn-danger btn-detail-tugas">Serahkan Tugas</button>
+                                <?php else : ?>
+                                    <input type="hidden" name="action" id="action" value="0">
+                                    <button type="button" id="button_submited_tugas" onclick="submit_form(this,'#form_serahkan')" class="btn btn-block btn-md btn-danger btn-detail-tugas">Batalkan Tugas</button>
+                                <?php endif; ?>
+                            <?php endif; ?>
+
+                        </form>
+                    </div>
                 </div>
 
-
-                <?php if (!$result->tugas_siswa->file && strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s')) && $result->detail->izin_terlambat == 'N') : ?>
-                    <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada jawaban', 'Anda belum mengirimkan jawaban tugas ini, silahkan hubungi guru atau admin sekolah jika terjadi kesalahan'); ?>
-                <?php endif; ?>
-
-                <?php if ($result->detail->izin_terlambat == 'Y') : ?>
-                    <?php if ((strtotime($result->detail->batas_waktu) < strtotime(date('Y-m-d H:i:s')))) : ?>
-                        <div class="row mt-4 mx-1">
-                            <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Terlambat</a>
-                        </div>
-                    <?php else : ?>
-                        <?php if ($result->tugas_siswa == NULL) : ?>
-                            <div class="row mt-4 mx-1">
-                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                            </div>
-                        <?php else : ?>
-                            <?php if ($result->tugas_siswa->kode_status == NULL) : ?>
-                                <div class="row mt-4 mx-1">
-                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                                </div>
-                            <?php else : ?>
-                                <?php if ($result->tugas_siswa->kode_status != 2) : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Batalkan Tugas</a>
-                                    </div>
-                                <?php else : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                <?php else : ?>
-                    <?php if ((strtotime($result->detail->batas_waktu) >= strtotime(date('Y-m-d H:i:s')))) : ?>
-                        <?php if ($result->tugas_siswa == NULL) : ?>
-                            <div class="row mt-4 mx-1">
-                                <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                            </div>
-                        <?php else : ?>
-                            <?php if ($result->tugas_siswa->kode_status == NULL) : ?>
-                                <div class="row mt-4 mx-1">
-                                    <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                                </div>
-                            <?php else : ?>
-                                <?php if ($result->tugas_siswa->kode_status != 2) : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Batalkan Tugas</a>
-                                    </div>
-                                <?php else : ?>
-                                    <div class="row mt-4 mx-1">
-                                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" id="button_submited_tugas">Serahkan Tugas</a>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                <?php endif; ?>
             </div>
+            <!-- End New Design -->
         </div>
     </div>
 </div>
