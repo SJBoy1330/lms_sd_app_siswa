@@ -182,6 +182,8 @@
                         <?php else : ?>
                             <?php if ($result->tugas_siswa->kode_status == 1 || $result->tugas_siswa->kode_status == 2) : ?>
                                 <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada lampiran', 'Tugas telah diserahkan tanpa melampirkan file'); ?>
+                            <?php else : ?>
+                                DISINI TEMPAT EKSEKUSI
                             <?php endif; ?>
                         <?php endif; ?>
                         <form class="row mt-4 mx-1" method="post" action="<?= base_url('tugas/serahkan'); ?>" id="form_serahkan" enctype="multipart/form-data">
