@@ -77,5 +77,12 @@ button.btn-download-tugas{
     100% {
       background-color: #00DFA3;
     }
-  }
+}
+
+.row .circle-serahtugas{
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #F5F5F5;
+}
   

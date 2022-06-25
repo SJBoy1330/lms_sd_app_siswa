@@ -183,7 +183,14 @@
                             <?php if ($result->tugas_siswa->kode_status == 1 || $result->tugas_siswa->kode_status == 2) : ?>
                                 <?= vector_default('vector_tugas_kosong.svg', 'Tidak ada lampiran', 'Tugas telah diserahkan tanpa melampirkan file'); ?>
                             <?php else : ?>
-                                DISINI TEMPAT EKSEKUSI
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center align-items-center flex-wrap mt-2">
+                                        <div class="circle-serahtugas d-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-layer-plus" style="font-size: 45px; color: #9f9f9f;"></i>
+                                        </div>
+                                        <p class="size-14 text-secondary fw-normal text-center mx-1 mt-3">Tekan tombol lampirkan untuk menambahkan jawaban anda</p>
+                                    </div>
+                                </div>
                             <?php endif; ?>
                         <?php endif; ?>
                         <form class="row mt-4 mx-1" method="post" action="<?= base_url('tugas/serahkan'); ?>" id="form_serahkan" enctype="multipart/form-data">
