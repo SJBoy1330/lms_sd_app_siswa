@@ -16853,3 +16853,11 @@ button.button-kirim-pesan {
 .custom-file-upload:hover {
   text-decoration: underline;
 }
+
+/* Figure Sidemnu */
+.figure-sidemenu{
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border: 3px solid white !important;
+}

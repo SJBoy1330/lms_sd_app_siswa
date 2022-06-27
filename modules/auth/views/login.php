@@ -63,7 +63,11 @@
                         Ingat saya
                     </label>
 
-                    <a href="<?= base_url('auth/send_email'); ?>" onclick="unreload(this)" class="label-merah">
+                    <!-- <a href="<?= base_url('auth/send_email'); ?>" onclick="unreload(this)" class="label-merah">
+                        Lupa kata sandi?
+                    </a> -->
+
+                    <a href="#" onclick="unreload(this)" class="label-merah">
                         Lupa kata sandi?
                     </a>
                 </div>
