@@ -1,5 +1,5 @@
 <!-- Begin page content -->
-<main class="container-fluid h-100 ">
+<main class="container-fluid h-100 welcome">
     <div class="row h-100">
         <div class="col-11 col-sm-11 mx-auto">
 
@@ -25,7 +25,7 @@
             <form id="form_login" method="POST" action="<?= base_url('func_auth/login_proses'); ?>">
                 <div class="text-center my-5">
                     <p class="mb-1 title-1">Log in App Siswa</p>
-                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan kode sekolah, username dan kata sandi</p>
+                    <p class="mb-0 fw-600 size-18 title-2">Masuk dengan Kode sekolah, User ID dan Kata sandi</p>
                 </div>
 
                 <div class="mb-4" id="req_kode_sekolah">
@@ -63,7 +63,11 @@
                         Ingat saya
                     </label>
 
-                    <a href="<?= base_url('auth/send_email'); ?>" onclick="unreload(this)" class="label-merah">
+                    <!-- <a href="<?= base_url('auth/send_email'); ?>" onclick="unreload(this)" class="label-merah">
+                        Lupa kata sandi?
+                    </a> -->
+
+                    <a href="#" onclick="unreload(this)" class="label-merah">
                         Lupa kata sandi?
                     </a>
                 </div>

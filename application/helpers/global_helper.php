@@ -407,18 +407,18 @@ function curl_post($url, $fields = array(), $files = NULL)
   $CI = &get_instance();
   $postvars = http_build_query($fields);
   if ($files != NULL) {
+    // var_dump($files);
     foreach ($files as $file => $value) {
       if (!isset($files[$file]['multiple'])) {
         $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
         $postfile[$file] = $cfile;
       } else {
-        $jmlh = count($value['file']['name']);
-        for ($i = 0; $i < $jmlh; $i++) {
-          $cfile[$i] = new CURLFile($value['file']['tmp_name'][$i], $value['file']['type'][$i], $value['file']['name'][$i]);
-          $postfile[$file][$i] = $cfile[$i];
-        }
+        $cfile = new CURLFile($value['file']['tmp_name'], $value['file']['type'], $value['file']['name']);
+        $postfile[$file] = $cfile;
       }
     }
+    var_dump($postfile);
+    die;
 
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
     // var_dump($postvars);
@@ -473,6 +473,16 @@ function nice_title($str, $limit = 75)
 
   // $tmp = implode(' ', $e);
   // return strlen($tmp);
+}
+
+function tampil_text($str, $tampil)
+{
+  $hasil = substr($str, 0, $tampil);
+  if (strlen($str) > $tampil) {
+    return $hasil . '...';
+  } else {
+    return $hasil;
+  }
 }
 function nice_date_time($tanggal = "now")
 {
@@ -705,6 +715,7 @@ function size($file)
 function get_icon_file($ext = NULL)
 {
   $arr['docx'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
+  $arr['doc'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
   $arr['words'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
   $arr['pdf'] = '<i class="fa-solid fa-file-pdf size-30 text-danger"></i>';
   $arr['jpg'] = '<i class="fa-solid fa-file-image size-30 text-warning"></i>';

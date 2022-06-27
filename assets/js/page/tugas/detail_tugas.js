@@ -74,8 +74,8 @@ function hapus_file(id_file) {
 function upload_jawaban(element) {
 	// console.log('ok');
 	var id = $('#id_tugas').data('id');
-	var url = $('#form_submited_tugas').attr('action');
-	var method = $('#form_submited_tugas').attr('method');
+	var url = BASE_URL + 'tugas/upload';
+	var method = 'POST';
 	// console.log(url);
 
 	var form = $('form')[0];
