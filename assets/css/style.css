@@ -12081,6 +12081,7 @@ fieldset:disabled .btn {
 main{
   padding-top: 75px;
   animation: fadein 0.3s;
+  padding-bottom: 80px;
 }
 
 @keyframes fadein {
