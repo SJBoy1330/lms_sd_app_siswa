@@ -401,20 +401,29 @@ function is_logged_in()
 }
 
 
-function curl_post($url, $fields = array(), $files = NULL)
+function curl_post($url, $fields = array(), $files = NULL, $multiple = false)
 {
   $ch = curl_init();
   $CI = &get_instance();
   $postvars = http_build_query($fields);
   if ($files != NULL) {
     // var_dump($files);
+    if ($multiple == true) {
+      $headers = array("Content-Type" => "multipart/form-data");
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+      $i = 0;
+    }
     foreach ($files as $file => $value) {
-      if (!isset($files[$file]['multiple'])) {
+      if ($multiple == FALSE) {
         $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
         $postfile[$file] = $cfile;
       } else {
-        $cfile = new CURLFile($value['file']['tmp_name'], $value['file']['type'], $value['file']['name']);
-        $postfile[$file] = $cfile;
+        $postfile[$file] = curl_file_create(
+          $value['tmp_name'][$i],
+          $value['type'][$i],
+          $value['name'][$i]
+        );
+        $i++;
       }
     }
     var_dump($postfile);

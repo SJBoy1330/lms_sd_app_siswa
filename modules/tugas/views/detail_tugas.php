@@ -186,7 +186,7 @@
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center align-items-center flex-wrap mt-2">
                                         <div class="circle-serahtugas d-flex justify-content-center align-items-center">
-                                            <i class="fa-solid fa-layer-plus" style="font-size: 45px; color: #9f9f9f;"></i>
+                                            <i class="fa-solid fa-layer-plus" style="font-size: 45px; color: #c8c5c5;"></i>
                                         </div>
                                         <p class="size-14 text-secondary fw-normal text-center mx-1 mt-3">Tekan tombol lampirkan untuk menambahkan jawaban anda</p>
                                     </div>

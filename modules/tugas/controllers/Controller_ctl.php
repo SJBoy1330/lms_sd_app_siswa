@@ -106,13 +106,12 @@ class Controller_ctl extends MY_Frontend
 		$arr['id_sekolah'] = $this->id_sekolah;
 		$arr['id_siswa'] = $this->id_siswa;
 		$arr['id_tugas'] = $id_tugas;
-		$arrFile['tugas']['multiple'] = true;
 		// $jmlh = count($_FILES['file_jawaban']['name']);
 		// for ($i=0; $i < $jmlh; $i++) {
 		// 	$arrFile['tugas'] = $_FILES['file_jawaban'];
 		// }
-		$arrFile['tugas']['file'] = $_FILES['file_jawaban'];
-		$result = curl_post('tugas/upload/', $arr, $arrFile);
+		$arrFile['tugas'] = $_FILES['file_jawaban'];
+		$result = curl_post('tugas/upload/', $arr, $arrFile, true);
 
 		var_dump($result);
 		die;

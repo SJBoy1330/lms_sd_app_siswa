@@ -20,10 +20,10 @@ class Controller_ctl extends MY_Frontend
 
 		// Meta Data
 		$mydata['id_sekolah'] = $this->id_sekolah;
-		$mydata['id_wali'] = $this->id_wali;
+		$mydata['id_siswa'] = $this->id_siswa;
 
 		$mydata['data'] = curl_get("profil", array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
-		
+
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/loader.css') . '">';
@@ -212,14 +212,11 @@ class Controller_ctl extends MY_Frontend
 		$bulan = month_from_number(date('m', $date));
 		$mydata['tanggal'] = $hari . ', ' . date('d', $date) . ' ' . $bulan . ' ' . date('Y', $date);
 
-		// meta data
-		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
-
 		// LOAD API 
 		$data = curl_get(
 			'presensi/report_siswa/',
 			[
-				'id_sekolah' => $id_sekolah,
+				'id_sekolah' => $this->id_sekolah,
 				'id_siswa' => $this->id_siswa,
 				'tanggal' => date('Y-m-d', $date)
 			]

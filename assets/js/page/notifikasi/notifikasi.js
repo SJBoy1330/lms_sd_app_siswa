@@ -28,9 +28,11 @@ function get_tipe(property, tipe) {
 
     const tampil = document.querySelectorAll(".showing");
     if (tampil.length == 0) {
-        vector_notifikasi.classList.remove('d-none');
+        vector_notifikasi.classList.remove("hiding");
+        vector_notifikasi.classList.add("showing");
     } else {
-        vector_notifikasi.classList.add('d-none');
+        vector_notifikasi.classList.add("hiding");
+        vector_notifikasi.classList.remove("showing");
     }
 }
 
