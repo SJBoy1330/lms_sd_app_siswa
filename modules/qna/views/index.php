@@ -1,6 +1,6 @@
 <!-- main page content -->
 <div class="main-container container top-20">
-    <div class="row" style="margin-top: 40px;">
+    <div class="row" style="margin-top: 130px;">
         <div class="col-12 col-md-10 col-lg-8 mx-auto">
             <div class="row mb-2">
                 <div class="col-12 col-md-12 col-lg-12">
