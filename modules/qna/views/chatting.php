@@ -7,148 +7,6 @@
                 <div class="main-container container">
                     <div class="row mb-5" id="display_chat">
                         <div class="col-12 chat-list scroll-y mb-3" id="reload_chat">
-                            <!-- <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <div class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col">
-                                <p class="mb-0 size-15 fw-normal">Materinya mudah dimengerti bu</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <div class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col">
-                                <div class="mw-100 position-relative mb-2 figure">
-                                    <img src="<?= base_url(); ?>assets/img/news1.jpg" alt="" class="mw-100">
-                                </div>
-                                <p class="mb-0 mt-2 ms-1 size-15 fw-normal">Gak membingungkan untuk
-                                    dipelajari sehingga murid pertama kali belajar jadi mudah untuk memahamix</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <div class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col">
-                                <video src="https://maxartkiller.com/website/maxartkiller.mp4" controls=""></video>
-                                <p class="mb-0 mt-2 ms-1 size-15 fw-normal">Gak membingungkan untuk
-                                    dipelajari sehingga murid pertama kali belajar jadi mudah untuk memahamix</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <a href="#" class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col-auto detail-tugas-sd">
-                                <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
-                                    <i class="fa-solid fa-file-pdf size-30"></i>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center ps-2">
-                                <p class="mb-0 size-13 fw-medium">tugas_bahasa..pdf</p>
-                                <p class="mb-0 size-12 fw-normal text-muted">Bab 1</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <a href="#" class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col-auto detail-tugas-sd">
-                                <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
-                                    <i class="fa-solid fa-file-word size-30"></i>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center ps-2">
-                                <p class="mb-0 size-13 fw-medium">tugas_bahasa..docx</p>
-                                <p class="mb-0 size-12 fw-normal text-muted">Bab 1</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <a href="#" class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col-auto detail-tugas-sd">
-                                <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
-                                    <i class="fa-solid fa-file-excel size-30"></i>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center ps-2">
-                                <p class="mb-0 size-13 fw-medium">tugas_bahasa..xls</p>
-                                <p class="mb-0 size-12 fw-normal text-muted">Bab 1</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <a href="#" class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col-auto detail-tugas-sd">
-                                <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
-                                    <i class="fa-solid fa-file-video size-30"></i>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center ps-2">
-                                <p class="mb-0 size-13 fw-medium">tugas_bahasa..mp4</p>
-                                <p class="mb-0 size-12 fw-normal text-muted">Bab 1</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row no-margin right-chat">
-                <div class="col-12">
-                    <a href="#" class="chat-block pengirim">
-                        <div class="row">
-                            <div class="col-auto detail-tugas-sd">
-                                <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
-                                    <i class="fa-solid fa-file-image size-30"></i>
-                                </div>
-                            </div>
-                            <div class="col-auto align-self-center ps-2">
-                                <p class="mb-0 size-13 fw-medium">tugas_bahasa..png</p>
-                                <p class="mb-0 size-12 fw-normal text-muted">Bab 1</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 text-end">
-                <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i> 08:30 </p>
-            </div>
-            <div class="row no-margin left-chat my-3">
-                <div class="col-2 align-self-center">
-                    <a href="#" target="_self" class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= base_url(); ?>assets/img/user2.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
-                </div>
-                <div class="col-10">
-                    <div class="chat-block penerima">
-                        <div class="row">
-                            <div class="col">
-                                <p class="mb-0 ms-1 size-15 fw-normal"> Sama sama, semangat ya semoga dapat nilai bagus</p>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-dark ms-1 mt-1 fw-medium small"><i class="fa-solid fa-check-double text-success"></i> 08:30 </p>
-                </div>
-            </div> -->
                             <?php if ($result) : ?>
                                 <?php foreach ($result as $row) : ?>
                                     <?php if ($row->domain == true) : ?>
@@ -212,6 +70,12 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+
                 <!-- Modal Chatting -->
                 <div class="modal fade" id="menuModalChatting" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
@@ -256,7 +120,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Modal Image -->
                 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
