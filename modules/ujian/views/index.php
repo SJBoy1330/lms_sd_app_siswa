@@ -1,29 +1,3 @@
-<!-- Header -->
-<header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
-    <div class="row">
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44">
-                <i class="fa-solid fa-chevron-left text-white"></i>
-            </a>
-        </div>
-        <div class="col d-flex justify-content-center align-items-center text-center">
-            <h6 class="text-white">Ujian Online</h6>
-        </div>
-        <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44"></a>
-        </div>
-    </div>
-    <div class="d-flex justify-content-center">
-        <div class="tablinknya-tugas-ujian">
-            <div class="col-12 align-self-center tab-wali" style="display: flex; justify-content:center; align-items:center;">
-                <button id="defaultOpen" class="tablinks-wali" onclick="openCity(event, 'Tugas')" style=" width: 100%; height: 100%; padding: 10px;">Daftar Ujian</button>
-                <button class="tablinks-wali" onclick="openCity(event, 'Ujian')" style="width: 100%; height: 100%; padding: 10px;">Daftar Riwayat</button>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Header ends -->
-
 <!-- main page content -->
 <div class="main-container container">
     <div class="row mb-2">
@@ -33,7 +7,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card mb-3">
-                                <a href="<?= base_url('ujian/detail_ujian')?>" class="card-body">
+                                <a href="<?= base_url('ujian/detail_ujian') ?>" class="card-body">
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -54,7 +28,7 @@
                             </div>
 
                             <div class="card mb-3">
-                                <a href="<?= base_url('ujian/detail_ujian')?>" class="card-body">
+                                <a href="<?= base_url('ujian/detail_ujian') ?>" class="card-body">
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -75,7 +49,7 @@
                             </div>
 
                             <div class="card mb-3">
-                                <a href="<?= base_url('ujian/detail_ujian')?>" class="card-body">
+                                <a href="<?= base_url('ujian/detail_ujian') ?>" class="card-body">
                                     <div class="row">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">

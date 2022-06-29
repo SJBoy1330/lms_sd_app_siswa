@@ -81,7 +81,7 @@ class Function_ctl extends MY_Welcome
             "id_siswa" => $this->id_siswa,
             "nama" => $nama,
             "alamat" => $this->input->post('alamat'),
-            "telp" => $this->input->post('nohp'),
+            "telp" => $this->input->post('telp'),
             "email" => $email,
             "id_agama" => $agama,
         ];

@@ -51,7 +51,7 @@
                 <input type="text" name="alamat" class="form-control form-control-pribadi text-start" id="alamat" value="<?= $result->alamat; ?>" placeholder="Masukan alamat rumah" autocomplete="off">
             </div>
             <div class="col-12" id="req_telp">
-                <label for="nohp" class="form-label fw-bold size-14">No. Handphone</label>
+                <label for="nohp" class="form-label fw-bold size-14">No. Telepon</label>
                 <input type="text" name="telp" class="form-control form-control-pribadi text-start" id="nohp" value="<?= $result->telp; ?>" placeholder="Masukan nomor telepon">
             </div>
             <div class="col-12 mb-4" id="req_email">
