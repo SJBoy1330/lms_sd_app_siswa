@@ -62,8 +62,8 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center ps-3 mt-2">
-                                                <p class="fw-normal mb-0 size-17"><?= $row->nama_pelajaran ?></p>
-                                                <p class="fw-normal mb-0 text-secondary size-13"><?= $row->pengajar ?></p>
+                                                <p class="fw-normal mb-0 size-17"><?= tampil_text($row->nama_pelajaran, 13); ?></p>
+                                                <p class="fw-normal mb-0 text-secondary size-13"><?= tampil_text($row->pengajar, 15); ?></p>
                                             </div>
                                             <div class="col text-end mt-3">
                                                 <p class="mb-0 fw-normal size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
@@ -92,8 +92,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col align-self-center ps-3 mt-2">
-                                                    <p class="fw-normal mb-0 size-17 opacity-5"><?= $row->nama_pelajaran ?></p>
-                                                    <p class="fw-normal mb-0 text-secondary size-13 opacity-5"><?= $row->pengajar ?></p>
+                                                    <p class="fw-normal mb-0 size-17 opacity-5"><?= tampil_text($row->nama_pelajaran, 13); ?></p>
+                                                    <p class="fw-normal mb-0 text-secondary size-13 opacity-5"><?= tampil_text($row->pengajar, 15); ?></p>
                                                 </div>
                                                 <div class="col text-end mt-3">
                                                     <p class="mb-0 fw-normal size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
