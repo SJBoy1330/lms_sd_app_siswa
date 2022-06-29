@@ -31,7 +31,7 @@
                                                                 <div class="d-flex justify-content-between align-items-center">
                                                                     <p class="size-12 fw-medium mb-0">Max Smith</p>
                                                                 </div>
-                                                                <p class="fw-normal size-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi saepe perspiciatis..</p>
+                                                                <p class="fw-normal size-12">Lorem</p>
                                                             </div>
                                                         </div>
                                                         <div class="col">

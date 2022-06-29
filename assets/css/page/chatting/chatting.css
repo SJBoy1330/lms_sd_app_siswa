@@ -105,7 +105,7 @@
 .column-reply-pengirim{
   max-height: 100px; 
   height: auto;
-  min-height: 75px;
+  min-height: 55px;
   border-radius: 10px;
   text-align: left; 
   margin: auto; 
@@ -127,7 +127,7 @@
 .column-reply-penerima{
   max-height: 100px; 
   height: auto;
-  min-height: 75px;
+  min-height: 55px;
   border-radius: 10px;
   text-align: left; 
   margin: auto; 
