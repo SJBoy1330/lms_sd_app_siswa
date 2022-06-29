@@ -31,6 +31,10 @@ $("#upload").click(function () {
     $("#upload-file").trigger('click');
 });
 
+$("#upload2").click(function () {
+    $("#upload-file2").trigger('click');
+});
+
 function toPelajaran() {
     $('.header-materi').html(`<h5 class="modal-title" id="pelajaranModalLabel">Materi Pelajaran</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`);

@@ -14437,42 +14437,43 @@ a.card {
 }
 
 .chat-list .left-chat {
-  margin-bottom: 15px;
+  margin-bottom: 15px !important;
+  text-align: left;
 }
 
 .chat-list .left-chat .chat-block {
   background-color: var(--finwallapp-theme-text);
-  padding: 15px;
-  border-radius: var(--finwallapp-rounded) var(--finwallapp-rounded) var(--finwallapp-rounded) 0px;
-  margin-right: 3px;
-  position: relative;
-  width: auto;
-  display: inline-block;
-  margin-bottom: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  max-width: 90%;
+  padding: 15px !important;
+  border-radius: var(--finwallapp-rounded) var(--finwallapp-rounded) var(--finwallapp-rounded) 0px !important;
+  margin-right: 3px !important;
+  position: relative !important;
+  width: auto !important;
+  display: inline-block !important;
+  margin-bottom: 5px !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) !important;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) !important;
+  -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05) !important;
+  max-width: 90% !important;
 }
 
 .chat-list .left-chat .chat-block:before {
   /* content: ""; */
-  position: absolute;
-  left: 0px;
-  bottom: -16px;
-  height: 8px;
-  width: 8px;
-  border-radius: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 10px;
-  z-index: 1;
-  border-top-color: var(--finwallapp-theme-text);
-  border-left-color: var(--finwallapp-theme-text);
+  position: absolute !important;
+  left: 0px !important;
+  bottom: -16px !important;
+  height: 8px !important;
+  width: 8px !important;
+  border-radius: 0 !important;
+  border-color: transparent !important;
+  border-style: solid !important;
+  border-width: 10px !important;
+  z-index: 1 !important;
+  border-top-color: var(--finwallapp-theme-text) !important;
+  border-left-color: var(--finwallapp-theme-text) !important;
 }
 
 .chat-list .left-chat .time {
-  padding-left: 15px;
+  padding-left: 15px !important;
 }
 
 .chat-list .right-chat {
@@ -14495,6 +14496,7 @@ a.card {
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   max-width: 90%;
+  min-width: 150px !important;
 }
 
 .chat-list .right-chat .chat-block:before {
@@ -16733,7 +16735,7 @@ button.input-group-text {
 }
 
 .chat-list .left-chat .chat-block.penerima {
-  background-color: #00DFA3;
+  background-color: #EC3528;
   color: #FFFFFF;
 }
 
