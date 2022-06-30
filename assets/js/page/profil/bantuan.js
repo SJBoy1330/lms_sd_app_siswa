@@ -24,7 +24,7 @@ function get_kategori(property, kategori) {
     });
 
     const vector_bantuan = document.querySelector("#vector_bantuan");
-    const tampil = document.querySelectorAll(".showing");
+    const tampil = document.querySelectorAll(".target_search.showing");
     if (tampil.length == 0) {
         vector_bantuan.classList.remove("hiding");
         vector_bantuan.classList.add("showing");

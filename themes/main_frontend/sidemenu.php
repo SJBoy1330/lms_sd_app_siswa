@@ -30,7 +30,7 @@
                             <li class="nav-item">
                                 <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" aria-current="page" href="<?= base_url('home'); ?>" onclick="unreload(this)">
                                     <div class="avatar avatar-40 icon"><i class="fa-solid fa-house"></i></div>
-                                    <div class="col">Dashboard</div>
+                                    <div class="col">Beranda</div>
                                     <div class="arrow"><i class="bi bi-chevron-right"></i></div>
                                 </a>
                             </li>
@@ -66,7 +66,7 @@
                                 </a>
                             </li>
                             <li class="nav-item logout">
-                                <a class="nav-link" href="<?= base_url('auth/logout') ?>" tabindex="-1">
+                                <a class="nav-link question_alert" <?= alert_question('KONFIRMASI', 'Apakah anda akan keluar dari aplikasi KlasQ Siswa ?', 'question') ?> href="<?= base_url('auth/logout') ?>" tabindex="-1">
                                     <div class="avatar avatar-40 icon"><i class="fa-solid fa-right-from-bracket"></i></div>
                                     <div class="col">Keluar</div>
                                 </a>
@@ -189,7 +189,8 @@
                                 <div class="d-flex justify-content-center">
                                     <div class="tablinknya-tugas-ujian">
                                         <div class="col-12 align-self-center tab" style="display: flex; justify-content:center; align-items:center;">
-                                            <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'Personal')" style=" width: 100%; height: 100%; padding: 5px;">Pesan <span class="badge rounded-pill bg-danger ms-1">3</span></button>
+                                            <!-- <span class="badge rounded-pill bg-danger ms-1">3</span> -->
+                                            <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'Personal')" style=" width: 100%; height: 100%; padding: 5px;">Pesan </button>
                                             <button class="tablinks" onclick="openCity(event, 'Grup')" style="width: 100%; height: 100%; padding: 5px;">Pesan Grup</button>
                                         </div>
                                     </div>

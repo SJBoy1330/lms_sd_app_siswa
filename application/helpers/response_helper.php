@@ -71,3 +71,22 @@ function alert_question($judul, $text = NULL, $icon = 'question', $image = NULL)
 
   return $data;
 }
+
+function take_alert($judul, $text = NULL, $icon = 'warning', $image = NULL)
+{
+
+  $data = '';
+
+  if ($judul != NULL) {
+
+    $data .= 'data-judul="' . $judul . '"';
+
+    $data .= 'data-message="' . $text . '"';
+
+    $data .= 'data-icon="' . $icon . '"';
+
+    $data .= 'data-image="' . $image . '"';
+  }
+
+  return $data;
+}

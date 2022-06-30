@@ -426,8 +426,6 @@ function curl_post($url, $fields = array(), $files = NULL, $multiple = false)
         $i++;
       }
     }
-    var_dump($postfile);
-    die;
 
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
     // var_dump($postvars);
@@ -726,10 +724,17 @@ function get_icon_file($ext = NULL)
   $arr['docx'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
   $arr['doc'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
   $arr['words'] = '<i class="fa-solid fa-file-word size-30 text-primary"></i>';
+  $arr['xls'] = '<i class="fa-solid fa-file-excel size-30 text-success"></i>';
+  $arr['xlsx'] = '<i class="fa-solid fa-file-excel size-30 text-success"></i>';
   $arr['pdf'] = '<i class="fa-solid fa-file-pdf size-30 text-danger"></i>';
   $arr['jpg'] = '<i class="fa-solid fa-file-image size-30 text-warning"></i>';
   $arr['png'] = '<i class="fa-solid fa-file-image size-30 text-info"></i>';
-  $arr['jpeg'] = '<i class="fa-solid fa-file-image size-30" stye="color : #ffa340"></i>';
+  $arr['jpeg'] = '<i class="fa-solid fa-file-image size-30" stye="color : #ffa340;"></i>';
+  $arr['zip'] = '<i class="fa-solid fa-file-zipper size-30" style="color : #ac53c9;"></i>';
+  $arr['rar'] = '<i class="fa-solid fa-file-zipper size-30" style="color : #e643bf;"></i>';
+  $arr['mp4'] = '<i class="fa-solid fa-file-video size-30" style="color : #4f6bf7;"></i>';
+  $arr['mp3'] = '<i class="fa-solid fa-file-music size-30" style="color : #4b9dad;"></i>';
+  $arr['corrupt'] = '<i class="fa-solid fa-file-xmark size-30" style="color : #4b5152;"></i>';
 
 
   if ($ext == NULL) {

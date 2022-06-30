@@ -26,8 +26,11 @@ $(document).ready(function () {
             method: 'POST',
             cache: false,
             dataType: 'json',
+            beforeSend() {
+                $('#button_presensi_mapel').prop('disabled', true);
+            },
             success: function (data) {
-                console.log(data);
+                $('#button_presensi_mapel').prop('disabled', false);
                 $('#nama_pelajaran').text(data.nama_pelajaran);
                 $('#nama_staf').text(data.nama_staf);
                 $('#jam_pelajaran').text(data.waktu);

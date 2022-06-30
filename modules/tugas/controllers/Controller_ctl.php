@@ -106,15 +106,59 @@ class Controller_ctl extends MY_Frontend
 		$arr['id_sekolah'] = $this->id_sekolah;
 		$arr['id_siswa'] = $this->id_siswa;
 		$arr['id_tugas'] = $id_tugas;
-		// $jmlh = count($_FILES['file_jawaban']['name']);
-		// for ($i=0; $i < $jmlh; $i++) {
-		// 	$arrFile['tugas'] = $_FILES['file_jawaban'];
-		// }
-		$arrFile['tugas'] = $_FILES['file_jawaban'];
-		$result = curl_post('tugas/upload/', $arr, $arrFile, true);
+		if (!$_FILES['file_jawaban']['tmp_name'][0]) {
+			$data['status'] = FALSE;
+			$data['title'] = 'PERINGATAN';
+			$data['message'] = 'File jawaban tidak boleh kosong!';
+			echo json_encode($data);
+			exit;
+		}
+		// var_dump($_FILES['file_jawaban']);
+		$jmlh = count($_FILES['file_jawaban']['tmp_name']);
+		$tugas = $_FILES['file_jawaban'];
+		for ($i = 0; $i < $jmlh; $i++) {
+			if ($tugas['size'][$i] > (10 * 1024 * 1024)) {
+				$data['status'] = false;
+				$data['title'] = 'PERINGATAN';
+				$data['message'] = 'File ' . $tugas['name'][$i] . ' terlalu besar!';
+				echo json_encode($data);
+				exit;
+			}
+			$test = explode('.', $tugas["name"][$i]);
+			$ext = end($test);
+			if (!in_array($ext, array('jpg', 'png', 'rar', 'zip', 'docx', 'doc', 'pdf', 'xls', 'xlxs', 'jpeg', 'mp3', 'mp4'))) {
+				$data['status'] = false;
+				$data['title'] = 'PERINGATAN';
+				$data['message'] = 'File ' . $tugas['name'][$i] . ' Tidak di izinkan!';
+				echo json_encode($data);
+				exit;
+			}
+			$name = uniqid() . '.' . $ext;
+			$location = APPPATH . '../../data/sekolah_' . $this->id_sekolah . '/tugas_siswa/' . $name;
+			$move = move_uploaded_file($tugas["tmp_name"][$i], $location);
+			if ($move) {
+				$fil[$i]['name'] = $tugas['name'][$i];
+				$fil[$i]['unik'] = $name;
+			} else {
+				$data['status'] = false;
+				$data['title'] = 'PERINGATAN';
+				$data['message'] = 'File ' . $tugas['name'][$i] . ' gagal di upload!';
+				echo json_encode($data);
+				exit;
+			}
+		}
+		$arr['tugas'] = json_encode($fil);
+		$result = curl_post('tugas/upload_sementara/', $arr);
+		if ($result->status == 200) {
+			$rr['status'] = true;
+			$rr['title'] = 'PEMBERITAHUAN';
+		} else {
+			$rr['status'] = false;
+			$rr['title'] = 'PERINGATAN';
+		}
+		$rr['message'] = $result->message;
 
-		var_dump($result);
-		die;
+		echo json_encode($rr);
 	}
 
 	public function serahkan()
@@ -132,6 +176,8 @@ class Controller_ctl extends MY_Frontend
 			$data['status'] = TRUE;
 			$data['load'][0]['parent'] = '#display_jawaban';
 			$data['load'][0]['reload'] = base_url('tugas/detail_tugas/' . $id_tugas) . ' #reload_jawaban';
+			$data['load'][1]['parent'] = '#div_status';
+			$data['load'][1]['reload'] = base_url('tugas/detail_tugas/' . $id_tugas) . ' #reload_status';
 			$data['alert']['title'] = 'PEMBERITAHUAN';
 		} else {
 			$data['status'] = FALSE;

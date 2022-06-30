@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-15 fw-medium">Kelas</p>
-                                    <p class="fw-normal text-secondary size-12"><?= ifnull($result->detail->nama_kelas, ' - '); ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= ifnull(tampil_text($result->detail->nama_kelas, 25), ' - '); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-14 fw-medium">Mata Pelajaran</p>
-                                    <p class="fw-normal text-secondary size-12"><?= ifnull($result->detail->nama_pelajaran, ' - '); ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= ifnull(tampil_text($result->detail->nama_pelajaran, 25), ' - '); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-15 fw-medium">Guru</p>
-                                    <p class="fw-normal text-secondary size-12"><?= ifnull($result->detail->nama_staf, ' - '); ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= ifnull(tampil_texT($result->detail->nama_staf, 25), ' - '); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                 <?php if ($result->result->materi) : ?>
                     <div class="row">
                         <div class="col-12">
-                            <p class="mb-1 title-detail-kbm-judul">Materi Pelajaran</p>
+                            <p class="mb-1 title-detail-kbm-judul">Materi hari ini</p>
                         </div>
                         <div class="col-12">
                             <?php foreach ($result->result->materi as $row) : ?>
@@ -160,8 +160,8 @@
                                                 </div>
                                             </div>
                                             <div class="col align-self-center px-0">
-                                                <p class="mb-0 size-14 fw-normal"><?= $row->judul; ?></p>
-                                                <p class="mb-0 size-13 fw-normal text-secondary"><?= $row->bab; ?></p>
+                                                <p class="mb-0 size-14 fw-normal"><?= tampil_text($row->judul, 25); ?></p>
+                                                <p class="mb-0 size-13 fw-normal text-secondary"><?= tampil_text($row->bab, 35); ?></p>
                                             </div>
                                             <div class="col-auto align-self-center">
                                                 <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>

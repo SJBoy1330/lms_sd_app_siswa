@@ -17,7 +17,7 @@ function filter_tugas() {
         }
     });
 
-    var count = $('.showing').length;
+    var count = $('.target_search.showing').length;
     if (count <= 0) {
         vector_tugas.classList.remove('hiding');
         vector_tugas.classList.add('showing');

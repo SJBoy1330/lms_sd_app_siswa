@@ -16,7 +16,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-15 fw-medium">Bab</p>
-                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->bab; ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= tampil_text($result->detail->bab, 25); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-14 fw-medium">Mata Pelajaran</p>
-                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->nama_pelajaran; ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= tampil_text($result->detail->nama_pelajaran, 30); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-13 fw-medium">Pembuat Materi</p>
-                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->nama_staf; ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= tampil_text($result->detail->nama_staf, 15); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             <div class="row">
                                 <div class="col align-self-center ps-4 text-detail-kbm">
                                     <p class="mb-0 size-15 fw-medium">Materi</p>
-                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->materi; ?></p>
+                                    <p class="fw-normal text-secondary size-12"><?= tampil_text($result->detail->materi, 25); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col align-self-center px-0">
-                                                    <p class="mb-1 size-13 fw-normal"><?= $row->judul; ?></p>
+                                                    <p class="mb-1 size-13 fw-normal"><?= tampil_text($row->judul, 20); ?></p>
                                                     <p class="text-muted text-secondary size-12"><?= $row->durasi; ?></p>
                                                 </div>
                                                 <div class="col-auto align-self-center">
@@ -132,19 +132,42 @@
                         <div class="card-body tabcontent" id="Download">
                             <?php if ($result->result->dokumen) : ?>
                                 <?php foreach ($result->result->dokumen as $row) : ?>
-                                    <a href="<?= $row->file_dokumen ?>" class="card my-3">
+                                    <?php
+                                    if ($row->file_dokumen != FALSE) {
+                                        $action = 'href="' . $row->file_dokumen . '"';
+                                    } else {
+                                        $action = 'onclick="take_alert(`PERINGATAN`, `Tidak bisa mengunduh file diakrenakan file rusak!`, `warning`)"';
+                                    }
+                                    ?>
+                                    <a <?= $action; ?> class="card my-3" <?php
+                                                                            if ($row->file_dokumen == FALSE) {
+                                                                                echo 'style="background-color : #c7c9c9;"';
+                                                                            }
+                                                                            ?>>
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-auto">
-                                                    <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
-                                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                                    <div class="avatar avatar-50 shadow-sm rounded-18 <?php
+                                                                                                        if ($row->file_dokumen != FALSE) {
+                                                                                                            echo 'avatar-presensi-outline';
+                                                                                                        } else {
+                                                                                                            echo 'avatar-presensi-outline-second';
+                                                                                                        }
+                                                                                                        ?>">
+                                                        <div class="avatar avatar-40 rounded-15 <?php
+                                                                                                if ($row->file_dokumen != FALSE) {
+                                                                                                    echo 'avatar-presensi-inline';
+                                                                                                } else {
+                                                                                                    echo 'avatar-presensi-inline-second';
+                                                                                                }
+                                                                                                ?>">
                                                             <i class="fa-solid fa-download size-22 text-white"></i>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col align-self-center ps-0">
-                                                    <p class="mb-1 size-13 fw-normal"><?= $row->judul; ?></p>
-                                                    <p class="text-muted text-secondary size-12"><?= size($row->size); ?></p>
+                                                    <p class="mb-1 size-13 fw-normal"><?= tampil_text($row->judul, 20); ?></p>
+                                                    <p class="text-muted text-secondary size-12"><?= $row->size; ?> Mb</p>
                                                 </div>
                                             </div>
                                         </div>

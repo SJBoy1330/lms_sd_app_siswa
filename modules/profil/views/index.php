@@ -142,7 +142,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="<?= base_url('auth/logout') ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3">
+                <a href="<?= base_url('auth/logout') ?>" class="list-group-item border-0 bg-f5f5f5 shadow-none rounded-15 py-1 px-3 mb-3 mx-3 question_alert" <?= alert_question('KONFIRMASI', 'Apakah anda akan keluar dari aplikasi KlasQ Siswa ?', 'question') ?>>
                     <div class="row p-2">
                         <div class="d-flex col-auto align-items-center ">
                             <div class="bg-ec3528 rounded-10 icon-box-profile d-flex justify-content-center align-items-center fs-3 text-light">

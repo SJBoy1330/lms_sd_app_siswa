@@ -47,6 +47,24 @@ $('.confirm_alert').on('click', function (e) {
 		});
 	}
 });
+$('.take_alert').on('click', function (e) {
+	// console.log('ok');
+	e.preventDefault();
+	const title = $(this).data('judul');
+	const message = $(this).data('message');
+	const image = $(this).data('image');
+	const icon = $(this).data('icon');
+
+	Swal.fire({
+		title: title,
+		html: message,
+		icon: icon,
+		buttonsStyling: !1,
+		confirmButtonText: 'Ok',
+		customClass: { confirmButton: css_button }
+	});
+});
+
 $('.question_alert').on('click', function (e) {
 	// console.log('ok');
 	e.preventDefault();
@@ -183,3 +201,15 @@ $('.question_alert').on('click', function (e) {
 		})
 	}
 });
+
+
+function take_alert(title, message, icon) {
+	Swal.fire({
+		title: title,
+		html: message,
+		icon: icon,
+		buttonsStyling: !1,
+		confirmButtonText: 'Ok',
+		customClass: { confirmButton: css_button }
+	});
+}

@@ -35,8 +35,7 @@ $("#attachment").on('change', function (e) {
 
 
 
-function hapus_file(id_file) {
-	var text_button = document.getElementById('button_submited_tugas').innerHTML;
+function hapus_file(id_tugas, id_file) {
 	$.ajax({
 		url: BASE_URL + "tugas/hapus_file/",
 		data: { id_file: id_file },
@@ -45,16 +44,19 @@ function hapus_file(id_file) {
 		cache: false,
 		beforeSend: function () {
 			$('#button_submited_tugas').prop('disabled', true);
-			$('#button_submited_tugas').html('<div class="spinner-border" style="color : #FFFFFF" role="status">\
+			$('#hapus_file_loading_' + id_file).html('<div class="spinner-border text-danger" role="status">\
                      <span class="sr-only"></span>\
 </div>');
+			$('#lapirkan_jawaban').prop('readonly', true);
 		},
 		success: function (data) {
 			// console.log(data);
 			$('#button_submited_tugas').prop('disabled', false);
-			$('#button_submited_tugas').html(text_button);
+			$('#lapirkan_jawaban').prop('readonly', false);
 			if (data.status == true) {
-				$('#jawaban-' + id_file).fadeOut();
+				$('#jawaban-' + id_file).fadeOut(function () {
+					$('#display_jawaban').load(BASE_URL + 'tugas/detail_tugas/' + id_tugas + ' #reload_jawaban');
+				});
 			} else {
 				Swal.fire({
 					title: 'PERINGATAN',
@@ -73,7 +75,7 @@ function hapus_file(id_file) {
 
 function upload_jawaban(element) {
 	// console.log('ok');
-	var id = $('#id_tugas').data('id');
+	var id = $('#id_tugas').val();
 	var url = BASE_URL + 'tugas/upload';
 	var method = 'POST';
 	// console.log(url);
@@ -81,7 +83,6 @@ function upload_jawaban(element) {
 	var form = $('form')[0];
 	var form_data = new FormData(form);
 
-	// console.log(form);
 	$.ajax({
 		url: url,
 		method: method,
@@ -95,7 +96,26 @@ function upload_jawaban(element) {
 		},
 		success: function (data) {
 			$('#loading_scene').modal('hide');
-			$('#reload_jawaban').load(BASE_URL + 'tugas/detail_tugas/' + id + ' #load_jawaban_new');
+			$('#refresh_modal').load(BASE_URL + 'tugas/detail_tugas/' + id + ' #loading_scene');
+			if (data.status == true) {
+				var icon = 'success';
+				$('#display_jawaban').load(BASE_URL + 'tugas/detail_tugas/' + id + ' #reload_jawaban');
+			} else {
+				var icon = 'warning';
+			}
+			Swal.fire({
+				title: data.titile,
+				text: data.message,
+				icon: icon,
+				buttonsStyling: !1,
+				confirmButtonText: "Ok",
+				customClass: {
+					confirmButton: css_button
+				}
+			})
+
+		}, error: function () {
+			// $('#loading_scene').modal('hide');
 		}
 	});
 }

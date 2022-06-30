@@ -12078,13 +12078,13 @@ fieldset:disabled .btn {
   background: linear-gradient(to bottom, transparent 0%, transparent 42%, rgba(0, 0, 0, 0.65) 100%);
 }
 
-main{
+main {
   padding-top: 75px;
   animation: fadein 0.3s;
   padding-bottom: 75px;
 }
 
-main.welcome{
+main.welcome {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
@@ -15949,21 +15949,21 @@ p.label-biru {
   color: #199DFD;
 }
 
-a.label-kuning{
+a.label-kuning {
   font-weight: 500;
   color: #F7EC09;
 }
 
-p.label-kuning{
+p.label-kuning {
   color: #F7EC09;
 }
 
-a.label-abu{
+a.label-abu {
   font-weight: 500;
   color: #999999;
 }
 
-p.label-abu{
+p.label-abu {
   color: #999999;
 }
 
@@ -16513,6 +16513,18 @@ figure.detail-berita {
   background-color: #EC3528;
 }
 
+.avatar-presensi-outline-second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #a2a1a1;
+}
+
+.avatar-presensi-inline-second {
+  background-color: #a2a1a1;
+}
+
 .avatar-presensi-inline {
   background-color: #EC3528;
 }
@@ -16860,7 +16872,7 @@ button.button-kirim-pesan {
 }
 
 /* Figure Sidemnu */
-.figure-sidemenu{
+.figure-sidemenu {
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;

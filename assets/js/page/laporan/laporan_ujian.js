@@ -17,7 +17,7 @@ function filter_ujian() {
         }
     });
 
-    var count = $('.showing').length;
+    var count = $('.target_search.showing').length;
     if (count <= 0) {
         vector_riwayat.classList.remove('hiding');
         vector_riwayat.classList.add('showing');

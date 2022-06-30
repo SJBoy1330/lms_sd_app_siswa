@@ -23,7 +23,7 @@ class Controller_ctl extends MY_Frontend
 
 		$mydata['result_aktif'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'Y', 'id_kelas' =>  $user->id_kelas, 'kbm' => 'Y'))->data;
 		$mydata['result_old'] = curl_get('jadwal/today', array('id_sekolah' => $this->id_sekolah, 'hari' => date('N'), 'aktif' => 'N', 'id_kelas' =>  $user->id_kelas, 'kbm' => 'Y'))->data;
-		$mydata['pengumuman'] = curl_get('pengumuman', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
+		$mydata['pengumuman'] = curl_get('pengumuman/all', array('id_sekolah' => $this->id_sekolah, 'limit' => 3))->data;
 		$mydata['berita'] = curl_get('berita', array('id_sekolah' => $this->id_sekolah, 'limit' => 5))->data;
 		$mydata['presensi'] = curl_get('presensi/today', array('id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa))->data;
 		$mydata['presensi_setting'] = curl_get('presensi/setting', array('id_sekolah' => $this->id_sekolah));

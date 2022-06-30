@@ -50,18 +50,21 @@
                         </div>
                         <?php if ($result->tugas_siswa) : ?>
                             <?php if ($result->tugas_siswa->status) : ?>
-                                <div class="row py-1 px-2 mt-2 mb-2 ">
-                                    <div class="d-flex col-auto ps-0 pe-2">
-                                        <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                            <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                <i class="fa-solid fa-circle-dot size-20 text-white"></i>
+                                <div class="row py-1 px-2 mt-2 mb-2" id="div_status">
+                                    <div id="reload_status" class="row">
+                                        <div class="d-flex col-auto ps-0 pe-2">
+                                            <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
+                                                <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
+                                                    <i class="fa-solid fa-circle-dot size-20 text-white"></i>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col align-self-center p-0 d-flex align-items-start flex-column">
+                                            <p class="mb-0 fw-normal size-13 text-secondary">Status</p>
+                                            <p class="mb-0 fw-normal size-14"><?= $result->tugas_siswa->status; ?></p>
+                                        </div>
                                     </div>
-                                    <div class="col align-self-center p-0 d-flex align-items-start flex-column">
-                                        <p class="mb-0 fw-normal size-13 text-secondary">Status</p>
-                                        <p class="mb-0 fw-normal size-14"><?= $result->tugas_siswa->status; ?></p>
-                                    </div>
+
                                 </div>
                             <?php endif; ?>
                             <?php if ($result->tugas_siswa->nilai) : ?>
@@ -128,7 +131,6 @@
                     <?php endforeach; ?>
                 </div>
             <?php endif; ?>
-
             <div class="list-group-item rounded-15 mb-1 shadow-sm position-relative overflow-hidden p-3 mb-3">
                 <div id="display_jawaban">
                     <div id="reload_jawaban">
@@ -159,20 +161,35 @@
                             <?php foreach ($result->tugas_siswa->file as $row) : ?>
                                 <div class="card shadow-sm mb-3" id="jawaban-<?= $row->id_file; ?>">
                                     <div class=" card-body">
-                                        <div class="row">
+                                        <div class="row" id="loading_hapus">
                                             <div class="col-auto">
                                                 <div class="avatar avatar-50 rounded-10 bg-document">
                                                     <!-- <i class="fa-solid fa-file-pdf size-30 text-danger"></i> -->
-                                                    <?= get_icon_file($row->ext); ?>
+                                                    <?php if ($row->files != FALSE) {
+                                                        echo get_icon_file($row->ext);
+                                                    } else {
+                                                        echo get_icon_file('corrupt');
+                                                    } ?>
                                                 </div>
                                             </div>
-                                            <a href="<?= $row->files; ?>" class="col align-self-center ps-0">
+                                            <?php
+                                            if ($row->files != FALSE) {
+                                                $action = 'href="' . $row->files . '" class="col align-self-center ps-0"';
+                                            } else {
+                                                $action = 'class="col align-self-center ps-0 " onclick="take_alert(`PERINGATAN`, `Tidak bisa mengunduh file diakrenakan file rusak!`, `warning`)"';
+                                            }
+                                            ?>
+                                            <a <?= $action; ?>>
                                                 <p class="mb-0 size-14 text-dark fw-normal"><?= tampil_text($row->judul, 14) ?></p>
-                                                <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->ext); ?> File</p>
+                                                <p class="mb-0 size-12 fw-normal text-secondary"><?php if ($row->files != FALSE) {
+                                                                                                        echo strtoupper($row->ext);;
+                                                                                                    } else {
+                                                                                                        echo 'Corrupt';
+                                                                                                    } ?> File</p>
                                             </a>
-                                            <div class="col-auto align-self-center text-end ms-3">
+                                            <div class="col-auto align-self-center text-end ms-3" id="hapus_file_loading_<?= $row->id_file; ?>">
                                                 <?php if ($result->tugas_siswa->kode_status == NULL || $result->tugas_siswa->kode_status == 3) : ?>
-                                                    <button type="button" onclick="hapus_file(<?= $row->id_file; ?>)" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
+                                                    <button type="button" onclick="hapus_file(<?= $id_tugas; ?>,<?= $row->id_file; ?>)" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-xmark size-26 text-danger"></i></button>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
