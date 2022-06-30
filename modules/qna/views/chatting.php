@@ -1,11 +1,11 @@
 <!-- main page content -->
-<div class="main-container container">
+<div class="main-container container mb-0">
     <div class="row">
-        <div class="col-12 chat-list scroll-y mb-3">
+        <div class="col-12 chat-list scroll-y">
             <div class="row no-margin right-chat">
                 <div class="main-container container">
                     <div class="row" id="display_chat">
-                        <div class="col-12 chat-list scroll-y mb-3" id="reload_chat">
+                        <div class="col-12 chat-list scroll-y" id="reload_chat">
                             <?php if ($result) : ?>
                                 <?php foreach ($result as $row) : ?>
                                     <?php if ($row->domain == true) : ?>
@@ -83,7 +83,6 @@
                     </div>
 
                     <div class="position-fixed bottom-0 start-0 chat-post">
-
                         <form class="row gx-3 typing-area">
                             <div class="col">
                                 <div class="form-group mb-2">
