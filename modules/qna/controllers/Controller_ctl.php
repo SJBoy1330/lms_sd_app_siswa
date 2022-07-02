@@ -124,12 +124,13 @@ class Controller_ctl extends MY_Frontend
 		$this->data['config_hidden']['footer'] = true;
 		$this->data['right_button']['chatting'] = true;
 		$this->data['foto_staf'] = $result->data->detail->foto;
-		$this->data['judul_halaman'] = $result->data->detail->nama;
+		$this->data['judul_halaman'] = tampil_text($result->data->detail->nama, 30);
 
 		// LOAD MYDATA 
 		$mydata['id_diskusi_tanya'] = $id_diskusi_tanya;
 		$mydata['result'] = $result->data->chat;
-		$mydata['pelajaran'] = curl_get('materi/pelajaran', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa])->data;
+		$mydata['detail'] = $result->data->detail;
+		$mydata['pelajaran'] = curl_get('materi/pelajaran', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa, 'id_staf' => $result->data->detail->id_staf])->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('chatting', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

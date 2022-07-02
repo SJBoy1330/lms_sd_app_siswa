@@ -141,6 +141,23 @@
     var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
     var loading = $('#loading_scene');
     var css_button = 'btn btn-block btn-md';
+    var html_loader = '<div class="row loader">\
+                    <div class="col-12 loader">\
+                        <div class="loadingio-spinner-double-ring-x5jbbv5x43o">\
+                            <div class="ldio-wmpldorvik">\
+                                <div></div>\
+                                <div></div>\
+                                <div>\
+                                    <div></div>\
+                                </div>\
+                                <div>\
+                                    <div></div>\
+                                </div>\
+                            </div>\
+                        </div>\
+                        <p class="size-20 fw-medium loader"> Loading... </p>\
+                    </div>\
+                </div>';
 </script>
 <!-- Customized jquery file  -->
 <script src="<?= base_url() ?>assets/js/main.js"></script>

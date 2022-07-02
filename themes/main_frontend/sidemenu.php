@@ -159,7 +159,7 @@
                                         <a href="#" target="_self" class="btn btn-44" data-bs-toggle="modal" data-bs-target="#filterUjian"><i class="fa-regular fa-filter"></i></a>
                                     <?php endif; ?>
                                     <?php if (isset($right_button['chatting'])) :  ?>
-                                        <a href="#" target="_self" class="btn btn-44 rounded-circle btn-notifikasi" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="background-image: url(<?= $foto_staf; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+                                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#detail_profil_chat" aria-controls="offcanvasRight" class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= $foto_staf; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
                                     <?php endif; ?>
 
                                 </div>

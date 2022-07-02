@@ -9,73 +9,112 @@
                             <?php if ($result) : ?>
                                 <?php foreach ($result as $row) : ?>
                                     <?php if ($row->domain == true) : ?>
+                                        <!-- CHAT PENGIRIM -->
                                         <div class="row no-margin right-chat">
                                             <div class="col-12">
                                                 <div class="chat-block pengirim">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <p class="mb-0 size-15 fw-normal"><?= $row->pesan; ?></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Design Baru Reply Chatting -->
-                                        <div class="row no-margin right-chat">
-                                            <div class="col-12">
-                                                <div class="chat-block pengirim">
-                                                    <div class="row flex-column">
-                                                        <div class="reply-text-pengirim">
-                                                            <div class="column-reply-pengirim flex-wrap">
-                                                                <div class="d-flex justify-content-between align-items-center">
-                                                                    <p class="size-12 fw-medium mb-0">Max Smith</p>
+                                                    <?php if ($row->reply == false) : ?>
+                                                        <!-- JIKA CHAT BIASA  -->
+                                                        <div class="row">
+                                                            <?php if ($row->file == NULL) : ?>
+                                                                <!-- JIKA BUKAN FILE -->
+                                                                <div class="col">
+                                                                    <?php if ($row->gambar != NULL) : ?>
+                                                                        <!-- JIKA ADA GAMBAR -->
+                                                                        <div class="mw-100 position-relative mb-2 figure">
+                                                                            <img src="<?= $row->gambar; ?>" alt="" class="mw-100">
+                                                                        </div>
+                                                                    <?php endif; ?>
+                                                                    <p class="mb-0 size-15 fw-normal"><?= $row->pesan; ?></p>
                                                                 </div>
-                                                                <p class="fw-normal size-12">Lorem</p>
+                                                            <?php else : ?>
+                                                                <!-- JIKA FILE -->
+                                                                <div class="col-auto detail-tugas-sd">
+                                                                    <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
+                                                                        <!-- <i class="fa-solid fa-file-word size-30"></i> -->
+                                                                        <?= get_icon_file($row->file->ext); ?>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto align-self-center ps-2">
+                                                                    <a href="<?= $row->file->download ?>" class="mb-0 size-13 fw-medium text-dark"><?= tampil_text($row->file->name, 20); ?></a>
+                                                                    <p class="mb-0 size-12 fw-normal text-muted"><?= strtoupper($row->file->ext) ?> File</p>
+                                                                </div>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    <?php else : ?>
+                                                        <!-- JIKA CHAT REPLY MATERI -->
+                                                        <div class="row flex-column">
+                                                            <div class="reply-text-pengirim">
+                                                                <div class="column-reply-pengirim flex-wrap">
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <p class="size-12 fw-medium mb-0"><?= tampil_text($row->judul_materi, 20); ?></p>
+                                                                    </div>
+                                                                    <p class="fw-normal size-12"><?= tampil_text($row->ket_materi, 70); ?></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="mb-0 mt-2 size-15 fw-normal"><?= $row->pesan; ?></p>
                                                             </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <p class="mb-0 mt-2 size-15 fw-normal">lorem</p>
-                                                        </div>
-                                                    </div>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php else : ?>
+                                        <!-- CHAT BALASAN -->
                                         <div class="row no-margin left-chat my-3">
                                             <div class="col-10">
                                                 <div class="chat-block penerima">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <p class="mb-0 ms-1 size-15 fw-normal"><?= $row->pesan; ?></p>
+                                                    <?php if ($row->reply == false) : ?>
+                                                        <!-- JIKA PESAN BIASA -->
+                                                        <div class="row">
+                                                            <?php if ($row->file == NULL) : ?>
+                                                                <div class="col">
+                                                                    <?php if ($row->gambar != NULL) : ?>
+                                                                        <!-- JIKA ADA GAMBAR -->
+                                                                        <div class="mw-100 position-relative mb-2 figure">
+                                                                            <img src="<?= $row->gambar; ?>" alt="" class="mw-100">
+                                                                        </div>
+                                                                    <?php endif; ?>
+                                                                    <p class="mb-0 ms-1 size-15 fw-normal"><?= $row->pesan; ?></p>
+                                                                </div>
+                                                            <?php else : ?>
+                                                                <!-- JIKA FILE -->
+                                                                <div class="col-auto detail-tugas-sd">
+                                                                    <div class="avatar avatar-50 rounded-10 avatar-detail-tugas">
+                                                                        <!-- <i class="fa-solid fa-file-word size-30"></i> -->
+                                                                        <?= get_icon_file($row->file->ext); ?>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto align-self-center ps-2">
+                                                                    <a href="<?= $row->file->download ?>" class="mb-0 size-13 fw-medium text-dark"><?= tampil_text($row->file->name, 20); ?></a>
+                                                                    <p class="mb-0 size-12 fw-normal text-muted"><?= strtoupper($row->file->ext) ?> File</p>
+                                                                </div>
+                                                            <?php endif; ?>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    <?php endif; ?>
-                                <?php endforeach; ?>
-                                <div class="row no-margin left-chat  my-3">
-                                    <div class="col-12">
-                                        <div class="chat-block penerima">
-                                            <div class="row flex-column">
-                                                <div class="reply-text-penerima">
-                                                    <div class="column-reply-penerima flex-wrap">
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <p class="size-12 fw-medium mb-0">Max Smith</p>
+                                                    <?php else : ?>
+                                                        <!-- JIKA PESAN REPLAY MATERI -->
+                                                        <div class="row flex-column">
+                                                            <div class="reply-text-penerima">
+                                                                <div class="column-reply-penerima flex-wrap">
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <p class="size-12 fw-medium mb-0"><?= tampil_text($row->judul_materi, 20); ?></p>
+                                                                    </div>
+                                                                    <p class="fw-normal size-12"><?= tampil_text($row->ket_materi, 70); ?></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <p class="mb-0 mt-2 size-15 fw-normal"><?= $row->pesan; ?></p>
+                                                            </div>
                                                         </div>
-                                                        <p class="fw-normal size-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias animi saepe perspiciatis..</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <p class="mb-0 mt-2 size-15 fw-normal"> Sama sama, semangat ya semoga dapat nilai bagus</p>
+                                                    <?php endif; ?>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div> 
-                                <div style="height : 100px;"></div>
-                                
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                                <div style="height : 20px;"></div>
+
                             <?php else : ?>
                                 <?= vector_default('vector_personal_chat.svg', 'Tidak ada chat', 'Anda belum melakukan obrolan hari ini, kirim pesan pada guru anda !') ?>
                             <?php endif; ?>
@@ -90,13 +129,13 @@
                                         <input type="hidden" id="id_pelajaran" value="0">
                                         <input type="hidden" id="id_materi" name="id_materi">
                                         <input type="hidden" name="id_diskusi_tanya" id="id_diskusi_tanya" value="<?= $id_diskusi_tanya; ?>">
-                                        <div class="reply-text">
+                                        <div class="reply-text" id="display_reply" style="display:none;">
                                             <div class="column-reply flex-wrap">
                                                 <div class="d-flex justify-content-between align-items-center">
-                                                    <p class="size-15 fw-medium mb-0">Max Smith</p>
-                                                    <button class="btn btn-sm btn-block"><i class="fa-regular fa-xmark" style="color: #8e8e8e;"></i></button>
+                                                    <p class="size-15 fw-medium mb-0" id="materi">Max Smith</p>
+                                                    <button onclick="batal_materi()" class=" btn btn-sm btn-block"><i class="fa-regular fa-xmark" style="color: #8e8e8e;"></i></button>
                                                 </div>
-                                                <p class="fw-normal size-12 mb-2">Lorem</p>
+                                                <p class="fw-normal size-12 mb-2" id="text_materi">Lorem</p>
                                             </div>
                                         </div>
                                         <input type="text" class="form-control form-control-pribadi input-field chatting border-0" name="pesan" id="pesan" placeholder="Tulis Pesan" autocomplete="off">
@@ -153,7 +192,7 @@
 
                     <div class="col-auto text-center">
                         <input id="upload-file2" type="file" />
-                        <a href="javascript:void(0)" id="upload2" class="avatar avatar-60 p-1 shadow-sm shadow-info rounded-20 bg-image-modal mb-2" >
+                        <a href="javascript:void(0)" id="upload2" class="avatar avatar-60 p-1 shadow-sm shadow-info rounded-20 bg-image-modal mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
                             <div class="icons text-success">
@@ -246,7 +285,7 @@
 </div>
 
 <!-- Detail Profile -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="detail_profil_chat" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
         <h5 id="offcanvasRightLabel"></h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -256,7 +295,7 @@
             <div class="col-12 d-flex justify-content-center">
                 <div class="image-profile position-relative text-center">
                     <figure class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile">
-                        <img src="<?= base_url(); ?>assets/img/user1.jpg" alt="" class="rounded-20" id="photouser">
+                        <img src="<?= $detail->foto; ?>" alt="" class="rounded-20">
                     </figure>
                 </div>
             </div>
@@ -273,7 +312,7 @@
                             </div>
                             <div class="col align-self-center p-0">
                                 <p class="mb-0 fw-bold size-14">Nama Lengkap</p>
-                                <p class="text-secondary size-12">Drs. Hendrawati Kusumaningsih Sagaru Saputri</p>
+                                <p class="text-secondary size-12"><?= $detail->nama; ?></p>
                             </div>
                         </div>
                     </div>
@@ -287,7 +326,7 @@
                             </div>
                             <div class="col align-self-center p-0">
                                 <p class="mb-0 fw-bold size-14">Alamat Lengkap</p>
-                                <p class="text-secondary size-12">Sidoarjo</p>
+                                <p class="text-secondary size-12"><?= ifnull($detail->alamat, ' - '); ?></p>
                             </div>
                         </div>
                     </div>
@@ -301,7 +340,7 @@
                             </div>
                             <div class="col align-self-center p-0">
                                 <p class="mb-0 fw-bold size-14">Jenis Kelamin</p>
-                                <p class="text-secondary size-12">Perempuan</p>
+                                <p class="text-secondary size-12"><?= $detail->gender; ?></p>
                             </div>
                         </div>
                     </div>
@@ -315,7 +354,7 @@
                             </div>
                             <div class="col align-self-center p-0">
                                 <p class="mb-0 fw-bold size-14">Email</p>
-                                <p class="text-secondary size-12">sakadana2003@gmail.com</p>
+                                <p class="text-secondary size-12"><?= $detail->email; ?></p>
                             </div>
                         </div>
                     </div>
@@ -329,7 +368,7 @@
                             </div>
                             <div class="col align-self-center p-0">
                                 <p class="mb-0 fw-bold size-14">Nomot Telepon</p>
-                                <p class="text-secondary size-12">081234567819</p>
+                                <p class="text-secondary size-12"><?= ifnull($detail->telp, ' - '); ?></p>
                             </div>
                         </div>
                     </div>
