@@ -136,3 +136,7 @@
   max-width: 100%;
   width: auto;
 }
+
+textarea[type="text"]::placeholder { 
+  text-align: start;
+} 

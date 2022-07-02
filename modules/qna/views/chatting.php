@@ -1,4 +1,3 @@
-<!-- main page content -->
 <div class="main-container container mb-0">
     <div class="row">
         <div class="col-12 chat-list scroll-y">
@@ -138,7 +137,9 @@
                                                 <p class="fw-normal size-12 mb-2" id="text_materi">Lorem</p>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control form-control-pribadi input-field chatting border-0" name="pesan" id="pesan" placeholder="Tulis Pesan" autocomplete="off">
+                                        <div class="form-floating">
+                                            <textarea type="text" class="form-control form-control-pribadi input-field chatting border-0" name="pesan" id="pesan" placeholder="Tulis Pesan" autocomplete="off"></textarea>
+                                        </div>
                                         <a href="#" class="input-group-append tambah-file" data-bs-toggle="modal" data-bs-target="#menuModalChatting" id="centermenubtn">
                                             <span class="input-group-text">
                                                 <i class="fa-solid fa-plus size-20 text-white"></i>
