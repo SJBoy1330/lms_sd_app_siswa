@@ -199,6 +199,11 @@ class Controller_ctl extends MY_Frontend
 		$result = curl_post('pesan/kirim', $req);
 	}
 
+	public function kirim_tugas_file()
+	{
+		# code...
+	}
+
 
 	public function get_bab()
 	{
