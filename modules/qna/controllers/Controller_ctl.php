@@ -110,7 +110,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Chatting';
 
 		// LOAD CSS
-		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/style-dewa.css') . '">';
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/chatting/chatting.css') . '">';
 
 		// LOAD JS
