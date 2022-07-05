@@ -2,7 +2,7 @@
 <header class="header tugas-ujian position-fixed" style="background-color: #EC3528;">
     <div class="row">
         <div class="col-auto">
-            <a href="#" target="_self" class="btn btn-44">
+            <a href="<?= base_url('ujian'); ?>" target="_self" class="btn btn-44">
                 <i class="fa-solid fa-chevron-left text-white"></i>
             </a>
         </div>

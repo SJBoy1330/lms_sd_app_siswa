@@ -36,15 +36,18 @@
 }
 
 .badge.bg-time-exam {
-    background-color: #FFE6E6;
+    background-color: #fcd7d7;
+    border-radius: 0px 20px 0px 15px;
 }
 
 .badge.bg-history-exam {
     background-color: #D4FFF3;
+    border-radius: 0px 20px 0px 15px;
 }
 
 .badge.bg-history-exam-danger {
     background-color: #fcd7d7;
+    border-radius: 0px 20px 0px 15px;
 }
 
 .btn.btn-44.number-exam {
@@ -60,6 +63,10 @@
     line-height: 45px !important;
     width: 44px !important;
     padding: 0 !important;
+}
+
+.card.berlangsung{
+    opacity: 50% !important;
 }
 
 
@@ -85,6 +92,7 @@ label {
     box-shadow: 0 0 1px 1px #2ecc71;
     background-color: #E2FFF7;
 }
+
 
 
 /* Checkbox */
@@ -258,3 +266,24 @@ figure.image-ujian-jawaban {
 .color-f73563 {
     color: #f73563;
 }
+
+/* Pembahasan */
+.card-input-true{
+    box-shadow: 0 0 1px 1px #2ecc71;
+    background-color: #E2FFF7;
+}
+
+
+.card-input-wrong{
+    box-shadow: 0 0 1px 1px #EC3528;
+    background-color: #FFE6E6;
+}
+
+.list-group-item.true{
+    background-color: #E2FFF7;
+}
+
+.list-group-item.wrong{
+    background-color: #FFE6E6;
+}
+

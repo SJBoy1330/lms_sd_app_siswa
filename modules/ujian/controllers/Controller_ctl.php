@@ -72,4 +72,20 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('exam', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function pembahasan()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Pembahasan';
+
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/ujian/ujian.css') . '">';
+
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_3.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('pembahasan', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }
