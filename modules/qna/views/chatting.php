@@ -87,8 +87,8 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-auto align-self-center ps-2">
-                                                                    <a href="<?= $row->file->download ?>" class="mb-0 size-13 fw-medium text-dark"><?= tampil_text($row->file->name, 20); ?></a>
-                                                                    <p class="mb-0 size-12 fw-normal text-muted"><?= strtoupper($row->file->ext) ?> File</p>
+                                                                    <a href="<?= $row->file->download ?>" class="mb-0 size-13 fw-medium text-white"><?= tampil_text($row->file->name, 20); ?></a>
+                                                                    <p class="mb-0 size-12 fw-normal text-white"><?= strtoupper($row->file->ext) ?> File</p>
                                                                 </div>
                                                             <?php endif; ?>
                                                         </div>
@@ -296,8 +296,7 @@
         <div class="row mb-3">
             <div class="col-12 d-flex justify-content-center">
                 <div class="image-profile position-relative text-center">
-                    <figure class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile">
-                        <img src="<?= $detail->foto; ?>" alt="" class="rounded-20">
+                    <figure class="avatar avatar-125 rounded-35 shadow-sm position-relative avatar-profile" style="background-position: center; background-size: cover; background-image: url('<?= $detail->foto; ?>');">
                     </figure>
                 </div>
             </div>
