@@ -46,7 +46,7 @@
                             } else {
                                 $status = 0;
                             } ?>
-                            <div class="list-group-item bg-white py-0 zoom-filter showing" data-tipe="tipe-<?= $row->tipe; ?>">
+                            <div id="fadeout-notif-<?= $row->id_notifikasi; ?>" class=" list-group-item bg-white py-0 zoom-filter showing" data-tipe="tipe-<?= $row->tipe; ?>">
                                 <input type="checkbox" onchange="pilih_notif(this)" class="checkboxes d-none" name="id_notifikasi[]" value="<?= $row->id_notifikasi; ?>" style="position : absolute;width : 85vw; height : 100%;opacity : 0;">
                                 <?php if ($row->link != NULL) : ?>
                                     <a onclick="read_notif(this,<?= $status; ?>)" data-url="<?= convert_link($row->link); ?>" data-id="<?= $row->id_notifikasi; ?>" class="button_long_press text-dark py-0" data-tipe="tipe-<?= $row->tipe; ?>">
@@ -86,18 +86,18 @@
         </div>
 
         <!-- Action Notfikasi -->
-            <div class="footer-notifikasi d-none">
-                <div class="container px-0">
-                    <div class="row notifikasi px-0">
-                        <div class="col-6 d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check notifikasi"></i><span class="span-notifikasi">Tandai dibaca</span></button>
-                        </div>
-                        <div class="col-6 d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash notifikasi"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
-                        </div>
+        <div id="action_notifikasi" class="footer-notifikasi d-none">
+            <div class="container px-0">
+                <div class="row notifikasi px-0">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_bca_ntf" class="btn btn-danger rounded-pill btn-notifikasi-fill"><i class="fa-regular fa-check notifikasi"></i><span class="span-notifikasi">Tandai dibaca</span></button>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <button type="button" id="btn_hps_ntf" class="btn btn-danger rounded-pill btn-notifikasi-outline"><i class="fa-regular fa-trash notifikasi"></i><span class="span-notifikasi">Hapus Notifikasi</span></button>
                     </div>
                 </div>
             </div>
+        </div>
         <!-- End Action Notifikasi -->
 
     </div>

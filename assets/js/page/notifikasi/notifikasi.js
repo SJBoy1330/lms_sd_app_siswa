@@ -5,9 +5,9 @@ var swiper2 = new Swiper(".connectionwiper", {
     pagination: false
 });
 
-const header_notif = document.querySelector('#action_notifikasi');
-const header = document.querySelector('#header_config');
+const footer_notif = document.querySelector('#action_notifikasi');
 const pilih_semua = document.getElementById('pilih_semua');
+
 
 function get_tipe(property, tipe) {
     const base_tipe = document.querySelector(".base_tipe");
@@ -26,7 +26,7 @@ function get_tipe(property, tipe) {
         }
     });
 
-    const tampil = document.querySelectorAll(".showing");
+    const tampil = document.querySelectorAll(".zoom-filter.showing");
     if (tampil.length == 0) {
         vector_notifikasi.classList.remove("hiding");
         vector_notifikasi.classList.add("showing");
@@ -34,6 +34,7 @@ function get_tipe(property, tipe) {
         vector_notifikasi.classList.add("hiding");
         vector_notifikasi.classList.remove("showing");
     }
+
 }
 
 function pilih_notif(element) {
@@ -47,12 +48,12 @@ function pilih_notif(element) {
         div.classList.remove('notif-active');
     }
     if (jumlah > 0) {
-        header_notif.classList.remove('d-none');
-        header.classList.add('d-none');
+        footer_notif.classList.remove('d-none');
+
         pilih_semua.classList.remove('d-none');
     } else {
-        header_notif.classList.add('d-none');
-        header.classList.remove('d-none');
+        footer_notif.classList.add('d-none');
+
         pilih_semua.classList.add('d-none');
         var checkbox = document.querySelectorAll('.checkboxes');
         checkbox.forEach((cb) => {
@@ -103,8 +104,8 @@ $(document).ready(function () {
             });
         } else {
             $('.checkboxes').prop('checked', false);
-            header_notif.classList.add('d-none');
-            header.classList.remove('d-none');
+            footer_notif.classList.add('d-none');
+
             pilih_semua.classList.add('d-none');
 
             div_notif.forEach((dn) => {
@@ -113,12 +114,12 @@ $(document).ready(function () {
         }
         var jumlah = $(".checkboxes:checked").length;
         if (jumlah > 0) {
-            header_notif.classList.remove('d-none');
-            header.classList.add('d-none');
+            footer_notif.classList.remove('d-none');
+
             pilih_semua.classList.remove('d-none');
         } else {
-            header_notif.classList.add('d-none');
-            header.classList.remove('d-none');
+            footer_notif.classList.add('d-none');
+
             pilih_semua.classList.add('d-none');
             var checkbox = document.querySelectorAll('.checkboxes');
             checkbox.forEach((cb) => {
@@ -152,8 +153,8 @@ $(document).ready(function () {
                 $('.checkboxes[value=' + value + ']').prop('checked', true);
             });
             var flex = document.querySelector('#pro-notif-' + value);
-            header_notif.classList.remove('d-none');
-            header.classList.add('d-none');
+            footer_notif.classList.remove('d-none');
+
             pilih_semua.classList.remove('d-none');
             flex.classList.add('notif-active');
         }, 600);
@@ -168,7 +169,7 @@ $(document).ready(function () {
             method: 'POST',
             cache: false,
             success: function (msg) {
-                $('#display_notifikasi_dua').html(msg);
+                $('#display_notifikasi_ortu').html(msg);
             }
         })
     });
@@ -189,15 +190,75 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             dataType: 'json',
+            beforeSend() {
+                $('#loading_scene').modal('show');
+            },
             success: function (data) {
-                // $(data.load.parent).load(data.load.reload);
-                // header_notif.classList.add('d-none');
-                // header.classList.remove('d-none');
-                // pilih_semua.classList.add('d-none');
+                $('#loading_scene').modal('hide');
+                $('#refresh_loading').load(BASE_URL + 'notifikasi/ #loading_scene');
+                $('.modal-backdrop').remove();
+                var jumlah = data.id_notifikasi.length;
+                footer_notif.classList.add('d-none');
+                pilih_semua.classList.add('d-none');
+                for (let i = 0; i < jumlah; i++) {
+                    var div = document.getElementById('pro-notif-' + data.id_notifikasi[i]);
+                    div.classList.remove('bg-notif-readed');
+                    div.classList.remove('notif-active');
 
-                // $('#parent_notif').load(BASE_URL + 'notifikasi #reload_content_notif');
-                // $('header').load(BASE_URL + 'notifikasi #reload_header');
-                location.reload();
+                }
+                var checkbox = document.querySelectorAll('.checkboxes');
+                $('.checkboxes').prop('checked', false);
+                checkbox.forEach((cb) => {
+                    cb.classList.add("d-none");
+                });
+
+            }
+        })
+    });
+
+
+
+    $('#btn_hps_ntf').on('click', function () {
+        var url = BASE_URL + 'notifikasi/hapus_all';
+        var method = 'POST';
+        var form = $('form')[0];
+        var form_data = new FormData(form);
+        $.ajax({
+            url: url,
+            data: form_data,
+            method: method,
+            contentType: false,
+            cache: false,
+            processData: false,
+            dataType: 'json',
+            beforeSend() {
+                $('#loading_scene').modal('show');
+            },
+            success: function (data) {
+                var jumlah = data.id_notifikasi.length;
+                footer_notif.classList.add('d-none');
+                pilih_semua.classList.add('d-none');
+                $('#loading_scene').modal('hide');
+                $('#refresh_loading').load(BASE_URL + 'notifikasi/ #loading_scene');
+                $('.modal-backdrop').remove();
+                for (let i = 0; i < jumlah; i++) {
+                    var divv = document.getElementById('fadeout-notif-' + data.id_notifikasi[i]);
+                    $('#fadeout-notif-' + data.id_notifikasi[i]).fadeOut();
+                }
+
+                var checkbox = document.querySelectorAll('.checkboxes');
+                $('.checkboxes').prop('checked', false);
+                checkbox.forEach((cb) => {
+                    cb.classList.add("d-none");
+                });
+
+
+
+
+            }, error: function () {
+                $('#loading_scene').modal('hide');
+                $('#refresh_loading').load(BASE_URL + 'notifikasi/ #loading_scene');
+                $('.modal-backdrop').remove();
             }
         })
     });
