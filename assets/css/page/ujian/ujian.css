@@ -29,25 +29,29 @@
     border-top: none;
 }
 
-.tablinknya-tugas-ujian{
-    position: absolute; 
+.tablinknya-tugas-ujian {
+    position: absolute;
     width: 100vw;
     background-color: #EC3528;
 }
 
-.badge.bg-time-exam{
+.badge.bg-time-exam {
     background-color: #FFE6E6;
 }
 
-.badge.bg-history-exam{
+.badge.bg-history-exam {
     background-color: #D4FFF3;
 }
 
-.btn.btn-44.number-exam{
+.badge.bg-history-exam-danger {
+    background-color: #fcd7d7;
+}
+
+.btn.btn-44.number-exam {
     background-color: #FFE6E6;
 }
 
-.btn.btn-44.done-exam{
+.btn.btn-44.done-exam {
     background-color: #D4FFF3;
 }
 
@@ -65,7 +69,7 @@ label {
     width: 100%;
 }
 
-.card.card-default{
+.card.card-default {
     border-radius: 8px;
 }
 
@@ -77,9 +81,9 @@ label {
     cursor: pointer;
 }
 
-.card-input-element:checked + .card-input {
-     box-shadow: 0 0 1px 1px #2ecc71;
-     background-color: #E2FFF7;
+.card-input-element:checked+.card-input {
+    box-shadow: 0 0 1px 1px #2ecc71;
+    background-color: #E2FFF7;
 }
 
 
@@ -89,7 +93,7 @@ label {
     width: 100%;
 }
 
-.card.card-default-2{
+.card.card-default-2 {
     border-radius: 8px;
 }
 
@@ -101,18 +105,18 @@ label {
     cursor: pointer;
 }
 
-.card-input-element-2:checked + .card-input-2 {
-     box-shadow: 0 0 1px 1px #2ecc71;
-     background-color: #E2FFF7;
+.card-input-element-2:checked+.card-input-2 {
+    box-shadow: 0 0 1px 1px #2ecc71;
+    background-color: #E2FFF7;
 }
 
 
-.footer-ujian{
+.footer-ujian {
     min-height: 145px;
     background-color: #F3F3F2;
 }
 
-div.timer-exam{
+div.timer-exam {
     width: 40%;
     border-radius: 10px;
     background-color: #FFE6E6;
@@ -122,59 +126,59 @@ div.timer-exam{
 .btn-outline-warning {
     color: #FFBD17;
     border-color: #FFBD17;
-  }
-  
-  .btn-outline-warning:hover {
+}
+
+.btn-outline-warning:hover {
     color: #000;
     background-color: #FFBD17;
     border-color: #FFBD17;
-  }
-  
-  .btn-check:focus+.btn-outline-warning,
-  .btn-outline-warning:focus {
+}
+
+.btn-check:focus+.btn-outline-warning,
+.btn-outline-warning:focus {
     box-shadow: 0 0 0 0.25rem rgba(255, 189, 23, 0.5);
-  }
-  
-  .btn-check:checked+.btn-outline-warning,
-  .btn-check:active+.btn-outline-warning,
-  .btn-outline-warning:active,
-  .btn-outline-warning.active,
-  .btn-outline-warning.dropdown-toggle.show {
+}
+
+.btn-check:checked+.btn-outline-warning,
+.btn-check:active+.btn-outline-warning,
+.btn-outline-warning:active,
+.btn-outline-warning.active,
+.btn-outline-warning.dropdown-toggle.show {
     color: #000;
     background-color: #FFBD17;
     border-color: #FFBD17;
-  }
-  
-  .btn-check:checked+.btn-outline-warning:focus,
-  .btn-check:active+.btn-outline-warning:focus,
-  .btn-outline-warning:active:focus,
-  .btn-outline-warning.active:focus,
-  .btn-outline-warning.dropdown-toggle.show:focus {
+}
+
+.btn-check:checked+.btn-outline-warning:focus,
+.btn-check:active+.btn-outline-warning:focus,
+.btn-outline-warning:active:focus,
+.btn-outline-warning.active:focus,
+.btn-outline-warning.dropdown-toggle.show:focus {
     box-shadow: 0 0 0 0.25rem rgba(255, 189, 23, 0.5);
-  }
-  
-  .btn-outline-warning:disabled,
-  .btn-outline-warning.disabled {
+}
+
+.btn-outline-warning:disabled,
+.btn-outline-warning.disabled {
     color: #FFBD17;
     background-color: transparent;
-  }
+}
 
 
-.next-button{
+.next-button {
     width: 45px;
     height: 45px;
 }
 
-.ragu-button{
+.ragu-button {
     height: 45px;
 }
 
-.previous-button{
+.previous-button {
     width: 45px;
     height: 45px;
 }
 
-.solid-line{
+.solid-line {
     width: 100%;
     border: 1px solid #303030;
 }
@@ -182,9 +186,9 @@ div.timer-exam{
 /* Tablink Penomoran */
 .tab {
     color: #C4C4C4;
-  }
-  
-  .tab button {
+}
+
+.tab button {
     background-color: inherit;
     float: left;
     outline: none;
@@ -198,21 +202,21 @@ div.timer-exam{
     height: 45px;
     font-size: 13px;
     line-height: 10px
-  }
-  
-  .tab button.active {
+}
+
+.tab button.active {
     border: 2px solid #EC3528;
     color: #FFFFFF;
     background-color: #EC3528;
-  }
-  
-  .tabcontent {
+}
+
+.tabcontent {
     display: none;
     padding: 6px 12px;
     border-top: none;
-  }
+}
 
-  button.btn-ragu_ragu{
+button.btn-ragu_ragu {
     width: 45px;
     height: 45px;
     font-size: 13px;
@@ -221,36 +225,36 @@ div.timer-exam{
     background-color: #ffbd17;
     border: #ffbd17;
     color: #FFFFFF
-  }
+}
 
-.offcanvas-top{
+.offcanvas-top {
     height: 100vh;
 }
 
-.offcanvas.offcanvas-top.show{
+.offcanvas.offcanvas-top.show {
     background-color: #FFE6E6;
 }
 
-figure.image-ujian{
+figure.image-ujian {
     height: 129px;
 }
 
-figure.image-ujian-jawaban{
+figure.image-ujian-jawaban {
     height: 114px;
 }
 
 @media only screen and (max-width: 320px) {
-    figure.image-ujian{
+    figure.image-ujian {
         height: 114px !important;
         width: 114px !important;
     }
 
-    figure.image-ujian-jawaban{
+    figure.image-ujian-jawaban {
         height: 104px !important;
         width: 104px !important;
     }
 }
 
-.color-f73563{
+.color-f73563 {
     color: #f73563;
 }

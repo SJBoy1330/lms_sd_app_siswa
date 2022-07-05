@@ -2,10 +2,14 @@
 
 class Controller_ctl extends MY_Frontend
 {
+	protected $id_sekolah = '';
+	protected $id_siswa = '';
 	public function __construct()
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
+		$this->id_sekolah = $this->session->userdata('lms_siswa_id_sekolah');
+		$this->id_siswa = $this->session->userdata('lms_siswa_id_siswa');
 		is_logged_in();
 	}
 
@@ -20,7 +24,8 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_1.js"></script>';
-
+		// LOAD API
+		$result = curl_get('ujian', ['id_sekolah' => $this->id_sekolah, 'id_siswa' => $this->id_siswa]);
 		// CONFIG HALAMAN
 		$this->data['config_hidden']['notifikasi'] = TRUE;
 		$this->data['config_hidden']['footer'] = TRUE;
@@ -28,6 +33,9 @@ class Controller_ctl extends MY_Frontend
 		$this->data['khusus']['ujian'] = TRUE;
 		$this->data['text']['white'] = TRUE;
 		$this->data['button_back'] = base_url('home');
+		// LOAD MYDATA
+		$mydata['result_fresh'] = $result->data->fresh;
+		$mydata['result_old'] = $result->data->old;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

@@ -1,5 +1,6 @@
 <div class="main-container container mb-0">
     <div class="row">
+        <input type="hidden" name="now" id="now" value="<?= date('Y-m-d'); ?>">
         <div class="col-12 chat-list scroll-y">
             <div class="row no-margin right-chat">
                 <div class="main-container container">
@@ -167,7 +168,7 @@
     <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content shadow position-absolute" style="bottom: 65px;">
             <div class="modal-body">
-                <div class="row justify-content-center">
+                <form method="POST" id="form_upload" class=" row justify-content-center">
                     <div class="col-auto text-center">
                         <a href="#" class="avatar avatar-60 p-1 shadow-sm shadow-danger rounded-20 bg-danger mb-2" data-bs-toggle="modal" data-bs-target="#pelajaranModal" aria-hidden="true">
                             <div class="circle-bg-top"></div>
@@ -180,7 +181,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <input id="upload-file" type="file" />
+                        <input id="upload-file" onchange="kirim_file(this)" type="file" />
                         <a href="javascript:void(0)" id="upload" class="avatar avatar-60 p-1 shadow-sm shadow-primary rounded-20 bg-secondary mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
@@ -192,7 +193,7 @@
                     </div>
 
                     <div class="col-auto text-center">
-                        <input id="upload-file2" type="file" />
+                        <input id="upload-file2" type="file" onchange="kirim_gambar(this)" accept="image/*" />
                         <a href="javascript:void(0)" id="upload2" class="avatar avatar-60 p-1 shadow-sm shadow-info rounded-20 bg-image-modal mb-2">
                             <div class="circle-bg-top"></div>
                             <div class="circle-bg-bottom"></div>
@@ -202,7 +203,7 @@
                         </a>
                         <p class="size-13 text-secondary">Foto</p>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -219,7 +220,7 @@
             <div class="modal-body">
                 <div class="avatar-upload">
                     <div class="avatar-preview">
-                        <figure style="background-image: url(<?= base_url(); ?>assets/images/naruto.png);"></figure>
+                        <figure id="div_gambar" style="background-image: url(<?= base_url(); ?>assets/images/naruto.png);"></figure>
                     </div>
                 </div>
             </div>
@@ -229,12 +230,12 @@
                         <div class="col">
                             <div class="form-group mb-2">
                                 <div class="wrapper-password d-flex">
-                                    <input type="text" class="form-control form-control-pribadi ps-3 chatting" name="text" id="password" placeholder="Tulis Pesan" autocomplete="off">
+                                    <input type="text" id="base_pesan_dua" class="form-control form-control-pribadi ps-3 chatting" name="text" placeholder="Tulis Pesan" autocomplete="off">
                                 </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <button class="btn btn-danger btn-44 rounded-circle avatar p-0 button-kirim-pesan" type="button" data-bs-toggle="modal" data-bs-target="#attachefiles">
+                            <button type="button" onclick="kirim_pesan_gambar()" class="btn btn-danger btn-44 rounded-circle avatar p-0 button-kirim-pesan" data-bs-toggle="modal" data-bs-target="#attachefiles">
                                 <i class="fa-regular fa-paper-plane size-22 text-white"></i>
                             </button>
                         </div>

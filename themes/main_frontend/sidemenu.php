@@ -161,6 +161,13 @@
                                     <?php if (isset($right_button['chatting'])) :  ?>
                                         <a href="#" data-bs-toggle="offcanvas" data-bs-target="#detail_profil_chat" aria-controls="offcanvasRight" class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= $foto_staf; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
                                     <?php endif; ?>
+                                    <?php if (isset($right_button['chatting_grup'])) :  ?>
+                                        <?php if ($foto_accept) : ?>
+                                            <a class="btn btn-44 rounded-circle btn-notifikasi" style="background-image: url(<?= $foto_grup; ?>); background-repeat: no-repeat; background-size: cover; background-position: center;"></a>
+                                        <?php else : ?>
+                                            <a class="btn btn-44 rounded-circle btn-notifikasi" style="background-repeat: no-repeat; background-size: cover; background-position: center;"><?= $foto_grup; ?></a>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
 
                                 </div>
 
@@ -180,7 +187,7 @@
                                     <div class="col-12 mx-auto">
                                         <div class="input-group">
                                             <input type="text" class="form-control form-control-pribadi pencarian" id="search_personal" onkeyup="search(this,'a.target_search_1','#vector_pesan')" placeholder="Cari kontak" aria-label="Pencarian">
-                                            <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'a.target_search_2')" placeholder="Cari nama grup" aria-label="Pencarian" style="border-radius: 10px;">
+                                            <input type="text" class="form-control form-control-pribadi pencarian d-none" id="search_grup" onkeyup="search(this,'a.target_search_2','#vector_grup_pesan')" placeholder="Cari nama grup" aria-label="Pencarian" style="border-radius: 10px;">
                                             <button class="input-group-text searhing" id="basic-addon2"><i class="fa-solid fa-magnifying-glass size-20 text-white"></i></button>
                                         </div>
                                     </div>

@@ -127,19 +127,37 @@
                         </a>
                     <?php endif; ?>
                 </div>
-                <div class="col-4 d-flex justify-content-center align-items-center">
-                    <div class="card card-chatting mb-3">
-                        <div class="card-body">
-                            <div class="row d-flex justify-content-center align-items-center">
-                                <div class="col-auto">
-                                    <a href="#" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
-                                        <i class="fa-regular fa-messages size-22 text-white"></i>
-                                    </a>
+                <?php if ($result->result->chat != NULL && $result->result->chat != 'N') : ?>
+                    <!-- ini enabled -->
+                    <div class="col-4 d-flex justify-content-center align-items-center">
+                        <div class="card card-chatting mb-3">
+                            <div class="card-body">
+                                <div class="row d-flex justify-content-center align-items-center">
+                                    <div class="col-auto">
+                                        <a href="<?= base_url('qna/chatting_grup/' . $result->result->id_chat . '?tanggal=' . date('Y-m-d', strtotime($result->result->tanggal))); ?>" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
+                                            <i class="fa-regular fa-messages size-22 text-white"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php else : ?>
+                    <!-- INI DISABLED -->
+                    <div class="col-4 d-flex justify-content-center align-items-center">
+                        <div class="card card-chatting mb-3">
+                            <div class="card-body">
+                                <div class="row d-flex justify-content-center align-items-center">
+                                    <div class="col-auto">
+                                        <a href="#" class="avatar avatar-50 rounded-15 avatar-presensi-inline-disabled">
+                                            <i class="fa-regular fa-messages size-22 text-white"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <?php if ($result->result) : ?>
                 <?php if ($result->result->materi) : ?>
@@ -173,6 +191,38 @@
                         </div>
                     </div>
                 <?php endif; ?>
+
+            <?php endif; ?>
+            <?php if ($result->tugas) : ?>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-1 title-detail-kbm-judul">Tugas hari ini</p>
+                    </div>
+                    <div class="col-12">
+                        <?php foreach ($result->tugas as $row) : ?>
+                            <a href="<?= base_url('tugas/detail_tugas/' . $row->id_tugas) ?>" class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline" style="line-height: 44px;">
+                                                    <i class="fa-solid fa-book-open-cover size-18 text-white"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col align-self-center px-0">
+                                            <p class="mb-0 size-14 fw-normal"><?= tampil_text($row->nama, 25); ?></p>
+                                            <p class="mb-0 size-13 fw-normal text-secondary"><?= tampil_text($row->keterangan, 35); ?></p>
+                                        </div>
+                                        <div class="col-auto align-self-center">
+                                            <button class="btn btn-md btn-link"><i class="fa-solid fa-chevron-right size-26 text-dark"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             <?php endif; ?>
         </div>
     </div>
