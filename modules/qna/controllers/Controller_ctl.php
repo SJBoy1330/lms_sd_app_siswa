@@ -184,11 +184,11 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD CONFIG PAGE 
 		if ($_SERVER['HTTP_REFERER'] == NULL) {
-			$link = base_url('home');
+			$link = base_url('qna');
 		} else {
 			$arrLink = explode('/', $_SERVER['HTTP_REFERER']);
 			if (in_array('qna', $arrLink)) {
-				$link = base_url('home');
+				$link = base_url('qna');
 			} else {
 				$link = $_SERVER['HTTP_REFERER'];
 			}

@@ -200,7 +200,7 @@
                 <div class="modal-header py-4">
                     <button type="button" class="btn-close me-0" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body mb-0 pb-0">
                     <div class="row">
                         <div class="col-12">
                             <div style="width : 90%;height :100%;position : absolute;z-index : 10;"></div>
@@ -255,54 +255,55 @@
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
-                            <!-- BUTTON PRESENSI -->
-                            <input type="hidden" class="lat" name="lat" value="<?= $lat; ?>">
-                            <input type="hidden" class="long" name="long" value="<?= $long; ?>">
-
-                            <input type="hidden" id="jam_masuk" name="jam_masuk" value="<?= $presensi_setting->jam_masuk; ?>">
-                            <input type="hidden" id="jam_pulang" name="jam_pulang" value="<?= $presensi_setting->jam_pulang; ?>">
-                            <?php if ($presensi_setting->checkout == true) : ?>
-                                <input type="hidden" id="checkout" name="checkout" value="Y">
-                            <?php else : ?>
-                                <input type="hidden" id="checkout" name="checkout" value="N">
-                            <?php endif; ?>
-                            <?php if ($presensi_setting->status_presensi->masuk == true) : ?>
-                                <?php if (!isset($presensi->presensi_sekolah->scan_masuk)) :  ?>
-                                    <input type="hidden" name="scan_masuk" value="Y">
-                                    <div class="modal-footer d-flex justify-content-center border-0">
-                                        <button type="button" id="button_submit_masuk" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</button>
-                                    </div>
-                                <?php else : ?>
-                                    <?php if ($presensi_setting->checkout == true) : ?>
-                                        <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
-                                            <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
-                                                <input type="hidden" name="scan_masuk" value="N">
-                                                <div class="modal-footer d-flex justify-content-center border-0">
-                                                    <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</button>
-                                                </div>
-                                            <?php endif; ?>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-
-                            <?php endif; ?>
-                            <?php if ($presensi_setting->checkout == true) : ?>
-                                <?php if ($presensi_setting->status_presensi->masuk == false) : ?>
-                                    <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
-                                        <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
-                                            <input type="hidden" name="scan_masuk" value="N">
-                                            <div class="modal-footer d-flex justify-content-center border-0">
-                                                <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Pulang</button>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                            <?php endif; ?>
                         </div>
                     </div>
 
                 </div>
+                <div class="modal-footer d-flex justify-content-center border-0 mt-0 pt-0">
+                    <!-- BUTTON PRESENSI -->
+                    <input type="hidden" class="lat" name="lat" value="<?= $lat; ?>">
+                    <input type="hidden" class="long" name="long" value="<?= $long; ?>">
 
+                    <input type="hidden" id="jam_masuk" name="jam_masuk" value="<?= $presensi_setting->jam_masuk; ?>">
+                    <input type="hidden" id="jam_pulang" name="jam_pulang" value="<?= $presensi_setting->jam_pulang; ?>">
+                    <?php if ($presensi_setting->checkout == true) : ?>
+                        <input type="hidden" id="checkout" name="checkout" value="Y">
+                    <?php else : ?>
+                        <input type="hidden" id="checkout" name="checkout" value="N">
+                    <?php endif; ?>
+                    <?php if ($presensi_setting->status_presensi->masuk == true) : ?>
+                        <?php if (!isset($presensi->presensi_sekolah->scan_masuk)) :  ?>
+                            <input type="hidden" name="scan_masuk" value="Y">
+                            <div class="modal-footer d-flex justify-content-center border-0">
+                                <button type="button" id="button_submit_masuk" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2">Presensi Masuk</button>
+                            </div>
+                        <?php else : ?>
+                            <?php if ($presensi_setting->checkout == true) : ?>
+                                <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
+                                    <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
+                                        <input type="hidden" name="scan_masuk" value="N">
+                                        <div class="modal-footer d-flex justify-content-center border-0 py-0 my-0">
+                                            <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2 d-flex justify-content-center">Presensi Pulang</button>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+                    <?php if ($presensi_setting->checkout == true) : ?>
+                        <?php if ($presensi_setting->status_presensi->masuk == false) : ?>
+                            <?php if ($presensi_setting->status_presensi->pulang == true) : ?>
+                                <?php if (!isset($presensi->presensi_sekolah->scan_pulang)) : ?>
+                                    <input type="hidden" name="scan_masuk" value="N">
+                                    <div class="modal-footer d-flex justify-content-center border-0">
+                                        <button type="button" id="button_submit_pulang" onclick="submit_form(this,'#form_presensi_siswa')" class="btn shadow-sm btn-presensi mb-2 d-flex justify-content-center">Presensi Pulang</button>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
 
             </form>
         </div>
