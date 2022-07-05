@@ -8,8 +8,8 @@
                         <div class="col-12">
                             <?php if ($result_fresh) : ?>
                                 <?php foreach ($result_fresh as $row) : ?>
-                                    <div class="card mb-3">
-                                        <a href="<?= base_url('ujian/detail_ujian/' . $row->id_paket_ujian) ?>" class="card-body">
+                                    <div class="card berlangsung mb-3">
+                                        <a href="<?= base_url('ujian/detail_ujian/' . $row->id_paket_ujian) ?>" class=" card-body">
                                             <span class="badge bg-time-exam py-2 px-3 text-danger size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->jam_mulai; ?> - <?= $row->jam_selesai; ?></span>
                                             <div class="row">
                                                 <div class="col-auto">
@@ -31,27 +31,6 @@
                                 <?= vector_default('vector_ujian_kosong.svg', 'Tidak ada ujian aktif', 'Tidak ada ujian yang sedang berlangsung maupun belum mulai, silahkan hubungi pihak sekolah jika terjadi kesalahan!', 'vector_ujian') ?>
                             <?php endif; ?>
                         </div>
-
-                        <div class="col-12">
-                            <div class="card berlangsung mb-3">
-                                <a href="#" class="card-body">
-                                    <span class="badge bg-time-exam py-2 px-3 text-danger size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom">09:00 - 10:00</span>
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                                <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                    <i class="fa-solid fa-book-bookmark size-20 text-white"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="mb-0 size-15 fw-medium text-dark" style="width: 65%;">Ujian lorem ipsum dolor sit amet</p>
-                                            <p class="mb-0 size-12 fw-normal text-secondary">Matematika | 15 Juni 2022</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -64,14 +43,15 @@
                                         <a href="<?= base_url('ujian/pembahasan/' . $row->id_paket_ujian) ?>" class="card mb-3">
                                         <?php else : ?>
                                             <a href="#" class="card mb-3">
-                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                            <div class="card-body">
+                                                <?php if ($row->kode_status < 1) {
+                                                    $css = 'bg-history-exam-danger text-danger';
+                                                } else {
+                                                    $css = 'bg-history-exam text-success';
+                                                } ?>
                                                 <div class="card-body">
-                                                    <?php if ($row->kode_status < 1) {
-                                                        $css = 'bg-history-exam-danger text-danger';
-                                                    } else {
-                                                        $css = 'bg-history-exam text-success';
-                                                    } ?>
-                                                    <span class="badge <?= $css; ?> py-2 px-3 text-danger size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->status; ?></span>
+                                                    <span class="badge <?= $css; ?> py-2 px-3 size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->status; ?></span>
                                                     <div class="row">
                                                         <div class="col-auto">
                                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -86,37 +66,21 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
                                             </a>
                                         <?php endforeach; ?>
                                     <?php else : ?>
                                         <?= vector_default('vector_riwayat_ujian_kosong.svg', 'Tidak ada riwayat ujian', 'Tidak ada riwayat ujian, silahkan hubungi pihak sekolah jika terjadi kesalahan!', 'vector_ujian') ?>
                                     <?php endif; ?>
-                                    
-                                    <a href="<?= base_url('ujian/pembahasan');?>" class="card mb-3">
-                                        <div class="card-body">
-                                            <span class="badge bg-history-exam text-success py-2 px-3size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom">Pembahasan</span>
-                                            <div class="row">
-                                                <div class="col-auto">
-                                                    <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
-                                                        <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
-                                                            <i class="fa-solid fa-book-bookmark size-20 text-white"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col align-self-center ps-0">
-                                                    <p class="mb-0 size-15 fw-medium" style="width: 65%;">Ujian lorem ipsum dolor sit amet</p>
-                                                    <p class="mb-0 size-12 fw-normal text-secondary">Matematika | 16 Mei</p>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </a>
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 <!-- main page content ends -->
