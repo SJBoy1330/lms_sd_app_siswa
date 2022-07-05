@@ -96,7 +96,8 @@ function upload_jawaban(element) {
 		},
 		success: function (data) {
 			$('#loading_scene').modal('hide');
-			$('#refresh_modal').load(BASE_URL + 'tugas/detail_tugas/' + id + ' #loading_scene');
+			$('#refresh_loading').load(BASE_URL + 'tugas/detail_tugas/ #loading_scene');
+			$('.modal-backdrop').remove();
 			if (data.status == true) {
 				var icon = 'success';
 				$('#display_jawaban').load(BASE_URL + 'tugas/detail_tugas/' + id + ' #reload_jawaban');

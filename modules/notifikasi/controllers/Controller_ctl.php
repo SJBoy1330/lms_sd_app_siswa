@@ -86,30 +86,32 @@ class Controller_ctl extends MY_Frontend
 	public function hapus_all()
 	{
 		// Load meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_notifikasi = $this->input->post('id_notifikasi');
 
-		$api = curl_post('notifikasi/hapus', ['id_sekolah' => $this->id_sekolah, 'id_notifikasi' => json_encode($id_notifikasi)]);
+		$api = curl_post('notifikasi/hapus', ['id_sekolah' => $id_sekolah, 'id_notifikasi' => json_encode($id_notifikasi)]);
 
 		$data['status'] = 200;
-		// $data['load']['parent'] = '#parent_notif';
-		// $data['load']['reload'] = base_url('notifikasi #reload_content_notif');
+		$data['id_notifikasi'] = $id_notifikasi;
 
-		$data['reload'] = true;
-
+		sleep(1.5);
 		echo json_encode($data);
 	}
 
 	public function read_all()
 	{
 		// Load meta data
+		$id_sekolah = $this->session->userdata('lms_wali_id_sekolah');
 		$id_notifikasi = $this->input->post('id_notifikasi');
 
-		$api = curl_post('notifikasi/read_all', ['id_sekolah' => $this->id_sekolah, 'id_notifikasi' => json_encode($id_notifikasi)]);
+		$api = curl_post('notifikasi/read_all', ['id_sekolah' => $id_sekolah, 'id_notifikasi' => json_encode($id_notifikasi)]);
 
 		$data['status'] = 200;
+		// $data['load']['parent'] = '#parent_notif';
+		// $data['load']['reload'] = base_url('notifikasi #reload_content_notif');
+		$data['id_notifikasi'] = $id_notifikasi;
 
-		// $data['reload'] = true;
-
+		sleep(2);
 		echo json_encode($data);
 	}
 }

@@ -41,8 +41,11 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-	public function detail_ujian()
+	public function detail_ujian($id_paket_ujian = NULL)
 	{
+		if ($id_paket_ujian == NULL) {
+			redirect('ujian');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'Detail Ujian';
 
@@ -51,7 +54,18 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_1.js"></script>';
+		// LOAD CONFIG
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+		$this->data['judul_halaman'] = 'Detail ujian';
+		$this->data['khusus']['detail_ujian'] = TRUE;
+		$this->data['text']['white'] = TRUE;
+		$this->data['button_back'] = base_url('ujian');
+		// LOAD API
+		$result = curl_get('ujian/detail/', ['id_sekolah' => $this->id_sekolah, 'id_paket_ujian' => $id_paket_ujian]);
 
+		// LOAD MYDATA 
+		$mydata['result'] = $result->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('detail_ujian', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
