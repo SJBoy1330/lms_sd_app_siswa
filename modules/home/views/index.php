@@ -203,6 +203,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
+                            <div style="width : 90%;height :100%;position : absolute;z-index : 10;"></div>
                             <div id="map-container-google-1" class="z-depth-1-half map-container">
                                 <iframe id="map_iframe" src="<?= $map; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
@@ -318,7 +319,9 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-12">
+                        <div style="width : 90%;height :100%;position : absolute;z-index : 10;"></div>
                         <div id="map-container-google-1" class="z-depth-1-half map-container">
+
                             <iframe id="map_mapel" src="<?= $map; ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
