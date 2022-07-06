@@ -8,8 +8,15 @@
                         <div class="col-12">
                             <?php if ($result_fresh) : ?>
                                 <?php foreach ($result_fresh as $row) : ?>
-                                    <div class="card berlangsung mb-3">
-                                        <a href="<?= base_url('ujian/detail_ujian/' . $row->id_paket_ujian) ?>" class=" card-body">
+                                    <?php if ($row->status_ujian != true) {
+                                        $css =  'berlangsung';
+                                        $href = '#';
+                                    } else {
+                                        $css = NULL;
+                                        $href = base_url('ujian/detail_ujian/' . $row->id_paket_ujian);
+                                    } ?>
+                                    <div class="card <?= $css; ?>mb-3">
+                                        <a href="<?= $href; ?>" class=" card-body">
                                             <span class="badge bg-time-exam py-2 px-3 text-danger size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->jam_mulai; ?> - <?= $row->jam_selesai; ?></span>
                                             <div class="row">
                                                 <div class="col-auto">

@@ -81,7 +81,11 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/ujian/tablink_2.js"></script>';
-
+		// LOAD CONFIG
+		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
+		$this->data['judul_halaman'] = 'Paket ujian 1';
+		$this->data['button_back']['khusus']['ujian'] = true;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('exam', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

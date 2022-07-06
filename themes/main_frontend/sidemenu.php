@@ -78,6 +78,41 @@
         </div>
 
     </div>
+<?php else : ?>
+    <?php if (isset($button_back['khusus'])) : ?>
+        <?php if (isset($button_back['khusus']['ujian'])) : ?>
+            <!-- Sidebar Penomoran -->
+            <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" styele="background-color: #FFE6E6;">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
+                    <button type="button" class="btn-close text-reset mt-1 me-1" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ujian">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>Paket Ujian 01</h5>
+                            <p class="fw-normal text-dark size-15">Bahasa Indonesia</p>
+                            <div class="solid-line mb-4"></div>
+                        </div>
+                        <div class="col-12 tab px-0">
+                            <div class="wrapper-ujian d-flex justify-content-center align-items-center flex-wrap">
+                                <button id="defaultOpen" class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event,'ForSoal')">1</button>
+                                <button class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event, 'ForSoal2')">2</button>
+                                <button class="btn btn-ragu_ragu mx-2 mb-3" onclick="openCity(event, 'ForSoal3')">3</button>
+                                <button class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event, 'ForSoal4')">4</button>
+                                <button class="btn rounded-circle mx-2 mb-3 tablinks" onclick="openCity(event, 'ForSoal5')">5</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-footer bg-none my-3 mx-4">
+                    <div class="wrapper-button">
+                        <a href="#" class="btn btn-block btn-md btn-danger btn-detail-tugas" style="width: 100%;">Selesai Ujian</a>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
 <?php endif; ?>
 <!-- Sidebar main menu ends -->
 <main class="h-100">
@@ -106,13 +141,21 @@
                                 <div class="row" id="header_config">
                                     <div class="col-auto">
                                         <?php if (isset($button_back)) : ?>
-                                            <a href="<?= $button_back ?>" target="_self" class="btn btn-44">
-                                                <?php if (isset($text['white'])) : ?>
-                                                    <i class="fa-solid fa-chevron-left text-white"></i>
-                                                <?php else : ?>
-                                                    <i class="fa-solid fa-chevron-left text-dark"></i>
+                                            <?php if (!isset($button_back['khusus'])) : ?>
+                                                <a href="<?= $button_back ?>" target="_self" class="btn btn-44">
+                                                    <?php if (isset($text['white'])) : ?>
+                                                        <i class="fa-solid fa-chevron-left text-white"></i>
+                                                    <?php else : ?>
+                                                        <i class="fa-solid fa-chevron-left text-dark"></i>
+                                                    <?php endif; ?>
+                                                </a>
+                                            <?php else : ?>
+                                                <?php if (isset($button_back['khusus']['ujian'])) : ?>
+                                                    <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="btn btn-44 rounded-circle menu-btn number-exam">
+                                                        <i class="fa-regular fa-objects-column" style="font-size:20px; color: #EC3528;"></i>
+                                                    </a>
                                                 <?php endif; ?>
-                                            </a>
+                                            <?php endif; ?>
                                         <?php else : ?>
                                             <div class="col-auto">
                                                 <a href="javascript:void(0)" target="_self" class="btn btn-44 menu-btn">
