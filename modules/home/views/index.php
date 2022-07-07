@@ -65,7 +65,7 @@
                                                 <p class="fw-normal mb-0 size-17"><?= tampil_text($row->nama_pelajaran, 13); ?></p>
                                                 <p class="fw-normal mb-0 text-secondary size-13"><?= tampil_text($row->pengajar, 15); ?></p>
                                             </div>
-                                            <div class="col text-end mt-3">
+                                            <div class="col text-end position-absolute mt-3" style="bottom: 13px; right: 4px;">
                                                 <p class="mb-0 fw-normal size-12"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                                     <p class="fw-normal mb-0 size-17 opacity-5"><?= tampil_text($row->nama_pelajaran, 13); ?></p>
                                                     <p class="fw-normal mb-0 text-secondary size-13 opacity-5"><?= tampil_text($row->pengajar, 15); ?></p>
                                                 </div>
-                                                <div class="col text-end mt-3">
+                                                <div class="col text-end mt-3 position-absolute" style="bottom: 13px; right: 4px;">
                                                     <p class="mb-0 fw-normal size-12 opacity-5"><?= substr($row->jam_mulai, 0, -3) ?> - <?= substr($row->jam_selesai, 0, -3) ?></p>
                                                 </div>
                                             </div>
