@@ -61,6 +61,7 @@ class Function_ctl extends MY_Welcome
         $arrVar['email'] = 'Email';
         $arrVar['agama'] = 'Agama';
         $arrVar['nama'] = 'Nama';
+        $arrVar['username'] = 'ID Pengguna';
         foreach ($arrVar as $var => $value) {
             $$var = $this->input->post($var);
             if (!$$var) {
@@ -80,6 +81,7 @@ class Function_ctl extends MY_Welcome
             "id_sekolah" => $this->id_sekolah,
             "id_siswa" => $this->id_siswa,
             "nama" => $nama,
+            "username" => $username,
             "alamat" => $this->input->post('alamat'),
             "telp" => $this->input->post('telp'),
             "email" => $email,

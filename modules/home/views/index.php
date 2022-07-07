@@ -42,7 +42,7 @@
                                             <div class="boba-kecil-1"></div>
                                             <div class="boba-kecil-2"></div>
                                         <?php endif ?>
-                                        <?php if ($presensi->presensi_mapel != NULL && isset($presensi->presensi_mapel->$uniq)) : ?>
+                                        <?php if ($presensi_setting->presensi_mapel != FALSE && isset($presensi->presensi_mapel->$uniq)) : ?>
                                             <div class="jam-presensi">
                                                 <p class="mb-0 text-white size-13"><?= $presensi->presensi_mapel->$uniq; ?></p>
                                             </div>
@@ -138,7 +138,7 @@
                                     </div>
                                 </div>
                                 <div class=" col align-self-center ps-0">
-                                    <p class="mb-1 size-15 fw-normal"><?= nice_title($row->judul, 40) ?></p>
+                                    <p class="mb-1 size-15 fw-normal"><?= tampil_text($row->judul, 40) ?></p>
                                     <p class="fw-normal text-secondary size-12"><?= nice_time($row->tanggal_mulai) ?></p>
                                 </div>
                             </div>
@@ -177,8 +177,8 @@
                                 <div class="wrapper-text shadow-sm">
                                     <div class="row px-3 py-3">
                                         <p class="mb-1 fw-medium size-15 text-dark">
-                                            <?= nice_title($row->judul, 40) ?></p>
-                                        <p class="mb-0 title-4-home-text"><?= nice_title($row->keterangan, 70) ?></p>
+                                            <?= tampil_text($row->judul, 40) ?></p>
+                                        <p class="mb-0 title-4-home-text"><?= tampil_text($row->keterangan, 80) ?></p>
                                     </div>
                                 </div>
                             </a>

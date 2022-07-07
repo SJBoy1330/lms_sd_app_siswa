@@ -69,47 +69,48 @@
                 </div>
             </div>
         </div>
+        <?php if ($result->mapel != 1) : ?>
+            <?php if ($result->mapel != NULL) : ?>
+                <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
 
-        <?php if ($result->mapel) : ?>
-            <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
-
-            <?php foreach ($result->mapel as $row) : ?>
-                <a class="card mb-3 mx-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-auto">
-                                <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
-                                    <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
-                                        <i class="fa-solid fa-calendar-range size-20 text-white"></i>
+                <?php foreach ($result->mapel as $row) : ?>
+                    <a class="card mb-3 mx-2">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="avatar avatar-50 shadow-sm rounded-15 avatar-presensi-outline">
+                                        <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                            <i class="fa-solid fa-calendar-range size-20 text-white"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col align-self-center ps-0">
-                                <p class="mb-0 size-15 fw-medium"><?= $row->nama_pelajaran ?></p>
-                                <?php
-                                if ($row->status == 1) {
-                                    $warna = 'text-success';
-                                } elseif ($row->status == 2) {
-                                    $warna = 'text-info';
-                                } elseif ($row->status == 3) {
-                                    $warna = 'text-warning';
-                                } else {
-                                    $warna = 'text-danger';
-                                }
-                                ?>
-                                <?php if ($row->status == 1) : ?>
-                                    <div class="jam-laporan-presensi">
-                                        <p class="mb-0 text-white size-13"><?= $row->scan; ?></p>
-                                    </div>
-                                <?php endif; ?>
-                                <p class="mb-0 size-13 fw-normal <?= $warna; ?>"><?= $row->status_presensi; ?></p>
+                                <div class="col align-self-center ps-0">
+                                    <p class="mb-0 size-15 fw-medium"><?= $row->nama_pelajaran ?></p>
+                                    <?php
+                                    if ($row->status == 1) {
+                                        $warna = 'text-success';
+                                    } elseif ($row->status == 2) {
+                                        $warna = 'text-info';
+                                    } elseif ($row->status == 3) {
+                                        $warna = 'text-warning';
+                                    } else {
+                                        $warna = 'text-danger';
+                                    }
+                                    ?>
+                                    <?php if ($row->status == 1) : ?>
+                                        <div class="jam-laporan-presensi">
+                                            <p class="mb-0 text-white size-13"><?= $row->scan; ?></p>
+                                        </div>
+                                    <?php endif; ?>
+                                    <p class="mb-0 size-13 fw-normal <?= $warna; ?>"><?= $row->status_presensi; ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            <?php endforeach; ?>
-        <?php else : ?>
-            <?= vector_default("vector_jadwal_kosong.svg", "Tidak ada jadwal", "Tidak ada jadwal pada hari ini, Silahkan pilih hari lain atau hubungi pihak sekolah jika terjadi kesalahan!"); ?>
+                    </a>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <?= vector_default("vector_jadwal_kosong.svg", "Tidak ada jadwal", "Tidak ada jadwal pada hari ini, Silahkan pilih hari lain atau hubungi pihak sekolah jika terjadi kesalahan!"); ?>
+            <?php endif; ?>
         <?php endif; ?>
     <?php else : ?>
         <?= vector_default("vector_laporan_kosong.svg", "Tidak ada data presensi", "Tidak ditemukan data presensi hari ini, silahkan cari pada tanggal lain atau hubungi andim jika terjadi kesalahan!"); ?>

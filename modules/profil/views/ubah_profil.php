@@ -13,6 +13,10 @@
                     <input type="text" class="form-control form-control-pribadi text-start" id="nis" value="<?= $result->nisn; ?>" placeholder="Masukan NISN" autocomplete="off" readonly>
                 </div>
             <?php endif; ?>
+            <div class="col-12" id="req_username">
+                <label for="username" class="form-label fw-bold size-14">ID Pengguna</label>
+                <input type="text" name="username" class="form-control form-control-pribadi text-start" id="username" value="<?= $result->username; ?>" placeholder="Masukan ID Pengguna" autocomplete="off">
+            </div>
             <div class="col-12" id="req_nama">
                 <label for="nama" class="form-label fw-bold size-14">Nama lengkap</label>
                 <input type="text" name="nama" class="form-control form-control-pribadi text-start" id="nama" value="<?= $result->nama; ?>" placeholder="Masukan nama lengkap" autocomplete="off">
