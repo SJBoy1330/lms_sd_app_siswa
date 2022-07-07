@@ -141,7 +141,7 @@
                                     ?>
                                     <a <?= $action; ?> class="card my-3" <?php
                                                                             if ($row->file_dokumen == FALSE) {
-                                                                                echo 'style="background-color : #c7c9c9;"';
+                                                                                echo 'style="background-color : #EAEBEB;"';
                                                                             }
                                                                             ?>>
                                         <div class="card-body">

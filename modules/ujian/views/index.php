@@ -16,9 +16,9 @@
                                         $href = base_url('ujian/detail_ujian/' . $row->id_paket_ujian);
                                     } ?>
                                     <div class="card <?= $css; ?>mb-3">
-                                        <a href="<?= $href; ?>" class=" card-body">
+                                        <a href="<?= $href; ?>" class=" card-body ujian">
                                             <span class="badge bg-time-exam py-2 px-3 text-danger size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->jam_mulai; ?> - <?= $row->jam_selesai; ?></span>
-                                            <div class="row">
+                                            <div class="row pb-0 mt-1">
                                                 <div class="col-auto">
                                                     <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                         <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
@@ -51,15 +51,14 @@
                                         <?php else : ?>
                                             <a href="#" class="card mb-3">
                                             <?php endif; ?>
-                                            <div class="card-body">
+                                            <div class="card-body ujian">
                                                 <?php if ($row->kode_status < 1) {
                                                     $css = 'bg-history-exam-danger text-danger';
                                                 } else {
                                                     $css = 'bg-history-exam text-success';
                                                 } ?>
-                                                <div class="card-body">
                                                     <span class="badge <?= $css; ?> py-2 px-3 size-8 fw-normal position-absolute top-0 end-0 rounded-15-start-bottom"><?= $row->status; ?></span>
-                                                    <div class="row">
+                                                    <div class="row pb-0 mt-1">
                                                         <div class="col-auto">
                                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
                                                                 <div class="avatar avatar-40 rounded-circle avatar-presensi-inline">
@@ -72,7 +71,6 @@
                                                             <p class="mb-0 size-12 fw-normal text-secondary"><?= tampil_text($row->nama_pelajaran, 20); ?> | <?= $row->nice_tanggal; ?></p>
                                                         </div>
                                                     </div>
-                                                </div>
                                             </div>
                                             </a>
                                         <?php endforeach; ?>

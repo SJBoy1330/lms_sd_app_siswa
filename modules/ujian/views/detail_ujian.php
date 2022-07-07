@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-6 mb-3 jadwal pe-1">
                             <div class="card">
-                                <div class="card-body pt-3 mb-2">
+                                <div class="card-body detail-ujian pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-6 mb-3 jadwal ps-1">
                             <div class="card">
-                                <div class="card-body pt-3 mb-2">
+                                <div class="card-body detail-ujian pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-6 mb-3 jadwal pe-1">
                             <div class="card">
-                                <div class="card-body pt-3 mb-2">
+                                <div class="card-body detail-ujian pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="col-6 mb-3 jadwal ps-1">
                             <div class="card">
-                                <div class="card-body pt-3 mb-2">
+                                <div class="card-body detail-ujian pt-3 mb-2">
                                     <div class="row flex-column">
                                         <div class="col-auto">
                                             <div class="avatar avatar-50 shadow-sm rounded-circle avatar-presensi-outline">
