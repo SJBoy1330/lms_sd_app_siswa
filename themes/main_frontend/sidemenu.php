@@ -13,8 +13,8 @@
                                 <figure class="avatar avatar-80 rounded-20 p-1 bg-white shadow-sm figure-sidemenu" style="background-image: url(' <?= $profil->foto; ?>')"></figure>
                             </div>
                             <div class=" col px-0 align-self-center">
-                                <h5 class="mb-0 fw-normal text-white"><?= $profil->nama; ?></h5>
-                                <p class="text-muted size-12"><?= $profil->nama_kelas; ?></p>
+                                <h5 class="mb-0 fw-normal text-white"><?= tampil_text($profil->nama, 20); ?></h5>
+                                <p class="text-muted size-12"><?= tampil_text($profil->nama_kelas, 20); ?></p>
                             </div>
                         </div>
                     </div>

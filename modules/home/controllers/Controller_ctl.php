@@ -61,6 +61,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['judul_halaman'] = 'Pengumuman';
 		$this->data['button_back'] = base_url('home');
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_pengumuman', $mydata, TRUE);
@@ -125,6 +126,7 @@ class Controller_ctl extends MY_Frontend
 		$this->data['button_back'] = base_url('home');
 		$this->data['judul_halaman'] = 'Berita';
 		$this->data['config_hidden']['notifikasi'] = TRUE;
+		$this->data['config_hidden']['footer'] = TRUE;
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('list_berita', $mydata, TRUE);

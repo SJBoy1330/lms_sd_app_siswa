@@ -1,74 +1,61 @@
 <div class="col-12">
     <h6 class="pt-3 ps-3 my-2" style="color: #EC3528;"><?= $tanggal; ?></h6>
     <?php if ($result) : ?>
-        <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Harian</h6>
-        <!-- <div class="row">
-            <div class="<?php if ($result->presensi_siswa->checkout == 'Y') {
-                            echo 'col-6 ps-4 pe-1';
-                        } else {
-                            echo 'col-12 px-4';
-                        } ?>">
-                <div class="card mb-3 card-laporan-presensi">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <div class="row flex-column">
-                            <div class="col align-self-center">
-                                <p class="mb-1 fw-normal text-dark text-center size-15">Jam Masuk</p>
-                                <h2 class="mb-0 text-center" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->masuk, ' --:-- '); ?></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php if ($result->presensi_siswa->checkout == 'Y') : ?>
-                <div class="col-6 ps-1 pe-4">
-                    <div class="card mb-3 card-laporan-presensi">
+        <?php if ($result->presensi_siswa->status_presensi < 2) : ?>
+            <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Harian</h6>
+            <div class="row">
+                <div class="col-12 px-4">
+                    <div class="card mb-3">
                         <div class="card-body d-flex justify-content-center align-items-center">
-                            <div class="row flex-column">
-                                <div class="col align-self-center">
-                                    <p class="mb-1 fw-normal text-dark text-center size-15">Jam Pulang</p>
-                                    <h2 class="mb-0 text-center" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->pulang, ' --:-- '); ?></h2>
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="<?= base_url('assets/images/vector_absensi.svg') ?>" width="135">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
-        </div> -->
+                                <div class="col-7 mt-3 align-self-center">
 
-        <div class="row">
-            <div class="col-12 px-4">
-                <div class="card mb-3">
-                    <div class="card-body d-flex justify-content-center align-items-center">
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="<?= base_url('assets/images/vector_absensi.svg') ?>" width="135">
-                            </div>
-                            <div class="col-7 mt-3 align-self-center">
-
-                                <div class="jam-masuk d-flex justify-content-center align-items-center">
-                                    <i class="fa-regular fa-door-open" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
-                                    <p class="text-secondary fw-normal size-15">Jam Masuk
-                                        <br>
-                                        <span class="fw-medium size-1%" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->masuk, ' --:-- '); ?></span>
-                                    </p>
-                                </div>
-                                <?php if ($result->presensi_siswa->checkout == 'Y') : ?>
-                                    <div class="solid-line my-3"></div>
-
-                                    <div class="jam-pulang d-flex justify-content-center align-items-center">
-                                        <i class="fa-regular fa-door-closed" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
-                                        <p class="text-secondary fw-normal size-15">Jam Pulang
+                                    <div class="jam-masuk d-flex justify-content-center align-items-center">
+                                        <i class="fa-regular fa-door-open" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
+                                        <p class="text-secondary fw-normal size-15">Jam Masuk
                                             <br>
-                                            <span class="fw-medium size-15" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->pulang, ' --:-- '); ?></span>
+                                            <span class="fw-medium size-1%" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->masuk, ' --:-- '); ?></span>
                                         </p>
                                     </div>
-                                <?php endif; ?>
+                                    <?php if ($result->presensi_siswa->checkout == 'Y') : ?>
+                                        <div class="solid-line my-3"></div>
+
+                                        <div class="jam-pulang d-flex justify-content-center align-items-center">
+                                            <i class="fa-regular fa-door-closed" style="font-size:1.5rem; margin-right: 15px; color: #EC3528;"></i>
+                                            <p class="text-secondary fw-normal size-15">Jam Pulang
+                                                <br>
+                                                <span class="fw-medium size-15" style="color: #EC3528;"><?= ifnull($result->presensi_siswa->pulang, ' --:-- '); ?></span>
+                                            </p>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php else : ?>
+            <div class="row">
+                <div class="col-12 px-4">
+                    <div class="card mb-3">
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            <div class="row">
+                                <?php
+                                if ($result->presensi_siswa->status_presensi == 2) {
+                                    echo "IJIN";
+                                } else {
+                                    echo "SAKIT";
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
         <?php if ($result->mapel != 1) : ?>
             <?php if ($result->mapel != NULL) : ?>
                 <h6 class="fw-normal pt-1 ps-3 mb-2">Presensi Mata Pelajaran</h6>
