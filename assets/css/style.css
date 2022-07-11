@@ -16756,18 +16756,18 @@ button.input-group-text {
 .tambah-file {
   background: none;
   border: 0;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   background-color: #EC3528;
   border-radius: 100px;
-  top: 15px;
+  bottom: 24px;
   left: 21px;
   /* padding: 5px 10px; */
   line-height: 26px;
 }
 
-.form-control.form-control-pribadi.chatting {
-  border-radius: 100px;
+.form-control.autoresize-textarea.chatting {
+  border-radius: 25px;
   padding-left: 50px;
   width: 268px !important;
 }
@@ -16777,6 +16777,9 @@ button.input-group-text {
 }
 
 button.button-kirim-pesan {
+  position: fixed;
+  bottom: 24px;
+  right: 17px;
   width: 46px;
   height: 46px;
 }
@@ -16880,4 +16883,13 @@ button.button-kirim-pesan {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   border: 3px solid white !important;
+}
+
+textarea.autoresize-textarea{
+  background-color: #F5F5F5;
+  min-height: 50px !important;
+}
+
+textarea.autoresize-textarea:hover{
+  background-color: #F5F5F5;
 }
