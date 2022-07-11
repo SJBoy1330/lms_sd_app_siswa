@@ -368,7 +368,7 @@
                                 </div>
                             </div>
                             <div class="col align-self-center p-0">
-                                <p class="mb-0 fw-bold size-14">Nomot Telepon</p>
+                                <p class="mb-0 fw-bold size-14">Nomor Telepon</p>
                                 <p class="text-secondary size-12"><?= ifnull($detail->telp, ' - '); ?></p>
                             </div>
                         </div>
