@@ -83,6 +83,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="text-center"><?= $result->detail->keterangan; ?></p>
             </div>
 
             <div class="row mb-2">
