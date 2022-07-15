@@ -83,7 +83,28 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-center"><?= $result->detail->keterangan; ?></p>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 mx-auto">
+                    <div class="card">
+                        <div class="col-auto position-absolute avatar-detail-kbm">
+                            <div class="avatar avatar-50 shadow-sm rounded-18 avatar-presensi-outline">
+                                <div class="avatar avatar-40 rounded-15 avatar-presensi-inline">
+                                    <i class="fa-solid fa-align-left size-20 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col align-self-center ps-4 text-detail-kbm">
+                                    <p class="mb-0 size-13 fw-medium">Keterangan</p>
+                                    <p class="fw-normal text-secondary size-12"><?= $result->detail->keterangan; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row mb-2">
