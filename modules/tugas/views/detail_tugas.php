@@ -285,38 +285,6 @@
     </div>
 </div>
 
-<!-- Modal PDF -->
-<div class="modal fade" id="modalPDF" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-        <div class="modal-content detail_tugas">
-            <div class="modal-header border-0">
-                <div class="row" style="width: 100vw;">
-                    <div class="col-auto">
-                        <a data-bs-dismiss="modal" aria-label="Close" target="_self" class="btn btn-44">
-                            <i class="fa-solid fa-chevron-left text-white"></i>
-                        </a>
-                    </div>
-                    <iframe id="iframepdf" src="https://sd.klasq.id/data/sekolah_1/tugas/61d95ce286cdc.pdf"></iframe>
-                    <div class="col d-flex justify-content-center align-items-center text-center">
-                        <p class="size-14 text-white">tugas_bahasa_indo.pdf</p>
-                    </div>
-                    <div class="col-auto">
-                        <a href="#" target="_self" class="btn btn-44">
-                            <i class="fa-regular fa-download text-white" style="font-size: 20px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="image-preview-pdf">
-                    <img src="<?= base_url('assets/images/pdf.svg') ?>" width="125" alt="">
-                </div>
-            </div>
-            <div class="modal-footer border-0"></div>
-        </div>
-    </div>
-</div>
-
 <!-- Modal Word -->
 <div class="modal fade" id="modalWord" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen modal-dialog-centered">
