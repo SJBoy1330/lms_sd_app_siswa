@@ -92,7 +92,7 @@
                                     <i class="fa-solid fa-messages size-28 text-white"></i>
                                 </div>
                             </a>
-                            <p class="size-13 text-secondary">Chatting</p>
+                            <p class="size-13 text-secondary">Pesan</p>
                         </div>
                     </div>
                 </div>
