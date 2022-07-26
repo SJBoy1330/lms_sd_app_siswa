@@ -32,7 +32,7 @@
                             </div>
                             <div class="col align-self-center p-0 d-flex align-items-start flex-column">
                                 <p class="mb-0 fw-normal size-13 text-secondary">Batas Waktu</p>
-                                <p class="mb-0 fw-normal size-14"><?= nice_date_time($result->detail->batas_waktu); ?></p>
+                                <p class="mb-0 fw-normal size-14"><?= day_from_number(date('N', strtotime($result->detail->batas_waktu))) . ', ' . date('d', strtotime($result->detail->batas_waktu)) . ' ' . month_from_number(date('m', strtotime($result->detail->batas_waktu))) . ' ' . date('Y', strtotime($result->detail->batas_waktu)); ?></p>
                             </div>
                         </div>
                         <div class="row py-1 px-2 mt-2 mb-2 ">
@@ -109,18 +109,33 @@
                         <p class="fw-bolder size-15">Download Tugas</p>
                     </div>
                     <?php foreach ($result->download as $row) : ?>
-                        <a href="<?= $row->file; ?>" class=" card shadow-sm mb-3">
+                        <?php
+                        if ($row->files != FALSE) {
+                            $action_download = 'href="' . $row->file . '" class="card shadow-sm mb-3"';
+                        } else {
+                            $action_download = 'class="card shadow-sm mb-3" onclick="take_alert(`PERINGATAN`, `Tidak bisa mengunduh file diakrenakan file rusak!`, `warning`)"';
+                        }
+                        ?>
+                        <a <?= $action_download; ?>>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-auto">
                                         <div class="avatar avatar-50 rounded-10 bg-document">
                                             <!-- <i class="fa-solid fa-file-pdf size-30 text-danger"></i> -->
-                                            <?= get_icon_file($row->extension); ?>
+                                            <?php if ($row->file != FALSE) {
+                                                echo get_icon_file($row->extension);
+                                            } else {
+                                                echo get_icon_file('corrupt');
+                                            } ?>
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0">
                                         <p class="mb-0 size-14 text-dark fw-normal"><?= $row->nama; ?></p>
-                                        <p class="mb-0 size-12 fw-normal text-secondary"><?= strtoupper($row->extension); ?> File</p>
+                                        <p class="mb-0 size-12 fw-normal text-secondary"><?php if ($row->file != FALSE) {
+                                                                                                echo strtoupper($row->extension);;
+                                                                                            } else {
+                                                                                                echo 'Corrupt';
+                                                                                            } ?> File</p>
                                     </div>
                                     <div class="col-auto align-self-center text-end ms-3">
                                         <button type="button" class="btn btn-md bg-cancel rounded-circle"><i class="fa-solid fa-arrow-down size-26 text-danger"></i></button>
