@@ -29,7 +29,7 @@ class Controller_ctl extends MY_Frontend
 		// CONFIG HALAMAN
 		$this->data['config_hidden']['notifikasi'] = TRUE;
 		$this->data['config_hidden']['footer'] = TRUE;
-		$this->data['judul_halaman'] = 'Daftar ujian';
+		$this->data['judul_halaman'] = 'Ujian';
 		$this->data['khusus']['ujian'] = TRUE;
 		$this->data['text']['white'] = TRUE;
 		$this->data['button_back'] = base_url('home');
