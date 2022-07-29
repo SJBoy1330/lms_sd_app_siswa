@@ -169,7 +169,7 @@ $(document).ready(function () {
             method: 'POST',
             cache: false,
             success: function (msg) {
-                $('#display_notifikasi_ortu').html(msg);
+                $('#display_notifikasi_dua').html(msg);
             }
         })
     });

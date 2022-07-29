@@ -3,7 +3,6 @@ var numberOfItems = $('#jadwal-list .jadwal').length; // Get total number of the
 var limitPerPage = 4; // Limit of items per each page
 $('#jadwal-list .jadwal:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
 var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
-console.log(totalPages);
 $(".pagination").append("<a class='to-page active' href='javascript:void(0)'></a>"); // Add first page marker
 // Loop to insert page number for each sets of items equal to page limit (e.g., limit of 4 with 20 total items = insert 5 pages)
 if (numberOfItems > limitPerPage) {
