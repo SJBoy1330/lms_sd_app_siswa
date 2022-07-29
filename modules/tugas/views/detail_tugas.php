@@ -110,7 +110,7 @@
                     </div>
                     <?php foreach ($result->download as $row) : ?>
                         <?php
-                        if ($row->files != FALSE) {
+                        if ($row->file != FALSE) {
                             $action_download = 'href="' . $row->file . '" class="card shadow-sm mb-3"';
                         } else {
                             $action_download = 'class="card shadow-sm mb-3" onclick="take_alert(`PERINGATAN`, `Tidak bisa mengunduh file diakrenakan file rusak!`, `warning`)"';
