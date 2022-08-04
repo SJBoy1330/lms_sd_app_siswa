@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="col align-self-center ps-0">
-                                        <p class="mb-0 size-14 text-dark fw-normal"><?= $row->nama; ?></p>
+                                        <p class="mb-0 size-14 text-dark fw-normal"><?= tampil_text($row->nama, 14); ?></p>
                                         <p class="mb-0 size-12 fw-normal text-secondary"><?php if ($row->file != FALSE) {
                                                                                                 echo strtoupper($row->extension);;
                                                                                             } else {
@@ -266,67 +266,6 @@
 
             </div>
             <!-- End New Design -->
-        </div>
-    </div>
-</div>
-
-<!-- Modal Gambar -->
-<div class="modal fade" id="modalGambar" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-        <div class="modal-content detail_tugas">
-            <div class="modal-header border-0">
-                <div class="row" style="width: 100vw;">
-                    <div class="col-auto">
-                        <a data-bs-dismiss="modal" aria-label="Close" class="btn btn-44">
-                            <i class="fa-solid fa-chevron-left text-white"></i>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center align-items-center text-center">
-                        <p class="size-14 text-white">tugas_bahasa_indo.png</p>
-                    </div>
-                    <div class="col-auto">
-                        <a href="#" target="_self" class="btn btn-44">
-                            <i class="fa-regular fa-download text-white" style="font-size: 20px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="image-preview" style="background-image: url(<?= base_url(); ?>assets/img/categories5.png);">
-                </div>
-            </div>
-            <div class="modal-footer border-0"></div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal Word -->
-<div class="modal fade" id="modalWord" tabindex="-1" aria-labelledby="detailSuratIjinModal" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen modal-dialog-centered">
-        <div class="modal-content detail_tugas">
-            <div class="modal-header border-0">
-                <div class="row" style="width: 100vw;">
-                    <div class="col-auto">
-                        <a data-bs-dismiss="modal" aria-label="Close" target="_self" class="btn btn-44">
-                            <i class="fa-solid fa-chevron-left text-white"></i>
-                        </a>
-                    </div>
-                    <div class="col d-flex justify-content-center align-items-center text-center">
-                        <p class="size-14 text-white">tugas_bahasa_indo.docx</p>
-                    </div>
-                    <div class="col-auto">
-                        <a href="#" target="_self" class="btn btn-44">
-                            <i class="fa-regular fa-download text-white" style="font-size: 20px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="image-preview-word">
-                    <img src="<?= base_url('assets/images/doc.svg') ?>" width="125" alt="">
-                </div>
-            </div>
-            <div class="modal-footer border-0"></div>
         </div>
     </div>
 </div>
