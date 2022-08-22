@@ -126,7 +126,7 @@ class Controller_ctl extends MY_Frontend
 			}
 			$test = explode('.', $tugas["name"][$i]);
 			$ext = end($test);
-			if (!in_array($ext, array('jpg', 'png', 'rar', 'zip', 'docx', 'doc', 'pdf', 'xls', 'xlxs', 'jpeg', 'mp3', 'mp4'))) {
+			if (!in_array($ext, array('jpg', 'png', 'rar', 'zip', 'docx', 'doc', 'pdf', 'xls', 'xlsx', 'jpeg', 'mp3', 'mp4'))) {
 				$data['status'] = false;
 				$data['title'] = 'PERINGATAN';
 				$data['message'] = 'File ' . $tugas['name'][$i] . ' Tidak di izinkan!';
