@@ -161,7 +161,7 @@
                                         $action = 'onclick="take_alert(`PERINGATAN`, `Tidak bisa mengunduh file diakrenakan file rusak!`, `warning`)"';
                                     }
                                     ?>
-                                    <a <?= $action; ?> class="card my-3" <?php
+                                    <a <?= $action; ?> class="card mb-3" <?php
                                                                             if ($row->file_dokumen == FALSE) {
                                                                                 echo 'style="background-color : #EAEBEB;"';
                                                                             }
