@@ -134,7 +134,7 @@
                             <div class="card-body">
                                 <div class="row d-flex justify-content-center align-items-center">
                                     <div class="col-auto">
-                                        <a href="<?= base_url('qna/chatting_grup/' . $result->result->id_chat . '?tanggal=' . date('Y-m-d', strtotime($result->result->tanggal))); ?>" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
+                                        <a href="<?= base_url('qna/chatting_grup/' . $result->result->id_chat . '?tanggal=' . date('Y-m-d', strtotime($result->result->tanggal)) . '&redirect=true'); ?>" class="avatar avatar-50 rounded-15 avatar-presensi-inline">
                                             <i class="fa-regular fa-messages size-22 text-white"></i>
                                         </a>
                                     </div>

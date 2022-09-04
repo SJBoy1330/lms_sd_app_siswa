@@ -180,6 +180,8 @@ class Controller_ctl extends MY_Frontend
 		if ($this->input->get('tanggal')) {
 			$req['tanggal'] = $this->input->get('tanggal');
 		}
+
+
 		$result = curl_get('pesan/display_grup/', $req);
 
 		// LOAD CONFIG PAGE 
